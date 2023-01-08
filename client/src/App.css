@@ -1,38 +1,230 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  /* display: grid; */
+  height: 100vh;
+  place-content: center;
+  font-family: 'Montserrat', sans-serif;
+  /* background: black ; */
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+header {
+  padding: .5em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  visibility: hidden;
+  opacity: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  place-content: center;
+  width: 100%; 
+  height: 100vh;
+  background: #D64006;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  transition: .3s;
+}
+
+nav ul .close {
+  font-size: 2.5em;
+  font-weight: 100;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+nav ul a {
+  color: black;
+  display: block;
+  padding: 1em;
+  font-weight: normal;
+  font-size: 1.5em;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+nav .menu {
+  float: right;
+  font-size: 1.5em;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.open-nav {
+  opacity: 1;
+  visibility: unset;
+  overflow: hidden;
+}
+
+nav h1 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+
+.wrapper {
+  color: white;
+  position: relative;
+}
+.background-img {
+  position: absolute;
+  width: 100%;
+  height: 85vh; 
+  background-image: url(./images/christian-englmeier-J7EUjSlNQtg-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: 1800px;
+  background-position: top;
+  z-index: -1;
+}
+
+.top-page {
+  text-align: center;
+  padding: .5em;
+  margin: 5em auto;
+}
+
+.top-page h1 {
+  margin-bottom: 1em;
+  font-size: 1.9em;
+  position: relative;
+}
+
+.top-page h1::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 24%;
+  height: 5px;
+  width: 18%;
+  background:#D64006; 
+}
+.top-page p {
+  width: 90%;  
+  margin-bottom: 1em;
+  font-size: .9em;
+  color: #BCB8B8;
+  line-height: 1.5em;
+  margin: 0 auto 2.5em;
+}
+
+.buttons .cta {
+  background: #D64006;
+  width: 90%;
+  color: white;
+  font-weight: bold;
+  display: block;
+  margin: 1em auto;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.buttons .secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid #D38567;
+  position: relative;
+}
+
+.arrow-right{
+  font-size: 1.5em;
+  position: absolute;
+  right: 0;
+  margin-right: .5em;
+}
+
+.our-products {
+  color: black;
+  margin-top: 15em;
+  padding: 1em .5em;
+  text-align: center;
+}
+
+img {
+  width: 250px;
+}
+
+.our-products h3 {
+  font-size: 1.6em;
+}
+
+.product-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.product-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.product-title h3{
+  width: 40%;
+  text-align: left;
+}
+
+.product-title span{
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.product-container p {
+  color: #817E7E;
+  margin-bottom: 1em;
+}
+
+.cta-buttons .cta {
+  background: #D64006;
+  /* width: 90%; */
+  color: white;
+  font-weight: bold;
+  display: block;
+  margin: 1em auto;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.cta-buttons .secondary {
+  background: none;
+  color: black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 0;
+  border-bottom: 2px solid black;
+}
+
+.arrow {
+  font-size: 1.5em;
 }
