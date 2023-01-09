@@ -56,6 +56,7 @@ const Navbar = () => {
                     <li>
                     <NavLink
                             to='contacts'
+                            className='contacts-link'
                             style={({ isActive }) => 
                             isActive ? activeStyle : undefined
                         }    

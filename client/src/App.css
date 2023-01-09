@@ -8,7 +8,6 @@
 
 body {
   height: 100vh;
-  place-content: center;
   font-family: 'Montserrat', sans-serif;
   color: black;
 }
@@ -94,13 +93,24 @@ nav h1 {
 .top-page {
   height: 750px;
   text-align: center;
-  padding: .5em;
-  display: grid;
-  place-content: center;
+  position: relative;
+}
+
+.top-page-content{
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.background-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
   background-image: url(./images/christian-englmeier-J7EUjSlNQtg-unsplash.jpg);
   background-repeat: no-repeat;
-  background-size: 2387px 1591px;
-  background-position: -1177px -72px;
+  background-position: -800px 0;
+  background-size: 2000px;
   z-index: -1;
 }
 
@@ -113,15 +123,14 @@ nav h1 {
 .top-page h1::before {
   content: '';
   position: absolute;
-  top: -20%;
-  left: 24%;
+  top: -30%;
+  left: 20%;
   height: 5px;
-  width: 18%;
+  width: 20%;
   background:#D64006; 
 }
 .top-page p {
   width: 90%;  
-  margin-bottom: 1em;
   font-size: .9em;
   color: #BCB8B8;
   line-height: 1.5em;
@@ -158,7 +167,7 @@ nav h1 {
 .our-products {
   color: black;
   background: white;
-  padding: 1em .5em;
+  padding: 1em .5em 2em;
   text-align: center;
 }
 
@@ -176,7 +185,7 @@ h2 {
 }
 
 .product-container {
-  width: 90%;
+  width: 380px;
   margin: 0 auto;
 }
 
@@ -205,7 +214,6 @@ h2 {
 
 .cta-buttons .cta {
   background: #D64006;
-  /* width: 90%; */
   color: white;
   font-weight: bold;
   display: block;
@@ -243,6 +251,7 @@ h2 {
 
 .feature-container {
   width: 90%;
+  /* max-width: 300px; */
   margin: 2em auto;
 }
 
@@ -298,4 +307,235 @@ h2 {
 .testimonial-card span {
   font-weight: bold;
   font-size: .8em;
+}
+
+@media (min-width: 550px) {
+  .cta-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .cta-buttons .cta {
+    flex: 0 0 47%;
+    margin: 0;
+  }
+}
+
+@media (min-width: 620px) {
+  header {
+    padding: .5em 1em;
+  }
+  nav ul {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    visibility: unset;
+    opacity: 1;
+    background: none;
+    position: unset;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .background-img {
+    background-position: -500px 0;
+    background-size: 2000px;
+  }
+
+  nav h1 {
+    font-size: 1.1em;
+  }
+
+  nav ul li a {
+    font-size: 1em;
+    padding: 0 1.5em;
+    font-weight: normal;
+  }
+
+  .contacts-link {
+    padding-right: 0;
+  }
+
+  .menu, .close {
+    display: none;
+  }
+
+  .top-page h1{
+    font-size: 2.5em;
+    width: 68%;
+    margin: 1em auto;
+
+  }
+  
+  .top-page h1::before{
+    top: -25%;
+    width: 30%;
+  }
+  .top-page p {
+    font-size: 1.1em;
+    width: 65%;
+    line-height: 1.5em;
+  }
+  .buttons {
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .cta {
+    flex: 0 0 47%;
+    margin: 0;
+  }
+
+  .cta-buttons {
+    display: unset;
+  }
+  .our-products ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .product-title h3{
+    width: 50%;
+    text-align: left;
+  }
+
+  .our-feautres ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .feature-container {
+    max-width: 300px;
+  }
+  
+  .testimonial-card {
+    max-width: 550px;
+    display: flex;
+    padding: 1em 1em;
+    border-radius: 2em;
+  }
+
+  .testimonial-card .avatar {
+    flex: 0 0 90px;
+  }
+
+  .testimonial-card blockquote {
+    margin-top: 0;
+  } 
+}
+
+@media (min-width: 1000px) {
+  header {
+    font-size: 1.2em;
+    padding: .5em 1.5em;
+  }
+  
+  .top-page {
+    height: 100vh;
+  }
+  .top-page .top-page-content{
+    text-align: left;
+    margin: 0;
+    padding: 4em;
+    gap: 2em;
+  }
+
+
+  .top-page h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 3em;
+    width: 40%;
+  }
+
+  .top-page h1::before{
+    top: -20%;
+    left: 0%;
+    width: 30%;
+    height: 10px;
+  }
+
+  .top-page p {
+    font-size: 1.3em;
+    width: 45%;
+    margin: 0;
+  }
+
+  .buttons {
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    max-width: 500px;
+    gap: 1em;
+  }
+
+  .primary,
+  .secondary {
+    flex: unset;
+    font-size: 1.2em;
+  }
+
+  .primary {
+    text-align: center;
+  }
+
+  .background-img {
+    background-position: 0 0;
+    background-size: 2000px;
+  }
+  /* .our-products h2,
+  .our-feautres h2 {
+    margin-bottom: .5em;
+  }  */
+
+  .product-container h3, span, p {
+    text-align: left;
+  }
+  .feature-container {
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+
+  .feature-container h3{
+    margin: .5em 0 ;
+  }
+  .reputation-content {
+    margin-top: 2em;
+    display: flex;
+    /* gap: 1em; */
+  }
+
+  .reputation-content p {
+    font-size: 1.2em;
+    line-height: 1.7em;
+    flex: 0 0 35%;
+    margin: auto;
+  }
+
+  .testimonials {
+    flex: 0 0 50%;
+    margin: auto;
+  }
+
+  .testimonial-card {
+    width: 550px;
+    text-align: left;
+    gap: 1em;
+  }
+  
+  .testimonial-card blockquote {
+    width: unset;
+  }
+
+
+  .testimonials ul li:first-child {
+    transform: translate(-35px , 0%);
+  }
+
+  .testimonials ul li:last-child {
+    transform: translate(-20px, 0%);
+  }
 }
