@@ -6,7 +6,7 @@ import image3 from'../images/Iptv-3-Months-Pack.png';
 const OurProducts = () => {
     return ( 
         <div className='our-products'>
-            <h3>Our Products</h3>
+            <h2>Our Products</h2>
             <ul>
                 <li className="product-container">
                     <img src={image1} alt='iptv-1-year-subscription'></img>
@@ -19,7 +19,7 @@ const OurProducts = () => {
                         <a href="/" className='cta primary'>PURCHASE</a>
                         <a href="/" className='cta secondary'>
                             <span>Read more</span>
-                            <i class="ri-arrow-right-s-line arrow"></i>    
+                            <i className="ri-arrow-right-s-line arrow"></i>    
                         </a>
                     </div>
                 </li>
@@ -34,7 +34,7 @@ const OurProducts = () => {
                         <a href="/" className='cta primary'>PURCHASE</a>
                         <a href="/" className='cta secondary'>
                             <span>Read more</span>
-                            <i class="ri-arrow-right-s-line arrow"></i>    
+                            <i className="ri-arrow-right-s-line arrow"></i>    
                         </a>
                     </div>
                 </li>
@@ -49,7 +49,7 @@ const OurProducts = () => {
                         <a href="/" className='cta primary'>PURCHASE</a>
                         <a href="/" className='cta secondary'>
                             <span>Read more</span>
-                            <i class="ri-arrow-right-s-line arrow"></i>    
+                            <i className="ri-arrow-right-s-line arrow"></i>    
                         </a>
                     </div>
                 </li>

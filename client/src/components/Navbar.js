@@ -21,7 +21,7 @@ const Navbar = () => {
                 <i className="ri-menu-line menu" onClick={toggleMenu}></i>
                 <ul className={navClass}>
                     <li>
-                        <i class="ri-close-fill close" onClick={toggleMenu}></i>
+                        <i className="ri-close-fill close" onClick={toggleMenu}></i>
                     </li>
                     <li>
                         <NavLink

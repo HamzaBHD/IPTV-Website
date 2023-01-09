@@ -10,7 +10,7 @@ const TopPage = () => {
                 <a href='/' className="cta primary">Order NOW</a>
                 <a href='/' className="cta secondary">
                     <span>Browse Product</span>
-                    <i class="ri-arrow-right-s-line arrow-right"></i>
+                    <i className="ri-arrow-right-s-line arrow-right"></i>
                 </a>
             </div>
         </div>
