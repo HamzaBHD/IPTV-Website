@@ -1,0 +1,536 @@
+header {
+    padding: .5em;
+    background: #000103;
+    color: white;
+  }
+
+  li {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-content: center;
+    width: 100%; 
+    height: 100vh;
+    background: #D64006;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    transition: .3s;
+  }
+  
+  nav ul .close {
+    font-size: 2.5em;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
+  
+  nav ul a {
+    color: black;
+    display: block;
+    padding: 1em;
+    font-weight: normal;
+    font-size: 1.5em;
+    color: white;
+  }
+  
+  nav .menu {
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  
+  .open-nav {
+    opacity: 1;
+    visibility: unset;
+    overflow: hidden;
+  }
+  
+  nav h1 {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  
+  .wrapper {
+    color: white;
+  }
+  
+  .top-page {
+    height: 750px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .top-page .top-page-content {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .background-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(../images/christian-englmeier-J7EUjSlNQtg-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: -800px 0;
+    background-size: 2000px;
+    z-index: -1;
+  }
+  
+  .top-page h1 {
+    margin-bottom: 1em;
+    font-size: 1.9em;
+    position: relative;
+  }
+  
+  .top-page h1::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: 20%;
+    height: 5px;
+    width: 20%;
+    background:#D64006; 
+  }
+  .top-page p {
+    width: 90%;  
+    font-size: .9em;
+    color: #BCB8B8;
+    line-height: 1.5em;
+    margin: 0 auto 2.5em;
+  }
+  
+  .buttons .cta {
+    background: #D64006;
+    width: 90%;
+    color: white;
+    font-weight: bold;
+    display: block;
+    margin: 1em auto;
+    padding: 1em;
+    cursor: pointer;
+  }
+  
+  .buttons .secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 1px solid #D38567;
+    position: relative;
+  }
+  
+  .arrow-right{
+    font-size: 1.5em;
+    position: absolute;
+    right: 0;
+    margin-right: .5em;
+  }
+  
+  .our-products {
+    color: black;
+    background: white;
+    padding: 1em .5em 2em;
+    text-align: center;
+  }
+  
+  .our-products img {
+    width: 250px;
+    margin-right: 2.2em;
+  }
+  
+  
+  h2 {
+    font-size: 1.8em;
+  }
+  .our-products h3 {
+    font-size: 1.6em;
+  }
+  
+  .product-container {
+    width: 380px;
+    margin: 0 auto;
+  }
+  
+  .product-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1em;
+  }
+  
+  .product-title h3{
+    width: 40%;
+    text-align: left;
+  }
+  
+  .product-title span{
+    font-weight: bold;
+    font-size: 2em;
+  }
+  
+  .product-container p {
+    color: #817E7E;
+    margin-bottom: 1em;
+    line-height: 1.5em;
+  }
+  
+  .cta-buttons .cta {
+    background: #D64006;
+    color: white;
+    font-weight: bold;
+    display: block;
+    margin: 1em auto;
+    padding: 1em;
+    cursor: pointer;
+  }
+  
+  .cta-buttons .secondary {
+    background: none;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 0;
+    border-bottom: 2px solid black;
+  }
+  
+  .arrow {
+    font-size: 1.5em;
+  }
+  
+  .our-feautres {
+    color: black;
+    text-align: center;
+    background: #F0F0F0;
+    padding: 1em .5em;
+  }
+  
+  .our-feautres svg{
+    font-size: 3em;
+    color: #D64006;
+  }
+  
+  .feature-container {
+    width: 90%;
+    /* max-width: 300px; */
+    margin: 2em auto;
+  }
+  
+  .feature-container h3 {
+    font-size: 1.5em;
+    margin: .5em;
+  }
+  
+  .feature-container p {
+    color: #817E7E;
+    line-height: 1.5em;
+  }
+  
+  .our-reputation {
+    color: black;
+    text-align: center;
+    padding: 1em 1em;
+  }
+  
+  .our-reputation p{
+    width: 90%;
+    margin: 1em auto;
+    color: #817E7E;
+    line-height: 1.5em;
+  }
+  
+  .testimonial-card {
+    max-width: 400px;
+    background: #F0F0F0;
+    margin: 2em auto;
+    padding: 2em 1em;
+    border-radius: 4em;
+  }
+  
+  .avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+    background: white;
+  }
+  
+  .testimonial-card blockquote {
+    font-size: 1.2em;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5em;
+    width: 85%;
+    margin: 1em auto .5em;
+  }
+  
+  .testimonial-card span {
+    font-weight: bold;
+    font-size: .8em;
+  }
+  
+  @media (min-width: 550px) {
+    .cta-buttons {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .cta-buttons .cta {
+      flex: 0 0 47%;
+      margin: 0;
+    }
+  }
+  
+  @media (min-width: 620px) {
+    header {
+      padding: .5em 1em;
+    }
+    nav ul {
+      width: auto;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      visibility: unset;
+      opacity: 1;
+      background: none;
+      position: unset;
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .background-img {
+      background-position: -500px 0;
+      background-size: 2000px;
+    }
+  
+    nav h1 {
+      font-size: 1.1em;
+    }
+  
+    nav ul li a {
+      font-size: 1em;
+      padding: 0 1.5em;
+      font-weight: normal;
+    }
+  
+    .contacts-link {
+      padding-right: 0;
+    }
+  
+    .menu, .close {
+      display: none;
+    }
+  
+    .top-page h1{
+      font-size: 2.5em;
+      width: 68%;
+      margin: 1em auto;
+  
+    }
+    
+    .top-page h1::before{
+      top: -25%;
+      width: 30%;
+    }
+    .top-page p {
+      font-size: 1.1em;
+      width: 65%;
+      line-height: 1.5em;
+    }
+    .buttons {
+      width: 65%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .cta {
+      flex: 0 0 47%;
+      margin: 0;
+    }
+  
+    .cta-buttons {
+      display: unset;
+    }
+    .our-products ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .product-title h3{
+      width: 50%;
+      text-align: left;
+    }
+  
+    .our-feautres ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .feature-container {
+      max-width: 300px;
+    }
+    
+    .testimonial-card {
+      max-width: 550px;
+      display: flex;
+      padding: 1em 1em;
+      border-radius: 2em;
+    }
+  
+    .testimonial-card .avatar {
+      flex: 0 0 90px;
+    }
+  
+    .testimonial-card blockquote {
+      margin-top: 0;
+    } 
+  }
+  
+  @media (min-width: 1000px) {
+    header {
+      font-size: 1.2em;
+      padding: .5em 1.5em;
+    }
+    
+    .top-page {
+      height: 100vh;
+    }
+    .top-page-content{
+      text-align: left;
+      margin: 0;
+      padding: 4em;
+      gap: 2em;
+    }
+  
+  
+    .top-page-content h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 3em;
+      width: 40%;
+    }
+  
+    .top-page-content h1::before{
+      top: -20%;
+      left: 0%;
+      width: 30%;
+      height: 10px;
+    }
+  
+    .top-page-content p {
+      font-size: 1.3em;
+      width: 45%;
+      margin: 0;
+    }
+  
+    .top-page-content .buttons {
+      margin: 0;
+      padding: 0;
+      width: 50%;
+      max-width: 500px;
+      gap: 1em;
+    }
+  
+    .primary,
+    .secondary {
+      flex: unset;
+      font-size: 1.2em;
+    }
+  
+    .primary {
+      text-align: center;
+    }
+  
+    .top-page .background-img {
+      background-position: 0 0;
+      background-size: 2000px;
+    }
+  
+    .our-products,
+    .our-feautres,
+    .our-reputation {
+      text-align: left;
+      padding: 2em 4em;
+    }
+    
+    .our-products {
+      margin-bottom: 4em;
+    }
+
+    .product-container,
+    .feature-container,
+    .reputation-content p {
+      margin-left: 0;
+    }
+
+    
+    .feature-container {
+      text-align: left;
+      margin-top: 5em;
+      margin-bottom: 5em;
+    }
+  
+    .feature-container h3{
+      margin: .5em 0 ;
+    }
+    .reputation-content {
+      margin-top: 2em;
+      display: flex;
+    }
+  
+    .reputation-content p {
+      font-size: 1.2em;
+      line-height: 1.7em;
+      flex: 0 0 35%;
+    }
+  
+    .testimonials {
+      flex: 0 0 50%;
+      /* margin: auto; */
+    }
+  
+    .testimonial-card {
+      width: 550px;
+      text-align: left;
+      gap: 1em;
+    }
+    
+    .testimonial-card blockquote {
+      width: unset;
+    }
+  
+  
+    .testimonials ul li:first-child {
+      transform: translate(-35px , 0%);
+    }
+  
+    .testimonials ul li:last-child {
+      transform: translate(-20px, 0%);
+    }
+  }

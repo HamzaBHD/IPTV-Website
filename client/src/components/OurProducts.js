@@ -3,10 +3,10 @@ import image2 from'../images/Iptv-6-Months-Pack.png';
 import image3 from'../images/Iptv-3-Months-Pack.png';
 
 
-const OurProducts = () => {
+const OurProducts = ({ isTrue, productsClass }) => {
     return ( 
-        <div className='our-products'>
-            <h2>Our Products</h2>
+        <div className={productsClass}>
+            {isTrue && <h2>Our Products</h2>}
             <ul>
                 <li className="product-container">
                     <img src={image1} alt='iptv-1-year-subscription'></img>

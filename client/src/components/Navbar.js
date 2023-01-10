@@ -15,7 +15,7 @@ const Navbar = () => {
     const navClass = isOpen ? 'open-nav' : undefined
 
     return ( 
-        <header>
+        <header className='header-black'>
             <nav>
                 <h1>WATCHED.</h1>
                 <i className="ri-menu-line menu" onClick={toggleMenu}></i>
