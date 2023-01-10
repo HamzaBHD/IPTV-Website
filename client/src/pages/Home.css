@@ -422,7 +422,7 @@ header {
     .top-page {
       height: 100vh;
     }
-    .top-page-content{
+    .top-page .top-page-content{
       text-align: left;
       margin: 0;
       padding: 4em;
@@ -430,7 +430,7 @@ header {
     }
   
   
-    .top-page-content h1 {
+    .top-page .top-page-content h1 {
       margin: 0;
       padding: 0;
       font-size: 3em;
