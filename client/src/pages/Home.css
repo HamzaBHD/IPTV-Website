@@ -66,15 +66,16 @@ header {
     overflow: hidden;
   }
   
-  nav h1 {
+  .wrapper {
+    color: white;
+  }
+  
+  nav a h1 {
+    color: white;
     font-size: 1em;
     font-weight: bold;
   }
   
-  
-  .wrapper {
-    color: white;
-  }
   
   .top-page {
     height: 750px;

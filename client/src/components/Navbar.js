@@ -17,7 +17,9 @@ const Navbar = () => {
     return ( 
         <header className='header-black'>
             <nav>
-                <h1>WATCHED.</h1>
+                <a href='/'>
+                    <h1>WATCHED.</h1>
+                </a>
                 <i className="ri-menu-line menu" onClick={toggleMenu}></i>
                 <ul className={navClass}>
                     <li>
@@ -28,7 +30,8 @@ const Navbar = () => {
                             to='/'
                             style={({ isActive }) =>
                             isActive ? activeStyle : undefined
-                        }
+                            }
+                            onClick={() => setIsOpen(false)}
                         >
                             Home
                         </NavLink>
@@ -38,7 +41,8 @@ const Navbar = () => {
                             to='products'
                             style={({ isActive }) => 
                                 isActive ? activeStyle : undefined
-                            }    
+                            }
+                            onClick={() => setIsOpen(false)}    
                             >
                             Products
                         </NavLink>
@@ -48,7 +52,8 @@ const Navbar = () => {
                             to='about'
                             style={({ isActive }) => 
                             isActive ? activeStyle : undefined
-                        }    
+                            }
+                            onClick={() => setIsOpen(false)}
                         >
                             About
                     </NavLink>
@@ -59,7 +64,8 @@ const Navbar = () => {
                             className='contacts-link'
                             style={({ isActive }) => 
                             isActive ? activeStyle : undefined
-                        }    
+                            }
+                            onClick={() => setIsOpen(false)}  
                         >
                             Contacts
                     </NavLink>
