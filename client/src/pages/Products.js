@@ -16,6 +16,8 @@ const Products = () => {
                 isTrue={false}
                 backgoundClass='background-img-black'
                 contentClass='top-page-content-products'
+                aboutPage={false}
+
             />
             <OurProducts 
                 isTrue={false}

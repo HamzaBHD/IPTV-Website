@@ -1,9 +1,9 @@
 import { FaCheck, FaBolt, FaHandshake } from 'react-icons/fa'
 
-const OurFeatures = () => {
+const OurFeatures = ({ isTrue, featuresClass }) => {
     return ( 
-        <div className="our-feautres">
-            <h2>Our Features</h2>
+        <div className={featuresClass}>
+            {isTrue && <h2>Our Features</h2>}
             <ul>
                 <li className="feature-container">
                     <FaCheck />

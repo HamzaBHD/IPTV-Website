@@ -224,21 +224,20 @@ header {
     font-size: 1.5em;
   }
   
-  .our-feautres {
+  .our-features {
     color: black;
     text-align: center;
     background: #F0F0F0;
     padding: 1em .5em;
   }
   
-  .our-feautres svg{
+  .our-features svg{
     font-size: 3em;
     color: #D64006;
   }
   
   .feature-container {
     width: 90%;
-    /* max-width: 300px; */
     margin: 2em auto;
   }
   
@@ -388,7 +387,7 @@ header {
       text-align: left;
     }
   
-    .our-feautres ul {
+    .our-features ul {
       display: flex;
       flex-wrap: wrap;
     }
@@ -422,6 +421,8 @@ header {
     .top-page {
       height: 100vh;
     }
+    
+
     .top-page .top-page-content{
       text-align: left;
       margin: 0;
@@ -429,12 +430,11 @@ header {
       gap: 2em;
     }
   
-  
     .top-page .top-page-content h1 {
       margin: 0;
       padding: 0;
       font-size: 3em;
-      width: 40%;
+      width: 50%;
     }
   
     .top-page-content h1::before{
@@ -474,7 +474,7 @@ header {
     }
   
     .our-products,
-    .our-feautres,
+    .our-features,
     .our-reputation {
       text-align: left;
       padding: 2em 4em;

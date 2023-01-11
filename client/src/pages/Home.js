@@ -13,12 +13,18 @@ const Home = () => {
                 isTrue={true}
                 backgoundClass='background-img'
                 contentClass='top-page-content'
+                aboutPage={false}
+                primary='Order NOW'
+                secondary='Browse product'
             />
             <OurProducts 
                 isTrue={true}
                 productsClass='our-products'
             />
-            <OurFeatures />
+            <OurFeatures 
+                isTrue={true}
+                featuresClass='our-features'
+            />
             <OurReputation />
         </div>
      );

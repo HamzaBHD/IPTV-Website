@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* background: rgb(0 100 0 / 0.1) !important; */
 }
 
 body {
@@ -11,9 +12,3 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: black;
 }
-
-/* @media (min-width: 1000px) {
-  .wrapper {
-    text-align: left ;
-  }
-} */
