@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
+    const [headerClass, setHeaderClass] = useState('dark')
 
     const activeStyle = {
         fontWeight: 'bold'
@@ -15,7 +16,7 @@ const Navbar = () => {
     const navClass = isOpen ? 'open-nav' : undefined
 
     return ( 
-        <header className='header-black'>
+        <header className={`header-${headerClass}`}>
             <nav>
                 <a href='/'>
                     <h1>WATCHED.</h1>
@@ -31,7 +32,7 @@ const Navbar = () => {
                             style={({ isActive }) =>
                             isActive ? activeStyle : undefined
                             }
-                            onClick={() => setIsOpen(false)}
+                            onClick={() => {setIsOpen(false); setHeaderClass('dark')}}
                         >
                             Home
                         </NavLink>
@@ -42,7 +43,7 @@ const Navbar = () => {
                             style={({ isActive }) => 
                                 isActive ? activeStyle : undefined
                             }
-                            onClick={() => setIsOpen(false)}    
+                            onClick={() => {setIsOpen(false); setHeaderClass('black')}}  
                             >
                             Products
                         </NavLink>
@@ -53,7 +54,7 @@ const Navbar = () => {
                             style={({ isActive }) => 
                             isActive ? activeStyle : undefined
                             }
-                            onClick={() => setIsOpen(false)}
+                            onClick={() => {setIsOpen(false); setHeaderClass('black')}}
                         >
                             About
                     </NavLink>
@@ -65,7 +66,7 @@ const Navbar = () => {
                             style={({ isActive }) => 
                             isActive ? activeStyle : undefined
                             }
-                            onClick={() => setIsOpen(false)}  
+                            onClick={() => {setIsOpen(false); setHeaderClass('black')}}  
                         >
                             Contacts
                     </NavLink>
