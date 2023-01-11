@@ -419,11 +419,12 @@ header {
     }
     
     .top-page {
-      height: 100vh;
+      min-height: 830px;
     }
     
 
     .top-page .top-page-content{
+      height: 650px;
       text-align: left;
       margin: 0;
       padding: 4em;
