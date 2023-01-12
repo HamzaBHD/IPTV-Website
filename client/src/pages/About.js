@@ -8,7 +8,7 @@ const About = () => {
         <div className='wrapper'>
             <div className='left'>
                 <TopPage
-                    topPageClass='top-page'
+                    topPageClass='top-page-about'
                     title='About WATCHED.'
                     paragraph='Lorem ipsum dolor sit amet, consectetur,
                     sed do eiusmod tempor incididunt ut

@@ -1,17 +1,30 @@
-.top-page .about-title{
+.top-page-about .top-page-content .about-title{
     color: white;
     position: relative;
 }
 
-.top-page .about-title h1 {
+.top-page-about {
+    height: 600px;
+    text-align: center;
+    background-color: #141313;
+}
+
+.top-page-about .top-page-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top-page-about .top-page-content .about-title h1 {
     margin: .1em auto .5em;
 }
 
-.top-page .about-title h1::before {
+.top-page-about .top-page-content .about-title h1::before {
     display: none;
 }
 
-.top-page .about-title::before {
+.top-page-about .top-page-content .about-title::before {
     content: '';
     position: absolute;
     top: -15%;
@@ -21,17 +34,12 @@
     background:#D64006; 
 }
 
-.top-page p {
-    line-height: 1.7em;
-}
-
-.background-img--black {
-    width: 100%;
-    height: 70%;
-    position: absolute;
-    background-color: #141313;
-    z-index: -1;
-    
+.top-page-about .top-page-content p {
+    width: 90%;  
+    font-size: .9em;
+    color: #BCB8B8;
+    line-height: 1.5em;
+    margin: 0 auto 2.5em;
 }
 
 .features {
@@ -49,10 +57,6 @@
 
 
 @media (min-width: 620px) {
-    .background-img--black {
-        height: 100%;
-    }
-
     .features {
         margin-top: -10em;
     }
@@ -61,32 +65,76 @@
         display: flex;
         flex-wrap: wrap;
     }
+
+    .top-page-about .top-page-content h1{
+        font-size: 2.5em;
+        width: 50%;
+        margin: 1em auto;
+    
+      }
+      
+      .top-page-about .top-page-content h1::before{
+        top: -25%;
+        width: 30%;
+      }
+      .top-page-about .top-page-content p {
+        font-size: 1.1em;
+        width: 65%;
+        line-height: 1.5em;
+        margin: 1em auto;
+      }
 }
 
-@media (min-width: 1000px) {
-    .top-page .about-title{
+@media (min-width: 1200px) {
+/* 
+    .top-page-about,
+    .top-page-content {
+    border: 1px solid red;
+    } */
+    .top-page-about {
+        min-height: 830px;
+        width: 68%;
+
+    }
+
+    /* .top-page-about .top-page-content {
+        min-height: 830px;
+        justify-content: space-evenly;
+    } */
+  
+    .top-page-about .top-page-content .about-title{
         text-align: left;
         width: 70%;
     }
 
-    .background-img--black {
-        height: 100%
-    }
-
-    .top-page .about-title h1 {
+    .top-page-about .top-page-content .about-title h1 {
         width: 100%;
         margin-left: 1em;
     }
-    .top-page .about-title span {
+    .top-page-about .top-page-content .about-title span {
         margin-left: 3em;
     }
 
-    .top-page .about-title::before {
+    .top-page-about .top-page-content .about-title::before {
         height: 5em;
         width: 10px;
         left: 0%;
         top: -5%;
     }
+
+      .top-page-about .top-page-content{
+        height: 650px;
+        text-align: left;
+        margin: 0;
+        padding: 4em;
+        gap: 2em;
+      }
+
+      .top-page-about .top-page-content p {
+        font-size: 1.3em;
+        width: 80%;
+        margin: 0;
+      }
 
     .left {
         display: flex;

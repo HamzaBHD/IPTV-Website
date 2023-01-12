@@ -172,7 +172,7 @@ header {
   }
   
   .product-container {
-    width: 380px;
+    width: 400px;
     margin: 0 auto;
   }
   
@@ -412,7 +412,7 @@ header {
     } 
   }
   
-  @media (min-width: 1000px) {
+  @media (min-width: 1200px) {
     header {
       font-size: 1.2em;
       padding: .5em 1.5em;
@@ -514,7 +514,6 @@ header {
   
     .testimonials {
       flex: 0 0 50%;
-      /* margin: auto; */
     }
   
     .testimonial-card {

@@ -6,7 +6,7 @@ const Products = () => {
     return (
         <div className='wrapper'>
             <TopPage
-                topPageClass='top-page'
+                topPageClass='top-page-product'
                 title='Choose your Plan.'
                 paragraph='Lorem ipsum dolor sit amet, consectetur 
                 sed do eiusmod tempor incididunt ut
@@ -16,7 +16,7 @@ const Products = () => {
                 labore et dolore magna aliqua.'
                 isTrue={false}
                 backgoundClass='background-img-black'
-                contentClass='top-page-content-products'
+                contentClass='top-page-content'
                 aboutPage={false}
                 contactPage={false}
 
