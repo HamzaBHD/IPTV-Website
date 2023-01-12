@@ -8,12 +8,14 @@ const Home = () => {
     return ( 
         <div className='wrapper'>
             <TopPage
+                topPageClass='top-page'
                 title='Get your Satisfaction Now.'
                 paragraph='Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
                 isTrue={true}
                 backgoundClass='background-img'
                 contentClass='top-page-content'
                 aboutPage={false}
+                contactPage={false}
                 primary='Order NOW'
                 secondary='Browse product'
             />

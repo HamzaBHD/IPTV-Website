@@ -8,6 +8,7 @@ const About = () => {
         <div className='wrapper'>
             <div className='left'>
                 <TopPage
+                    topPageClass='top-page'
                     title='About WATCHED.'
                     paragraph='Lorem ipsum dolor sit amet, consectetur,
                     sed do eiusmod tempor incididunt ut
@@ -16,13 +17,14 @@ const About = () => {
                     backgoundClass='background-img--black'
                     contentClass='top-page-content' 
                     aboutPage={true}
+                    contactPage={false}
                     primary='Contact us'
                     secondary='Browse product'
                     />
                 <OurFeatures 
                     isTrue={false}
                     featuresClass='features'
-                    />
+                />
             </div>
         </div>
 
