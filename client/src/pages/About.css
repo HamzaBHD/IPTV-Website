@@ -47,7 +47,6 @@
     text-align: center;
     background: #F0F0F0;
     padding: 1em .5em;
-    margin-top: -15em;
 }
   
 .features svg{
@@ -57,10 +56,6 @@
 
 
 @media (min-width: 620px) {
-    .features {
-        margin-top: -10em;
-    }
-
     .features ul {
         display: flex;
         flex-wrap: wrap;
@@ -86,22 +81,13 @@
 }
 
 @media (min-width: 1200px) {
-/* 
-    .top-page-about,
-    .top-page-content {
-    border: 1px solid red;
-    } */
+
     .top-page-about {
         min-height: 830px;
         width: 68%;
 
     }
 
-    /* .top-page-about .top-page-content {
-        min-height: 830px;
-        justify-content: space-evenly;
-    } */
-  
     .top-page-about .top-page-content .about-title{
         text-align: left;
         width: 70%;
