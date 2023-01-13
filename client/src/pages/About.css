@@ -53,34 +53,44 @@
     color: #D64006;
 }
 
-
 @media (min-width: 620px) {
     .features ul {
         display: flex;
+        gap: 1em;
         flex-wrap: wrap;
     }
 
-    .top-page-about .top-page-content h1{
+    .top-page-about .top-page-content .about-title h1{
         font-size: 2.5em;
-        width: 50%;
-        margin: 1em auto;
-    
-      }
+        width: 75%;
+        max-width: 620px;
+        margin: 0 auto 1em;
+    }
       
-      .top-page-about .top-page-content h1::before{
-        top: -25%;
-        width: 30%;
-      }
-      .top-page-about .top-page-content p {
+    .top-page-about .top-page-content .about-title::before{
+        top: -15%;
+        left: 45%;
+        width: 10%;
+        height: 6px;
+    }
+    .top-page-about .top-page-content p {
         font-size: 1.1em;
-        width: 65%;
-        line-height: 1.5em;
-        margin: 1em auto;
-      }
+        width: 75%;
+        max-width: 620px;
+        line-height: 1.8em;
+    }
+
+    .features ul li p {
+      font-size: 1.1em;
+      line-height: 1.8em;
+    }
+
+    .features svg{
+        font-size: 3.5em;
+    }
 }
 
 @media (min-width: 1200px) {
-
     .top-page-about {
         min-height: 830px;
         width: 68%;

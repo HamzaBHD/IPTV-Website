@@ -171,8 +171,9 @@ header {
     font-size: 1.6em;
   }
   
-  .product-container {
-    margin: 0 auto;
+  .product-container,
+  .feature-container {
+    margin: 1.5em auto;
   }
   
   .product-title{
@@ -214,6 +215,7 @@ header {
   .cta-buttons .secondary {
     background: none;
     color: black;
+    font-weight: 600;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -239,11 +241,6 @@ header {
     color: #D64006;
   }
   
-  .feature-container {
-    /* width: 90%; */
-    margin: 2.5em 0 1em;
-  }
-  
   .feature-container h3 {
     font-size: 1.6em;
     margin: .5em 0;
@@ -262,13 +259,13 @@ header {
   
   .our-reputation p{
     color: #817E7E;
-    line-height: 1.5em;
+    line-height: 1.7em;
     margin: 2em 0;
   }
   
   .testimonial-card {
     background: #F0F0F0;
-    margin: 2em 0;
+    margin: 2em auto;
     padding: 1.5em .5em;
     border-radius: 4em;
   }
@@ -299,7 +296,7 @@ header {
   @media (min-width: 550px) {
     .product-container,
     .testimonial-card {
-      width: 420px;
+      width: 450px;
     }
 
     .cta-buttons {
@@ -307,6 +304,11 @@ header {
       display: flex;
       justify-content: space-between;
     }
+    .cta-buttons .primary {
+      margin: 0;
+      padding: 1.15em ;
+    } 
+
     .cta-buttons .cta {
       flex: 0 0 47%;
       margin: 0;
@@ -314,8 +316,12 @@ header {
   }
   
   @media (min-width: 620px) {
-    header {
-      padding: .5em 1em;
+    body {
+      font-size: 16px;
+    }
+
+    nav {
+      padding: .7em 0;
     }
     nav ul {
       width: auto;
@@ -334,13 +340,9 @@ header {
       background-position: -500px 0;
       background-size: 2000px;
     }
-  
-    nav h1 {
-      font-size: 1.1em;
-    }
-  
+
     nav ul li a {
-      font-size: 1em;
+      font-size: unset;
       padding: 0 1.5em;
       font-weight: normal;
     }
@@ -352,59 +354,80 @@ header {
     .menu, .close {
       display: none;
     }
+
+    .top-page .top-page-content {
+      height: 80%; 
+    }
   
     .top-page h1{
       font-size: 2.5em;
-      width: 68%;
+      width: 75%;
+      max-width: 620px;
       margin: 1em auto;
   
     }
     
     .top-page h1::before{
       top: -25%;
+      left: 35%;
       width: 30%;
+      height: 6px;
     }
     .top-page p {
       font-size: 1.1em;
-      width: 65%;
-      line-height: 1.5em;
+      width: 75%;
+      max-width: 620px;
+      line-height: 1.8em;
     }
     .buttons {
-      width: 65%;
+      width: 75%;
+      max-width: 620px;
       margin: 0 auto;
       display: flex;
+      gap: 1em;
       justify-content: space-between;
     }
     .cta {
-      flex: 0 0 47%;
+      flex: 0 0 50%;
       margin: 0;
     }
   
-    .cta-buttons {
-      display: unset;
-    }
-    .our-products ul {
+    /* .cta-buttons {
+      display: block;
+    } */
+    .our-products ul,
+    .our-features ul {
       display: flex;
+      gap: 1em;
       flex-wrap: wrap;
+    }
+
+    .our-products ul li p,
+    .our-features ul li p,
+    .our-reputation p {
+      font-size: 1.1em;
+      line-height: 1.8em;
     }
   
     .product-title h3{
       width: 50%;
       text-align: left;
     }
-  
-    .our-features ul {
-      display: flex;
-      flex-wrap: wrap;
-    }
-  
+
     .feature-container {
-      max-width: 300px;
+      max-width: 320px;
+    }
+
+    .our-features svg{
+      font-size: 3.5em;
     }
     
     .testimonial-card {
-      max-width: 550px;
+      width: 90%;
+      max-width: 620px;
       display: flex;
+      margin-left: auto;
+      margin-right: auto;
       padding: 1em 1em;
       border-radius: 2em;
     }
@@ -416,6 +439,14 @@ header {
     .testimonial-card blockquote {
       margin-top: 0;
     } 
+
+    .testimonials ul li:first-child {
+      transform: translate(35px , 0%);
+    }
+  
+    .testimonials ul li:last-child {
+      transform: translate(20px, 0%);
+    }
   }
   
   @media (min-width: 1200px) {

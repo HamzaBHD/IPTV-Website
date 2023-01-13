@@ -57,23 +57,34 @@
 }
 
 @media (min-width:620px) {
+    .top-page-contacts .top-page-content {
+        height: 85%;
+    }
+
     .top-page-contacts .top-page-content h1{
         font-size: 2.5em;
-        width: 68%;
+        width: 75%;
+        max-width: 620px;
         margin: 1em auto;
-    
-      }
+    }
       
-      .top-page-contacts .top-page-content h1::before{
+    .top-page-contacts .top-page-content h1::before{
         top: -25%;
+        left: 40%;
         width: 20%;
-      }
-      .top-page-contacts .top-page-content p {
-        text-align: center;
+        height: 6px;
+    }
+    .top-page-contacts .top-page-content p {
         font-size: 1.1em;
-        width: 45%;
-        line-height: 1.5em;
-      }
+        width: 75%;
+        max-width: 620px;
+        line-height: 1.8em;
+    }
+
+    .top-page-contacts .contact-icons a {
+        font-size: 2.5em;
+    }
+    
 }
 
 
@@ -104,7 +115,7 @@
         width: 80%;
     }
     
-      .top-page-contacts .top-page-content h1::before{
+    .top-page-contacts .top-page-content h1::before{
         top: -20%;
         left: 0%;
         width: 30%;
@@ -126,8 +137,8 @@
         text-align: left;
     }
 
-      .contacts--form,
-      .contacts-form{
+    .contacts--form,
+    .contacts-form{
         color: white;
     }
     
