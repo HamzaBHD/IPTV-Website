@@ -9,12 +9,14 @@
   }
 
   .top-page-product .top-page-content {
+    padding: 1em;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
   .top-page-product .top-page-content h1 {
+    margin: 1em;
     position: relative;
   }
 
@@ -22,17 +24,15 @@
     content: '';
     position: absolute;
     top: -30%;
-    left: 25%;
+    left: 40%;
     height: 5px;
-    width: 17%;
-    background:#D64006; 
+    width: 22%;
+    background:#D64006;  
   }
 
   .top-page-product .top-page-content p {
-    width: 90%;  
-    font-size: .9em;
     color: #BCB8B8;
-    line-height: 1.5em;
+    line-height: 1.7em;
     margin: 0 auto 2.5em;
   }
 
@@ -43,7 +43,7 @@
   .products {
     color: black;
     background: transparent;
-    padding: 1em .5em 2em;
+    padding: 1em;
     margin-top: -10em;
     text-align: center;
   }

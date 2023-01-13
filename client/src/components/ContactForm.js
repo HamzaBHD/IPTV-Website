@@ -8,10 +8,10 @@ const ContactForm = () => {
             <form className='contacts-form'>
                 
                 <label for='fname'>First Name</label>
-                <input type='text' id='fname' name='fname' placeholder='First Name'/>
+                <input type='text' id='fname' name='fname' placeholder='John Doe'/>
 
-                <label for='lname'>last Name</label>
-                <input type='text' id='lname' name='lname' placeholder='Last Name'/>
+                <label for='email'>last Name</label>
+                <input type='email' id='email' name='email' placeholder='John@doe.com'/>
 
                 <label for='msg'>Your Message goes here!</label>
                 <input type='text' id='msg' name='msg' placeholder='Hi Watched.' />

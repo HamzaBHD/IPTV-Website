@@ -1,5 +1,5 @@
 header {
-    padding: .5em;
+    padding: 1em;
     background: #000103;
     color: white;
   }
@@ -84,7 +84,8 @@ header {
   }
   
   .top-page .top-page-content {
-    height: 80%;
+    height: 90%;
+    padding: 1em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -102,8 +103,7 @@ header {
   }
   
   .top-page h1 {
-    margin-bottom: 1em;
-    font-size: 1.9em;
+    margin: 1em;
     position: relative;
   }
   
@@ -111,22 +111,19 @@ header {
     content: '';
     position: absolute;
     top: -30%;
-    left: 20%;
+    left: 40%;
     height: 5px;
-    width: 20%;
+    width: 22%;
     background:#D64006; 
   }
   .top-page p {
-    width: 90%;  
-    font-size: .9em;
     color: #BCB8B8;
-    line-height: 1.5em;
+    line-height: 1.7em;
     margin: 0 auto 2.5em;
   }
   
   .buttons .cta {
     background: #D64006;
-    width: 90%;
     color: white;
     font-weight: bold;
     display: block;
@@ -154,7 +151,7 @@ header {
   .our-products {
     color: black;
     background: white;
-    padding: 1em .5em 2em;
+    padding: 1em;
     text-align: center;
   }
   
@@ -164,15 +161,17 @@ header {
   }
   
   
-  h2 {
+  .our-products h2,
+  .our-features h2,
+  .our-reputation h2 {
     font-size: 1.8em;
+    margin: .5em;
   }
   .our-products h3 {
     font-size: 1.6em;
   }
   
   .product-container {
-    width: 400px;
     margin: 0 auto;
   }
   
@@ -180,7 +179,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
   }
   
   .product-title h3{
@@ -195,7 +194,7 @@ header {
   
   .product-container p {
     color: #817E7E;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     line-height: 1.5em;
   }
   
@@ -204,10 +203,13 @@ header {
     color: white;
     font-weight: bold;
     display: block;
-    margin: 1em auto;
     padding: 1em;
     cursor: pointer;
   }
+
+  .cta-buttons .primary {
+    margin-bottom: 1em;
+  } 
   
   .cta-buttons .secondary {
     background: none;
@@ -218,6 +220,7 @@ header {
     justify-content: space-between;
     padding: 1em 0;
     border-bottom: 2px solid black;
+    margin-bottom: 2em;
   }
   
   .arrow {
@@ -228,7 +231,7 @@ header {
     color: black;
     text-align: center;
     background: #F0F0F0;
-    padding: 1em .5em;
+    padding: 1em;
   }
   
   .our-features svg{
@@ -237,13 +240,13 @@ header {
   }
   
   .feature-container {
-    width: 90%;
-    margin: 2em auto;
+    /* width: 90%; */
+    margin: 2.5em 0 1em;
   }
   
   .feature-container h3 {
-    font-size: 1.5em;
-    margin: .5em;
+    font-size: 1.6em;
+    margin: .5em 0;
   }
   
   .feature-container p {
@@ -254,21 +257,19 @@ header {
   .our-reputation {
     color: black;
     text-align: center;
-    padding: 1em 1em;
+    padding: 1em;
   }
   
   .our-reputation p{
-    width: 90%;
-    margin: 1em auto;
     color: #817E7E;
     line-height: 1.5em;
+    margin: 2em 0;
   }
   
   .testimonial-card {
-    max-width: 400px;
     background: #F0F0F0;
-    margin: 2em auto;
-    padding: 2em 1em;
+    margin: 2em 0;
+    padding: 1.5em .5em;
     border-radius: 4em;
   }
   
@@ -296,6 +297,11 @@ header {
   }
   
   @media (min-width: 550px) {
+    .product-container,
+    .testimonial-card {
+      width: 420px;
+    }
+
     .cta-buttons {
       width: 100%;
       display: flex;
