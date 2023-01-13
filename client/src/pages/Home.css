@@ -103,7 +103,8 @@ header {
   }
   
   .top-page h1 {
-    margin: 1em;
+    margin: 0 auto 1em;
+    width: 90%;
     position: relative;
   }
   
@@ -392,9 +393,6 @@ header {
       margin: 0;
     }
   
-    /* .cta-buttons {
-      display: block;
-    } */
     .our-products ul,
     .our-features ul {
       display: flex;
@@ -415,7 +413,7 @@ header {
     }
 
     .feature-container {
-      max-width: 320px;
+      max-width: 400px;
     }
 
     .our-features svg{
@@ -450,33 +448,36 @@ header {
   }
   
   @media (min-width: 1200px) {
+    body {
+      font-size: 17px;
+    }
     header {
       font-size: 1.2em;
-      padding: .5em 1.5em;
+      padding: .5em 4em;
     }
     
     .top-page {
-      min-height: 830px;
+      min-height: 800px;
     }
     
 
     .top-page .top-page-content{
-      height: 650px;
+      height: 100%;
+      width: unset;
       text-align: left;
       margin: 0;
       padding: 4em;
       gap: 2em;
     }
   
-    .top-page .top-page-content h1 {
+    .top-page-content h1 {
       margin: 0;
       padding: 0;
-      font-size: 3em;
-      width: 50%;
+      font-size: 4.3em;
     }
   
     .top-page-content h1::before{
-      top: -20%;
+      top: -5%;
       left: 0%;
       width: 30%;
       height: 10px;
@@ -484,21 +485,19 @@ header {
   
     .top-page-content p {
       font-size: 1.3em;
-      width: 45%;
+      max-width: 600px;
       margin: 0;
     }
   
-    .top-page-content .buttons {
+    .buttons {
       margin: 0;
       padding: 0;
-      width: 50%;
-      max-width: 500px;
+      max-width: 600px;
       gap: 1em;
     }
   
     .primary,
     .secondary {
-      flex: unset;
       font-size: 1.2em;
     }
   
@@ -517,36 +516,47 @@ header {
       text-align: left;
       padding: 2em 4em;
     }
-    
-    .our-products {
-      margin-bottom: 4em;
-    }
 
+    .our-products h2,
+    .our-features h2,
+    .our-reputation h2 {
+      margin: 0;
+    }
+    
     .product-container,
     .feature-container,
     .reputation-content p {
       margin-left: 0;
     }
 
+    .product-container img {
+      width: 350px;
+    }
+
     
     .feature-container {
       text-align: left;
       margin-top: 5em;
-      margin-bottom: 5em;
     }
   
     .feature-container h3{
       margin: .5em 0 ;
     }
+
+    .our-features svg{
+      font-size: 4em;
+    }
+
     .reputation-content {
       margin-top: 2em;
       display: flex;
+      gap: 1em;
     }
   
     .reputation-content p {
       font-size: 1.2em;
       line-height: 1.7em;
-      flex: 0 0 35%;
+      flex: 0 0 50%;
     }
   
     .testimonials {
@@ -554,7 +564,8 @@ header {
     }
   
     .testimonial-card {
-      width: 550px;
+      width: 650px;
+      max-width: unset;
       text-align: left;
       gap: 1em;
     }

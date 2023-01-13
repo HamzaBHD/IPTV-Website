@@ -2,25 +2,25 @@
     background: #141313;
   }
 
-  .top-page-product {
+.top-page-product {
     height: 600px;
     text-align: center;
     background-color: #141313;
-  }
+}
 
-  .top-page-product .top-page-content {
+.top-page-product .top-page-content {
     padding: 1em;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-  .top-page-product .top-page-content h1 {
+}
+.top-page-product .top-page-content h1 {
     margin: 1em;
     position: relative;
-  }
+}
 
-  .top-page-product .top-page-content h1::before {
+.top-page-product .top-page-content h1::before {
     content: '';
     position: absolute;
     top: -30%;
@@ -28,34 +28,34 @@
     height: 5px;
     width: 22%;
     background:#D64006;  
-  }
+ }
 
-  .top-page-product .top-page-content p {
+.top-page-product .top-page-content p {
     color: #BCB8B8;
     line-height: 1.7em;
     margin: 0 auto 2.5em;
-  }
+}
 
-  .tv-picture {
+.tv-picture {
     display: none;
-  }
+}
 
-  .products {
+.products {
     color: black;
     background: transparent;
     padding: 1em;
     margin-top: -10em;
     text-align: center;
-  }
+}
 
-  .products h3 {
+.products h3 {
     font-size: 1.6em;
-  }
+}
   
-  .products img {
+.products img {
     width: 250px;
     margin-right: 2.2em;
-  }
+}
 
   @media (min-width: 620px) {
     .top-page-product .top-page-content h1{
@@ -101,18 +101,14 @@
   }
   
   @media (min-width: 1200px) {
-    header {
-      font-size: 1.2em;
-      padding: .5em 1.5em;
-    }
-
     .top-page-product {
       min-height: 830px;
       width: 68%;
     }
 
     .top-page-product .top-page-content{
-      height: 650px;
+      height: 100%;
+      width: unset;
       text-align: left;
       margin: 0;
       padding: 4em;
@@ -122,8 +118,7 @@
     .top-page-product .top-page-content h1 {
       margin: 0;
       padding: 0;
-      font-size: 3em;
-      width: 100%;
+      font-size: 4.3em;
     }
   
     .top-page-product .top-page-content h1::before{
@@ -141,22 +136,19 @@
 
     .tv-picture {
       display: unset;
-      width: 600px;
+      width: clamp(15vw, 45vw, 50vw );
       position: absolute;
-      top: 25%;
+      top: 32%;
       right: 2%;
     }
 
     .products {
-      margin-top: -15em;
+      margin-top: -10em;
       margin-left: 4em;
-      margin-right: 4em;
       margin-bottom: 5em;
+      padding: 0;
       text-align: left;
-    }
 
-    .products ul {
-      padding-bottom: 5em;
     }
 
     .product-container img {
