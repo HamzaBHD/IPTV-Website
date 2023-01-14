@@ -4,9 +4,11 @@ import './ContactForm.css'
 const ContactForm = () => {
     return (
         <div className='contacts--form'>
+            
+            <h3>Let's talk!</h3>
+            <p>Send us a message.</p>
 
             <form className='contacts-form'>
-                
                 <label for='fname'>First Name</label>
                 <input type='text' id='fname' name='fname' placeholder='John Doe'/>
 

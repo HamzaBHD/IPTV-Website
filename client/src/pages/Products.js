@@ -8,12 +8,10 @@ const Products = () => {
             <TopPage
                 topPageClass='top-page-product'
                 title='Choose your Plan.'
-                paragraph='Lorem ipsum dolor sit amet, consectetur 
-                sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. 
-                Lorem ipsum dolor sit amet, consectetur 
-                sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua.'
+                paragraph="Are you tired of paying for services you don't use? With Choose Your Plan,
+                you can customize your subscription plan to fit your needs. 
+                We offer a variety of products,
+                and you can pick and choose which ones you want."
                 isTrue={false}
                 backgoundClass='background-img-black'
                 contentClass='top-page-content'

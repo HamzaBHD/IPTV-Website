@@ -153,8 +153,11 @@
     .contacts--form {
         flex: 0 0 50% ;
     }
-    .contacts-form {
-        margin-top: 10em ;
+    .contacts--form {
+        padding-top: 10em ;
+    }
+    .contacts--form p {
+        margin-bottom: 1em;
     }
       
 }

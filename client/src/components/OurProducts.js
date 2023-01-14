@@ -14,7 +14,10 @@ const OurProducts = ({ isTrue, productsClass }) => {
                         <h3>1 Year Subscription</h3>
                         <span>60$</span>
                     </div>
-                    <p>Lorem ipsum dolor sit amet,consectetur adipiscing eli sed do eiusmod tempor incididunt utlabore.</p>
+                    <p>All devices are supported<br />
+                    Up TO 12000 Live Channels Full SD/HD/4K<br />
+                    Money-Back guarantee<br />
+                    24/7 Technical Support</p>
                     <div className='cta-buttons'>
                         <a href="/" className='cta primary'>PURCHASE</a>
                         <a href="/" className='cta secondary'>
@@ -29,7 +32,10 @@ const OurProducts = ({ isTrue, productsClass }) => {
                         <h3>6 Months Subscription</h3>
                         <span>40$</span>
                     </div>
-                    <p>Lorem ipsum dolor sit amet,consectetur adipiscing eli sed do eiusmod tempor incididunt utlabore.</p>
+                    <p>All devices are supported<br />
+                    Up TO 12000 Live Channels Full SD/HD/4K<br />
+                    Money-Back guarantee<br />
+                    24/7 Technical Support</p>
                     <div className='cta-buttons'>
                         <a href="/" className='cta primary'>PURCHASE</a>
                         <a href="/" className='cta secondary'>
@@ -44,7 +50,10 @@ const OurProducts = ({ isTrue, productsClass }) => {
                         <h3>3 Months Subscription</h3>
                         <span>25$</span>
                     </div>
-                    <p>Lorem ipsum dolor sit amet,consectetur adipiscing eli sed do eiusmod tempor incididunt utlabore.</p>
+                    <p>All devices are supported<br />
+                    Up TO 12000 Live Channels Full SD/HD/4K<br />
+                    Money-Back guarantee<br />
+                    24/7 Technical Support</p>
                     <div className='cta-buttons'>
                         <a href="/" className='cta primary'>PURCHASE</a>
                         <a href="/" className='cta secondary'>

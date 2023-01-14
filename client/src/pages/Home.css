@@ -196,8 +196,10 @@ header {
   
   .product-container p {
     color: #817E7E;
+    
+    font-size: 1.1em;
     margin-bottom: 2em;
-    line-height: 1.5em;
+    line-height: 1.6em;
   }
   
   .cta-buttons .cta {
@@ -271,13 +273,36 @@ header {
     border-radius: 4em;
   }
   
-  .avatar {
+  .testimonials .testimonial-card:first-child .avatar{
     width: 90px;
     height: 90px;
     border-radius: 50%;
     margin: auto;
     display: block;
-    background: white;
+    background-image: url(../images/IPTV-testimonial1.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .testimonials .testimonial-card:nth-child(2) .avatar{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+    background-image: url(../images/IPTV-testimonial2.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .testimonials .testimonial-card:nth-child(3) .avatar{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+    background-image: url(../images/IPTV-testimonial4.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
   }
   
   .testimonial-card blockquote {
@@ -522,7 +547,7 @@ header {
     .our-reputation h2 {
       margin: 0;
     }
-    
+
     .product-container,
     .feature-container,
     .reputation-content p {

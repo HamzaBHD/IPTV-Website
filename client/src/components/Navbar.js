@@ -19,7 +19,7 @@ const Navbar = () => {
         <header className={`header-${headerClass}`}>
             <nav>
                 <a href='/'>
-                    <h1>WATCHED.</h1>
+                    <h1>WATCHED.IPTV</h1>
                 </a>
                 <i className="ri-menu-line menu" onClick={toggleMenu}></i>
                 <ul className={navClass}>

@@ -8,23 +8,21 @@ const OurFeatures = ({ isTrue, featuresClass }) => {
                 <li className="feature-container">
                     <FaCheck />
                     <h3>Quality</h3>
-                    <p>Lorem ipsum dolor sit amet,consectetur 
-                    adipiscing eli sed do eiusmod tempor
-                    incididunt utlabore. </p>
+                    <p>At our company, we pride ourselves on the quality of our products.
+                    We strive to provide the best possible features that will make your experience 
+                    with us as smooth and enjoyable as possible.</p>
                 </li>
                 <li className="feature-container">
                     <FaBolt />
                     <h3>Rapidity</h3>
-                    <p>Lorem ipsum dolor sit amet,consectetur 
-                    adipiscing eli sed do eiusmod tempor
-                    incididunt utlabore. </p>
+                    <p>Our rapidity is one of the most important features that sets us apart from our competitors.
+                    We understand that time is of the essence and strive to deliver results quickly and efficiently.</p>
                 </li>
                 <li className="feature-container">
                     <FaHandshake />
                     <h3>Trust</h3>
-                    <p>Lorem ipsum dolor sit amet,consectetur 
-                    adipiscing eli sed do eiusmod tempor
-                    incididunt utlabore. </p>
+                    <p>At our company, we understand that trust is an essential part of any successful relationship.
+                    That's why we strive to provide features that are designed to foster trust and build relationships with our customers.</p>
                 </li>
             </ul>
 

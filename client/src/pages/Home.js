@@ -9,8 +9,10 @@ const Home = () => {
         <div className='wrapper'>
             <TopPage
                 topPageClass='top-page'
-                title='Get your Satisfaction Now.'
-                paragraph='Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                title='Get your IPTV Now.'
+                paragraph='Are you tired of paying too much for cable TV?
+                            Get IPTV and access over 10,000+ channels with no contracts
+                            or hidden fees. Our service is easy to set up and use'
                 isTrue={true}
                 backgoundClass='background-img'
                 contentClass='top-page-content'

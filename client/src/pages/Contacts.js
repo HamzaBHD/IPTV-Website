@@ -10,9 +10,8 @@ const Contacts = () => {
                 <TopPage
                     topPageClass='top-page-contacts'
                     title='Contact Us.'
-                    paragraph='Lorem ipsum dolor sit amet, consectetur,
-                    sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. '
+                    paragraph='Contact us today to learn more about our services 
+                                and how we can help you get the most out of your IPTV experience.'
                     isTrue={false}
                     backgoundClass='background-full-black'
                     contentClass='top-page-content' 
