@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
-    const [headerClass, setHeaderClass] = useState('dark')
+    const [headerClass, setHeaderClass] = useState('')
 
     const activeStyle = {
         fontWeight: 'bold'
