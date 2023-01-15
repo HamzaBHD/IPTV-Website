@@ -1,24 +1,82 @@
+import { useRef, useLayoutEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
+
 import { FaCheck, FaBolt, FaHandshake } from 'react-icons/fa'
 
 const OurFeatures = ({ isTrue, featuresClass }) => {
+    const currentLocation = useLocation()
+
+    console.log(currentLocation)
+    const features = useRef()
+    const firstFeature = useRef()
+    const secondFeature = useRef()
+    const thirdFeature = useRef()
+
+    const didAnimate = useRef(false)
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    useLayoutEffect(() => {
+        if(didAnimate.current === true) {
+            return
+        } else {
+
+            didAnimate.current = true
+            
+            if(currentLocation.pathname === '/') {
+                let tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: features.current,
+                        start: 'top bottom',
+                        end: '+=700',
+                        scrub: 1,
+                    },
+                    defaults:{
+                        duration: 1
+                    }
+                }) 
+            tl.from(firstFeature.current, {x: -50, opacity: 0, stagger: .3})
+            tl.from(secondFeature.current, {x: -50, opacity: 0, stagger: .3})
+            tl.from(thirdFeature.current, {x: -50, opacity: 0, stagger: .3})
+
+        } else if(currentLocation.pathname === '/about') {
+            let tl = gsap.timeline({
+                defaults:{
+                    duration: 1
+                }
+            })
+            tl.from(features.current, {
+                y: 50,
+                opacity: 0
+            })
+        }
+    }
+        
+
+    }, [currentLocation])
+
+    
+
     return ( 
         <div className={featuresClass}>
             {isTrue && <h2>Our Features</h2>}
-            <ul>
-                <li className="feature-container">
+            <ul ref={features}>
+                <li ref={firstFeature} className="feature-container">
                     <FaCheck />
                     <h3>Quality</h3>
                     <p>At our company, we pride ourselves on the quality of our products.
                     We strive to provide the best possible features that will make your experience 
                     with us as smooth and enjoyable as possible.</p>
                 </li>
-                <li className="feature-container">
+                <li ref={secondFeature} className="feature-container">
                     <FaBolt />
                     <h3>Rapidity</h3>
                     <p>Our rapidity is one of the most important features that sets us apart from our competitors.
                     We understand that time is of the essence and strive to deliver results quickly and efficiently.</p>
                 </li>
-                <li className="feature-container">
+                <li ref={thirdFeature} className="feature-container">
                     <FaHandshake />
                     <h3>Trust</h3>
                     <p>At our company, we understand that trust is an essential part of any successful relationship.

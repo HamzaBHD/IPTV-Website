@@ -1,19 +1,45 @@
+import { useRef, useLayoutEffect } from 'react'
+import { gsap } from 'gsap'
+
 import tvPicture from '../images/iptv-tv.png'
 import { FaAt, FaTelegram, FaWhatsapp } from 'react-icons/fa'
 
 const TopPage = ({ topPageClass, title, paragraph, isTrue, backgoundClass, contentClass, aboutPage, contactPage, primary, secondary }) => {
+
+    const topPageContent = useRef()
+    const pageTitle = useRef()
+
+    const aboutTitle = useRef()
+
+    const didAnimate = useRef(false)
+
+
+    useLayoutEffect(() => {
+
+        if(didAnimate.current === true) {return;}
+
+        didAnimate.current = true
+        let tl = gsap.timeline({defaults:{duration: 1}})
+        tl.from(topPageContent.current, {y: 50, opacity: 0})
+            .to(pageTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)'}, '-=.7')
+            .to(aboutTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)'}, '-=.7')
+
+            
+    }, [])
+
+
     return (
         <div className={topPageClass}>
             <div className={backgoundClass}></div>
-            <div className={contentClass}>
+            <div ref={topPageContent} className={contentClass}>
                 {
                 aboutPage ?
-                <div className='about-title'>
+                <div ref={aboutTitle} className='about-title'>
                     <span className='small-title'>Who we are?</span>
-                    <h1 className='main-title'>{title}</h1>
+                    <h2 className='main-title'>{title}</h2>
                 </div>
                 :
-                <h1>{title}</h1>
+                <h1 ref={pageTitle}>{title}</h1>
                 }
                 <p>{paragraph}</p>
                 {isTrue &&

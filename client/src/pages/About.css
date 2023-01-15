@@ -1,6 +1,8 @@
 .top-page-about .top-page-content .about-title{
     color: white;
     position: relative;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+
 }
 
 .top-page-about {
@@ -17,18 +19,14 @@
     justify-content: center;
 }
 
-.top-page-about .top-page-content .about-title h1 {
+.top-page-about .top-page-content .about-title h2 {
     margin: .1em auto .5em;
-}
-
-.top-page-about .top-page-content .about-title h1::before {
-    display: none;
 }
 
 .top-page-about .top-page-content .about-title::before {
     content: '';
     position: absolute;
-    top: -15%;
+    top: 0%;
     left: 42%;
     height: 5px;
     width: 15%;
@@ -60,7 +58,7 @@
         flex-wrap: wrap;
     }
 
-    .top-page-about .top-page-content .about-title h1{
+    .top-page-about .top-page-content .about-title h2{
         font-size: 2.5em;
         width: 75%;
         max-width: 620px;
@@ -68,10 +66,10 @@
     }
       
     .top-page-about .top-page-content .about-title::before{
-        top: -15%;
+        /* top: -5%; */
         left: 45%;
         width: 10%;
-        height: 6px;
+        height: 2px;
     }
     .top-page-about .top-page-content p {
         font-size: 1.1em;
@@ -100,13 +98,15 @@
     .top-page-about .top-page-content .about-title{
         text-align: left;
         width: 70%;
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
     }
 
-    .top-page-about .top-page-content .about-title h1 {
+    .top-page-about .top-page-content .about-title h2 {
         width: 100%;
         font-size: 4.3em;
         margin: 0 .5em;
     }
+
     .top-page-about .top-page-content .about-title span {
         margin-left: 2em;
         font-size: 1.5em;
