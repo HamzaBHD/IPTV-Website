@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
-    const [headerClass, setHeaderClass] = useState('')
+    const location = useLocation()
+    const [headerClass, setHeaderClass] = useState(location.pathname === '/' ? 'dark' : 'black')
 
     const activeStyle = {
         fontWeight: 'bold'
@@ -33,6 +34,7 @@ const Navbar = () => {
                             isActive ? activeStyle : undefined
                             }
                             onClick={() => {setIsOpen(false); setHeaderClass('dark')}}
+
                         >
                             Home
                         </NavLink>
@@ -43,7 +45,7 @@ const Navbar = () => {
                             style={({ isActive }) => 
                                 isActive ? activeStyle : undefined
                             }
-                            onClick={() => {setIsOpen(false); setHeaderClass('black')}}  
+                            onClick={() => {setIsOpen(false); setHeaderClass('black')}}
                             >
                             Products
                         </NavLink>
@@ -66,7 +68,7 @@ const Navbar = () => {
                             style={({ isActive }) => 
                             isActive ? activeStyle : undefined
                             }
-                            onClick={() => {setIsOpen(false); setHeaderClass('black')}}  
+                            onClick={() => {setIsOpen(false); setHeaderClass('black')}}
                         >
                             Contacts
                     </NavLink>
