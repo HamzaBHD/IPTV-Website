@@ -8,14 +8,12 @@ import { FaCheck, FaBolt, FaHandshake } from 'react-icons/fa'
 const OurFeatures = ({ isTrue, featuresClass }) => {
     const currentLocation = useLocation()
 
-    console.log(currentLocation)
     const features = useRef()
     const firstFeature = useRef()
     const secondFeature = useRef()
     const thirdFeature = useRef()
 
     const didAnimate = useRef(false)
-
     gsap.registerPlugin(ScrollTrigger)
 
     useLayoutEffect(() => {
@@ -30,7 +28,7 @@ const OurFeatures = ({ isTrue, featuresClass }) => {
                     scrollTrigger: {
                         trigger: features.current,
                         start: 'top bottom',
-                        end: '+=700',
+                        end: 'center center',
                         scrub: 1,
                     },
                     defaults:{

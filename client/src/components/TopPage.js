@@ -1,4 +1,5 @@
 import { useRef, useLayoutEffect } from 'react'
+
 import { gsap } from 'gsap'
 
 import tvPicture from '../images/iptv-tv.png'
@@ -8,23 +9,25 @@ const TopPage = ({ topPageClass, title, paragraph, isTrue, backgoundClass, conte
 
     const topPageContent = useRef()
     const pageTitle = useRef()
-
     const aboutTitle = useRef()
+    const tv = useRef()
+
+    console.log(pageTitle)
 
     const didAnimate = useRef(false)
 
-
     useLayoutEffect(() => {
 
-        if(didAnimate.current === true) {return;}
+        if(didAnimate.current === true) {return}
 
         didAnimate.current = true
         let tl = gsap.timeline({defaults:{duration: 1}})
         tl.from(topPageContent.current, {y: 50, opacity: 0})
-            .to(pageTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)'}, '-=.7')
-            .to(aboutTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)'}, '-=.7')
-
+        .from(tv.current, {y: 50, opacity: 0}, '-=1')
+        .to(pageTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 150% 0%, 0% -50%)'}, '-=.7')
+        .to(aboutTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 150% 0%, 0% -50%)'}, '-=.7')
             
+    
     }, [])
 
 
@@ -64,7 +67,7 @@ const TopPage = ({ topPageClass, title, paragraph, isTrue, backgoundClass, conte
                     </a>
                 </div> }
             </div>
-            { !isTrue && !contactPage && <img className='tv-picture' src={tvPicture} alt='tv displaying iptv products'></img>}
+            { !isTrue && !contactPage && <img ref={tv} className='tv-picture' src={tvPicture} alt='tv displaying iptv products'></img>}
         </div>
     );
 }

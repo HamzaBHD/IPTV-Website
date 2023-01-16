@@ -3,9 +3,9 @@ import { useLayoutEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 
-import image1 from'../images/iptv-1-Year-Pack.png';
-import image2 from'../images/Iptv-6-Months-Pack.png';
-import image3 from'../images/Iptv-3-Months-Pack.png';
+import image1 from'../images/iptv-1-Year-Pack.png'
+import image2 from'../images/Iptv-6-Months-Pack.png'
+import image3 from'../images/Iptv-3-Months-Pack.png'
 
 
 const OurProducts = ({ isTrue, productsClass }) => {
@@ -22,30 +22,31 @@ const OurProducts = ({ isTrue, productsClass }) => {
     useLayoutEffect(() => {
         
         if(didAnimate.current === true) {return}
-        didAnimate.current = true
-
-        let tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: products.current,
-                start: 'top bottom',
-                end: '+=700',
-                scrub: .3,
-            },
-            defaults:{
-                duration: 1
-            }
-        })
-        
-        tl.from(firstProduct.current, {x: -50, opacity: 0, stagger: .3})
-        tl.from(secondProduct.current, {x: -50, opacity: 0, stagger: .3})
-        tl.from(thirdProduct.current, {x: -50, opacity: 0, stagger: .3})
+            
+            didAnimate.current = true
+                let tl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: products.current,
+                        start: 'top bottom',
+                        end: 'center center',
+                        endTrigger: thirdProduct.current,
+                        scrub: 1,
+                    },
+                    defaults:{
+                        duration: 1
+                    }
+                })
+                
+                tl.from(firstProduct.current, {x: -50, opacity: 0, stagger: .3})
+                tl.from(secondProduct.current, {x: -50, opacity: 0, stagger: .3})
+                tl.fromTo(thirdProduct.current, {x: -50, opacity: 0, stagger: .3} , {opacity: 1.5, x: 0})
         
     }, [])
 
     return ( 
-        <div ref={products} className={productsClass }>
+        <div className={productsClass }>
             {isTrue && <h2>Our Products</h2>}
-            <ul>
+            <ul ref={products}>
                 <li ref={firstProduct} className="product-container">
                     <img src={image1} alt='iptv-1-year-subscription'></img>
                     <div className="product-title">

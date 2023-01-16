@@ -20,13 +20,14 @@
 }
 
 .top-page-about .top-page-content .about-title h2 {
-    margin: .1em auto .5em;
+    margin: .1em auto 1em;
+    font-size: 2em
 }
 
 .top-page-about .top-page-content .about-title::before {
     content: '';
     position: absolute;
-    top: 0%;
+    top: -15%;
     left: 42%;
     height: 5px;
     width: 15%;
@@ -66,10 +67,10 @@
     }
       
     .top-page-about .top-page-content .about-title::before{
-        /* top: -5%; */
+        top: -10%;
         left: 45%;
         width: 10%;
-        height: 2px;
+        height: 6px;
     }
     .top-page-about .top-page-content p {
         font-size: 1.1em;

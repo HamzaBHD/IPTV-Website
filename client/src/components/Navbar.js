@@ -4,7 +4,7 @@ import { NavLink, useLocation } from "react-router-dom";
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
     const location = useLocation()
-    const [headerClass, setHeaderClass] = useState(location.pathname === '/' ? 'dark' : 'black')
+    const [headerClass, setHeaderClass] = useState(location.pathname === '/' || location.pathname === '/home'? 'dark' : 'black')
 
     const activeStyle = {
         fontWeight: 'bold'

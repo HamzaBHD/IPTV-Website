@@ -22,9 +22,8 @@ const OurReputation = () => {
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ourReputation.current,
-                start: "center bottom",
-                end: '+=300',
-                // endTrigger: thirdTestimonial.current,
+                start: "top bottom",
+                end: 'top center',
                 scrub: 1
             },
             defaults: {
@@ -32,7 +31,22 @@ const OurReputation = () => {
             } 
         })
 
-        tl.from(paragraph.current, {x: -10, opacity:0})
+        let secondTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: firstTestimonial.current,
+                start: "top bottom",
+                end: '-50% center',
+                endTrigger: thirdTestimonial.current,
+                scrub: 1
+            },
+            defaults: {
+                duration: 1
+            } 
+        })
+
+        tl.from(paragraph.current, {x: -50, opacity:0})
+
+        secondTl
         .from(firstTestimonial.current, {y: -50, opacity: 0})
         .from(secondTestimonial.current, {y: -50, opacity: 0})
         .from(thirdTestimonial.current, {y: -50, opacity: 0})
