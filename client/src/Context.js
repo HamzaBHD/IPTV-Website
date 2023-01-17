@@ -1,20 +1,21 @@
-import { createContext, useEffect } from 'react'
+import { createContext, useEffect, useState } from 'react'
 
 const AppContext = createContext()
 
 function ContextProvider (props) {
 
+    const [message, setMessage] = useState('')
+
     useEffect(() => {
-        fetch('/testAPI')
+        fetch('/users')
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => setMessage(data.message))
         
     }, [])
 
     return (
         <AppContext.Provider
-            value={{
-                message: 123}}
+            value={{ message }} 
         >
             {props.children}
         </AppContext.Provider>
