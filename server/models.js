@@ -4,10 +4,7 @@ const { Schema } = mongoose;
 let productSchema = new Schema({
     name: 'String',
     price: 'String',
-    img: { 
-        data: Buffer,
-        contentType:'String'
-    }
+    imageURL: { type: String, required: true }
 })
 
 module.exports = new mongoose.model('Product', productSchema)
