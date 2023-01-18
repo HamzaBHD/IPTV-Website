@@ -4,18 +4,26 @@ const AppContext = createContext()
 
 function ContextProvider (props) {
 
-    const [message, setMessage] = useState('')
+    const [message, setMessage] = useState([])
+    const [productFound, setProductFound] = useState([])
 
+    console.log(message)
+    
     useEffect(() => {
-        fetch('/users')
+        fetch('/products')
         .then(res => res.json())
-        .then(data => setMessage(data.message))
+        .then(data => setMessage(data))
         
     }, [])
 
+    function getProductId(id) {
+        const product = message.filter(item => item._id === id)
+        setProductFound([...product])
+    }
+
     return (
         <AppContext.Provider
-            value={{ message }} 
+            value={{ message, getProductId, productFound }} 
         >
             {props.children}
         </AppContext.Provider>

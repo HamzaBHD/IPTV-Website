@@ -20,17 +20,18 @@ var upload = multer({ storage: storage });
 
 
 router.get('/', function(req, res, next) {
-  product.find({}, (err, item) => {
-    if (err) {
-        console.log(err);
-        res.status(500).send('An error occurred', err);
-    } else if (!item) {
-        res.json({message: 'looks like there is nothing here'})
-    }
-    else {
-        res.json(item);
-    }
-});
+
+    product.find({}, (err, item) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send('An error occurred', err);
+        } else if (!item) {
+            res.json({message: 'looks like there is nothing here'})
+        }
+        else {
+            res.json(item);
+        }
+    })
 })
 
 router.post('/', upload.single('image'), (req, res, next) => {
@@ -45,7 +46,6 @@ router.post('/', upload.single('image'), (req, res, next) => {
           console.log(err);
       }
       else {
-          // item.save()
           res.json(item)
       }
   });

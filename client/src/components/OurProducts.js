@@ -1,24 +1,29 @@
-import { useLayoutEffect, useRef } from 'react'
-
+import { useLayoutEffect, useRef, useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 
-import image1 from'../images/iptv-1-Year-Pack.png'
-import image2 from'../images/Iptv-6-Months-Pack.png'
-import image3 from'../images/Iptv-3-Months-Pack.png'
+import { AppContext } from '../Context'
+import ProductDetail from './subComponent/ProductDetail'
 
 
 const OurProducts = ({ isTrue, productsClass }) => {
+    const [isOpen ,setIsOpen] = useState(false)
+    const { message, getProductId } = useContext(AppContext)
 
+    console.log(isOpen)
+
+    function closeDetail() {
+        setIsOpen(false)
+    }
+    
     const products = useRef()
-    const firstProduct = useRef()
-    const secondProduct = useRef()
-    const thirdProduct = useRef()
-
+    const product = useRef()
+    
     const didAnimate = useRef(false)
-
+    
     gsap.registerPlugin(ScrollTrigger)
-
+    
     useLayoutEffect(() => {
         
         if(didAnimate.current === true) {return}
@@ -29,7 +34,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                         trigger: products.current,
                         start: 'top bottom',
                         end: 'center center',
-                        endTrigger: thirdProduct.current,
+                        // endTrigger: thirdProduct.current,
                         scrub: 1,
                     },
                     defaults:{
@@ -37,71 +42,48 @@ const OurProducts = ({ isTrue, productsClass }) => {
                     }
                 })
                 
-                tl.from(firstProduct.current, {x: -50, opacity: 0, stagger: .3})
-                tl.from(secondProduct.current, {x: -50, opacity: 0, stagger: .3})
-                tl.fromTo(thirdProduct.current, {x: -50, opacity: 0, stagger: .3} , {opacity: 1.5, x: 0})
+                tl.from(product.current, {x: -50, opacity: 0, stagger: .3})
+                // tl.from(secondProduct.current, {x: -50, opacity: 0, stagger: .3})
+                // tl.fromTo(thirdProduct.current, {x: -50, opacity: 0, stagger: .3} , {opacity: 1.5, x: 0})
         
     }, [])
 
+    const producContent = message.map(item => {
+
+        return (
+            <li key={item._id} className="product-container">
+                <img src={item.imageURL} alt={item.name}></img>
+                <div className="product-title">
+                    <h3>{item.name}</h3>
+                    <span>{item.price}$</span>
+                </div>
+                <p>All devices are supported<br />
+                Up TO 12000 Live Channels Full SD/HD/4K<br />
+                Money-Back guarantee<br />
+                24/7 Technical Support</p>
+                <div className='cta-buttons'>
+                    <Link to="/" className='cta primary' onClick={() => console.log(item._id)}>PURCHASE</Link>
+                    <Link href='#' className='cta secondary' onClick={() => {setIsOpen(true); getProductId(item._id)}}>
+                        <span>Read more</span>
+                        <i className="ri-arrow-right-s-line arrow"></i>    
+                    </Link>
+                </div>
+            </li>
+        )
+    })
+
+
+
     return ( 
-        <div className={productsClass }>
+        <div className={productsClass}>
             {isTrue && <h2>Our Products</h2>}
             <ul ref={products}>
-                <li ref={firstProduct} className="product-container">
-                    <img src={image1} alt='iptv-1-year-subscription'></img>
-                    <div className="product-title">
-                        <h3>1 Year Subscription</h3>
-                        <span>60$</span>
-                    </div>
-                    <p>All devices are supported<br />
-                    Up TO 12000 Live Channels Full SD/HD/4K<br />
-                    Money-Back guarantee<br />
-                    24/7 Technical Support</p>
-                    <div className='cta-buttons'>
-                        <a href="/" className='cta primary'>PURCHASE</a>
-                        <a href="/" className='cta secondary'>
-                            <span>Read more</span>
-                            <i className="ri-arrow-right-s-line arrow"></i>    
-                        </a>
-                    </div>
-                </li>
-                <li ref={secondProduct} className="product-container hey">
-                    <img src={image2} alt='iptv-6-months-subscription'></img>
-                    <div className="product-title">
-                        <h3>6 Months Subscription</h3>
-                        <span>40$</span>
-                    </div>
-                    <p>All devices are supported<br />
-                    Up TO 12000 Live Channels Full SD/HD/4K<br />
-                    Money-Back guarantee<br />
-                    24/7 Technical Support</p>
-                    <div className='cta-buttons'>
-                        <a href="/" className='cta primary'>PURCHASE</a>
-                        <a href="/" className='cta secondary'>
-                            <span>Read more</span>
-                            <i className="ri-arrow-right-s-line arrow"></i>    
-                        </a>
-                    </div>
-                </li>
-                <li ref={thirdProduct} className="product-container">
-                    <img src={image3} alt='iptv-3-months-subscription'></img>
-                    <div className="product-title">
-                        <h3>3 Months Subscription</h3>
-                        <span>25$</span>
-                    </div>
-                    <p>All devices are supported<br />
-                    Up TO 12000 Live Channels Full SD/HD/4K<br />
-                    Money-Back guarantee<br />
-                    24/7 Technical Support</p>
-                    <div className='cta-buttons'>
-                        <a href="/" className='cta primary'>PURCHASE</a>
-                        <a href="/" className='cta secondary'>
-                            <span>Read more</span>
-                            <i className="ri-arrow-right-s-line arrow"></i>    
-                        </a>
-                    </div>
-                </li>
+                {producContent}
             </ul>
+            <ProductDetail 
+                toggle={closeDetail} 
+                isOpen={isOpen}
+            />
         </div>
      );
 }

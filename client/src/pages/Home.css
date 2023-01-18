@@ -320,6 +320,65 @@ header {
     font-size: .8em;
   }
   
+  .product-detail {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    background: #FFFFFF;
+    padding: 1em;
+    width: 95%;
+    height: 90%;
+    top: 4%;
+    right: 2.5%;
+    display: grid;
+    place-content: center;
+    box-shadow: 0px 0px 10px grey;
+    z-index: 100;
+  }
+  
+  .product-detail .product-detail-content  .product-title h3 {
+    width: 30%;
+  }
+
+  .product-detail .product-detail-content p {
+    line-height: 2em;
+    font-size: 1em;
+    margin-bottom: 2em;
+  }
+
+
+  .product-detail .product-detail-content a {
+    background: #D64006;
+    color: white;
+    font-weight: bold;
+    display: block;
+    padding: 1em;
+    margin-bottom: 2em;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .product-detail .product-img {
+    margin: 0em 1em 1em;
+    width: 23em;
+  }
+
+  .close-detail {
+    font-size: 2.5em;
+    color: rgb(11, 11, 11);
+    position: absolute;
+    top: 0em;
+    right: 0em;
+    cursor: pointer;
+  }
+
+  .detail-opened {
+    visibility: unset;
+    opacity: 1;
+  }
+
+  
   @media (min-width: 550px) {
     .product-container,
     .testimonial-card {
@@ -472,6 +531,40 @@ header {
       transform: translate(20px, 0%);
     }
   }
+
+
+  @media (min-width: 1000px) {
+    .product-detail {
+      padding: 2em; 
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-around;
+      align-items: center;
+      height: 70vh;
+      top: 15%;
+    }
+
+    .product-detail .product-img {
+      margin: 0 -7em 0 -9em;
+      width: 40em;
+    }
+
+    .product-detail .product-detail-content p {
+      line-height: 2.5em;
+    }
+
+    .product-detail .product-detail-content {
+      display: flex;
+      flex: 0 0 60%;
+      flex-direction: column;
+      margin-top: 2.5em;
+      gap: 1em;
+      font-size: 1.1em;
+      max-width: fit-content;
+      padding: 1em;
+    }
+  
+  }
   
   @media (min-width: 1200px) {
     body {
@@ -608,4 +701,13 @@ header {
     .testimonials ul li:last-child {
       transform: translate(-20px, 0%);
     }
+
+  }
+  
+  @media (min-width: 1500px) {
+    .product-detail {
+      max-width: 1260px;
+      right: 12.5% ;
+    }
+    
   }

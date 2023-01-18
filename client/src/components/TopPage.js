@@ -1,5 +1,5 @@
-import { useRef, useLayoutEffect, useContext } from 'react'
-import { AppContext } from '../Context'
+import { useRef, useLayoutEffect } from 'react'
+// import { AppContext } from '../Context'
 
 import { gsap } from 'gsap'
 
@@ -8,9 +8,6 @@ import tvPicture from '../images/iptv-tv.png'
 import { FaAt, FaTelegram, FaWhatsapp } from 'react-icons/fa'
 
 const TopPage = ({ topPageClass, title, paragraph, isTrue, backgoundClass, contentClass, aboutPage, contactPage, primary, secondary }) => {
-
-    const {message} = useContext(AppContext)
-    console.log(message)
 
     const topPageContent = useRef()
     const pageTitle = useRef()
