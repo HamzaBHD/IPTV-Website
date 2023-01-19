@@ -8,7 +8,7 @@ import ProductDetail from './subComponent/ProductDetail'
 
 
 const OurProducts = ({ isTrue, productsClass }) => {
-    const [isOpen ,setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
     const { message, getProductId } = useContext(AppContext)
 
     console.log(isOpen)
@@ -62,7 +62,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                 Money-Back guarantee<br />
                 24/7 Technical Support</p>
                 <div className='cta-buttons'>
-                    <Link to="/" className='cta primary' onClick={() => console.log(item._id)}>PURCHASE</Link>
+                    <Link to="/purchase" className='cta primary' onClick={() => getProductId(item._id)}>PURCHASE</Link>
                     <Link href='#' className='cta secondary' onClick={() => {setIsOpen(true); getProductId(item._id)}}>
                         <span>Read more</span>
                         <i className="ri-arrow-right-s-line arrow"></i>    

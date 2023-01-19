@@ -25,7 +25,7 @@ const ProductDetail = ({ toggle, isOpen }) => {
                     - Watch live TV or catch up on your favorite shows with recordings.<br />
                     - Enjoy a {item.name} with this purchase.<br />
                 </p>
-                <Link to="/order" className='cta primary' onClick={() => console.log(item._id)}>PURCHASE</Link>
+                <Link to="/purchase" className='cta primary' onClick={() => console.log(item._id)}>PURCHASE</Link>
                 </div>
             </div>
         )

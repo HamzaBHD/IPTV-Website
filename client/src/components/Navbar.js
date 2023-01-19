@@ -73,8 +73,6 @@ const Navbar = () => {
                             Contacts
                     </NavLink>
                     </li>
-                    <li>
-                    </li>
                 </ul>
             </nav>
         </header>
