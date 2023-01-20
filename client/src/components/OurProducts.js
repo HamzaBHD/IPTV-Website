@@ -11,8 +11,6 @@ const OurProducts = ({ isTrue, productsClass }) => {
     const [isOpen, setIsOpen] = useState(false)
     const { message, getProductId } = useContext(AppContext)
 
-    console.log(isOpen)
-
     function closeDetail() {
         setIsOpen(false)
     }

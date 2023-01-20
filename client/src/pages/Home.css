@@ -328,8 +328,8 @@ header {
     background: #FFFFFF;
     padding: 1em;
     width: 95%;
-    height: 800px;
-    top: 3.5%;
+    height: 95vh;
+    top: 2.5%;
     right: 2.5%;
     display: grid;
     place-content: center;
@@ -405,7 +405,20 @@ header {
   .product-ordered .product-card ul li {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: .5em;
+  }
+  .product-ordered .product-card ul li p {
+    display: flex;
+    align-items: center;
+  }
+  .product-ordered .product-card ul li p .subtract,
+  .product-ordered .product-card ul li p .add {
+    font-size: 1.1em;
+    margin: auto 1em;
+  }
+
+  .product-ordered .product-card ul li p .add:hover {
+    color: green;
   }
 
   .product-ordered .product-card ul li i {
@@ -485,8 +498,11 @@ header {
   }
 
   .product-ordered ul.cta-section li a span {
-    display: inline-block;
-    padding: 0 1em;
+    width: 92%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
   }
 
   .product-ordered .payment-container {
@@ -498,10 +514,11 @@ header {
     top: 0;
     left: 0;
     padding: 2em 1em;
-    background: #FAFCFF;
-    z-index: 100;
-    display: grid;
-    place-content: center;
+    background: #F6F6F6;
+    z-index: 1;
+    box-shadow: -6px 8px 14px -3px rgba(0,0,0,0.39);
+    -webkit-box-shadow: -6px 8px 14px -3px rgba(0,0,0,0.39);
+    -moz-box-shadow: -6px 8px 14px -3px rgba(0,0,0,0.39);
     transition: .3s;
   }
   .product-ordered .payment-container .close-payment {
@@ -519,7 +536,7 @@ header {
 
   .product-ordered .payment-container form {
     width: 100%;
-    margin: 5em auto 0;
+    margin: 3em auto 0;
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(8, auto);
@@ -532,7 +549,7 @@ header {
     height: 50px;
     margin: .5em 0 2em;
     border: none;
-    background-color: #FAFCFF;
+    background-color: #F6F6F6;
     border-bottom: .1em solid #D38567;
     padding: .9em;
     font-size: 1em;
@@ -597,18 +614,26 @@ header {
   }
 
   .product-ordered .payment-container form a span {
-    padding: 0 1em;
-    display: inline-block;
+    width: 92%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
   }
 
   .product-ordered .payment-container .total-tbp {
     text-align: center;
+    margin-bottom: 2em;
   }
 
-  
+  .product-ordered .payment-container hr {
+    width: 80%;
+    margin: 0 auto;
+    border-top: 2px dashed #000103
+  }
 
 
-  
+
   @media (min-width: 550px) {
     .product-container,
     .testimonial-card {
@@ -953,7 +978,7 @@ header {
       top: 0;
       left: unset;
       right: 0;
-    }
+    }  
 
   }
   

@@ -7,7 +7,6 @@ function ContextProvider (props) {
     const [message, setMessage] = useState([])
     const [productFound, setProductFound] = useState([])
 
-    console.log(message)
     
     useEffect(() => {
         fetch('/products')
@@ -15,7 +14,7 @@ function ContextProvider (props) {
         .then(data => setMessage(data))
         
     }, [])
-
+    
     function getProductId(id) {
         const product = message.filter(item => item._id === id)
         setProductFound([...product])

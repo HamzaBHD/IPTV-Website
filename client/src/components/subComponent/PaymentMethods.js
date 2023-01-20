@@ -13,6 +13,7 @@ const PaymentMethods = ({ isOpen, toggle, total }) => {
                 <h1>Your Total:</h1>
                 <h3>{total}$</h3>
             </div>
+            <hr />
             
             <form>
 
@@ -29,8 +30,10 @@ const PaymentMethods = ({ isOpen, toggle, total }) => {
                 <input type='text' id='name' name='name'/>
 
                 <a href='#'>
-                <i class="ri-bank-card-line"></i>
-                    <span>Pay Now</span>
+                    <span>
+                        <i className="ri-bank-card-line"></i>
+                        Pay Now
+                    </span>
                 </a>
 
             </form>
