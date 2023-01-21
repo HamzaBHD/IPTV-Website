@@ -1,8 +1,9 @@
 import { useContext, useState, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 
+import './Purchase.css'
 import { AppContext } from "../Context"
-import PaymentMethods from "./subComponent/PaymentMethods"
+import PaymentMethods from "../components/PaymentMethods"
 
 const Purchase = () => {
     const { productFound } = useContext(AppContext)
@@ -41,7 +42,7 @@ const Purchase = () => {
         navigate(-1)
     }
     
-    const productPrice = (productFound.price *  productCount).toFixed(2)
+    const productPrice = (productFound.price * productCount).toFixed(2)
 
     return (
 

@@ -7,7 +7,7 @@ import Home from './pages/Home'
 import Products from './pages/Products';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
-import Purchase from './components/Purchase';
+import Purchase from './pages/Purchase';
 
 
 function App(){
