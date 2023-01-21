@@ -6,6 +6,8 @@ const Navbar = () => {
     const location = useLocation()
     const [headerClass, setHeaderClass] = useState(location.pathname === '/' || location.pathname === '/home'? 'dark' : 'black')
 
+    console.log(location.pathname)
+
     const activeStyle = {
         fontWeight: 'bold'
     }
@@ -71,6 +73,18 @@ const Navbar = () => {
                             onClick={() => {setIsOpen(false); setHeaderClass('black')}}
                         >
                             Contacts
+                    </NavLink>
+                    </li>
+                    <li>
+                    <NavLink
+                            to='purchase'
+                            className='purchase-link'
+                            style={({ isActive }) => 
+                            isActive ? activeStyle : undefined
+                            }
+                            onClick={() => {setIsOpen(false)}}
+                        >
+                            <i className="ri-shopping-bag-line"></i>
                     </NavLink>
                     </li>
                 </ul>

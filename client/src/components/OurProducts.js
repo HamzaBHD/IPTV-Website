@@ -61,7 +61,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                 24/7 Technical Support</p>
                 <div className='cta-buttons'>
                     <Link to="/purchase" className='cta primary' onClick={() => getProductId(item._id)}>PURCHASE</Link>
-                    <Link href='#' className='cta secondary' onClick={() => {setIsOpen(true); getProductId(item._id)}}>
+                    <Link to='#' className='cta secondary' onClick={() => {setIsOpen(true); getProductId(item._id)}}>
                         <span>Read more</span>
                         <i className="ri-arrow-right-s-line arrow"></i>    
                     </Link>

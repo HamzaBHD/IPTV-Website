@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const PaymentMethods = ({ isOpen, toggle, total }) => {
 
     const newClass = isOpen ? 'payment-opened' : undefined
@@ -11,7 +13,7 @@ const PaymentMethods = ({ isOpen, toggle, total }) => {
 
             <div className="total-tbp">
                 <h1>Your Total:</h1>
-                <h3>{total}$</h3>
+                <span>{total}$</span>
             </div>
             <hr />
             
@@ -29,12 +31,12 @@ const PaymentMethods = ({ isOpen, toggle, total }) => {
                 <label htmlFor='name'>NAME</label>
                 <input type='text' id='name' name='name'/>
 
-                <a href='#'>
+                <Link>
                     <span>
                         <i className="ri-bank-card-line"></i>
                         Pay Now
                     </span>
-                </a>
+                </Link>
 
             </form>
         </div>

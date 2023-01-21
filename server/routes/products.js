@@ -34,6 +34,23 @@ router.get('/', function(req, res, next) {
     })
 })
 
+router.get('/:id', function(req, res, next) {
+
+    const id = req.params.id
+
+    product.findById(id, (err, item) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send('An error occurred', err);
+        } else if (!item) {
+            res.json({message: 'looks like there is nothing here'})
+        }
+        else {
+            res.json(item);
+        }
+    })
+})
+
 router.post('/', upload.single('image'), (req, res, next) => {
  
   var obj = {
