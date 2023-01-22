@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function useToggler () {
     const [productDetail, setProductDetail] = useState(false)
@@ -8,7 +8,24 @@ function useToggler () {
         setProductDetail(prevState => !prevState)
     } 
 
-    return { productDetail, toggleDetail }
+
+    function useOutsideAlerter(ref, fun) {
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (ref.current && !ref.current.contains(event.target)) {
+                return fun
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside)
+
+        return () => {
+        document.removeEventListener("mousedown", handleClickOutside)
+        }
+    }, [ref, fun]);
+}
+
+    return { productDetail, toggleDetail, useOutsideAlerter }
 }
 
 export default useToggler;

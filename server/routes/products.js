@@ -3,7 +3,6 @@ var router = express.Router();
 var path = require('path')
 var product = require('../models');
 var multer = require('multer');
-var fs = require('fs')
 
  
 var storage = multer.diskStorage({
@@ -37,6 +36,10 @@ router.get('/', function(req, res, next) {
 router.get('/:id', function(req, res, next) {
 
     const id = req.params.id
+
+    if(id === 'firstLoad') {
+        return res.json({ message: 'It looks like you didn\'t pick your product yet' })
+    }
 
     product.findById(id, (err, item) => {
         if (err) {

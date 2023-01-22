@@ -58,6 +58,107 @@
     margin-right: 2.2em;
 }
 
+.detail-container {
+  position: fixed;
+    visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  width: 100%;
+  height: 100vh;
+  top: 0%;
+  left: 0;
+  background: rgba(0, 0, 0, .7);
+  display: grid;
+  place-content: center;
+  z-index: 100;
+}
+
+.product-detail {
+  background: #FFFFFF;
+  padding: 1em;
+  width: 95%;
+  height: 83vh;
+  margin: 0 auto;
+  display: grid;
+  place-content: center;
+  box-shadow: 0px 0px 10px grey;
+  position: relative;
+  transition: .3
+}
+
+.product-detail .product-detail-content  .product-title h3 {
+  width: 30%;
+}
+
+.product-detail .product-detail-content p {
+  line-height: 2em;
+  font-size: 1em;
+  margin-bottom: 2em;
+}
+
+
+.product-detail .product-detail-content a {
+  background: #D64006;
+  color: white;
+  font-weight: bold;
+  display: block;
+  padding: 1em;
+  margin-bottom: 2em;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.product-detail .product-img {
+  margin: 0em 1em 1em;
+  width: 23em;
+}
+
+.close-detail {
+  font-size: 2.5em;
+  color: rgb(11, 11, 11);
+  position: absolute;
+  top: 0em;
+  right: 0em;
+  cursor: pointer;
+}
+
+.detail-opened {
+  visibility: unset;
+  opacity: 1;
+}
+
+.detail-opened-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #D64006;
+  border-color: #D64006 transparent #D64006 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
   @media (min-width: 620px) {
     .top-page-product .top-page-content h1{
       font-size: 2.5em;
@@ -158,5 +259,37 @@
 
     .product-container h3, span, p {
       text-align: left;
+    }
+
+    .product-detail {
+      padding: 2em; 
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-around;
+      align-items: center;
+      height: 620px;
+      width: auto;
+    }
+
+    .product-detail .product-img {
+      margin: 0 -7em 0 -9em;
+      width: 45em;
+
+    }
+
+    .product-detail .product-detail-content p {
+      line-height: 2.5em;
+    }
+
+    .product-detail .product-detail-content {
+      display: flex;
+      flex: 0 0 60%;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 3em;
+      gap: 1em;
+      font-size: 1.1em;
+      max-width: fit-content;
+      padding: 1em;
     }
   }

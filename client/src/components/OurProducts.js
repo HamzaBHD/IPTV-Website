@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useContext, useState } from 'react'
+import { useLayoutEffect, useRef, useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
@@ -8,11 +8,26 @@ import ProductDetail from './subComponent/ProductDetail'
 
 
 const OurProducts = ({ isTrue, productsClass }) => {
-    const [isOpen, setIsOpen] = useState(false)
     const { message, getProductId } = useContext(AppContext)
+    const [isOpen, setIsOpen] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
-    function closeDetail() {
-        setIsOpen(false)
+    useEffect(() => {
+        if(isOpen === false) return;
+         
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 1200)
+        setIsLoading(true)
+
+        // return () => {
+        //     clearTimeout(toggleLoading)
+        // }
+
+    }, [isOpen])
+
+    function closeDetail(choice) {
+        setIsOpen(choice)
     }
     
     const products = useRef()
@@ -81,6 +96,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
             <ProductDetail 
                 toggle={closeDetail} 
                 isOpen={isOpen}
+                isLoading={isLoading}
             />
         </div>
      );

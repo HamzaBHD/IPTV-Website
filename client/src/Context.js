@@ -7,6 +7,7 @@ function ContextProvider (props) {
     const [message, setMessage] = useState([])
     const [productId, setProductId] = useState('')
     const [productFound, setProductFound] = useState([])
+    console.log(productId)
 
     useEffect(() => {
         fetch('/products')
@@ -15,7 +16,8 @@ function ContextProvider (props) {
     }, [])
 
     useEffect(() => {
-        fetch(`/products/${productId || localStorage.getItem('productId')}`)
+
+        fetch(`/products/${productId || localStorage.getItem('productId') || 'firstLoad' }`)
         .then(res => res.json())
         .then(data => setProductFound(data))
         
@@ -26,9 +28,15 @@ function ContextProvider (props) {
         localStorage.setItem('productId', id)
     }
 
+    function clearCard() {
+        setProductId('')
+        localStorage.clear('productId')
+        console.log('I was clicked')
+    }
+
     return (
         <AppContext.Provider
-            value={{ message, getProductId, productFound }} 
+            value={{ message, getProductId, productFound, clearCard }} 
         >
             {props.children}
         </AppContext.Provider>

@@ -290,6 +290,21 @@
     animation: lds-dual-ring 1.2s linear infinite;
   }
 
+  .product-ordered .product-card .puchase-message {
+    margin: auto;
+    text-align: center;
+  }
+
+  .product-ordered .product-card .puchase-message .products-link {
+    display: inline-block;
+    padding: 0 .25em;
+    color: #D64006;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    line-height: 1.5em;
+  }
+
   @keyframes lds-dual-ring {
     0% {
       transform: rotate(0deg);
@@ -310,6 +325,9 @@
   }
 
   @media (min-width: 1200px) {
+    .product-ordered {
+      height: 100%;
+    }
     .product-ordered ul.cta-section li a {
       max-width: 50%;
       margin: 0;
@@ -324,6 +342,7 @@
     
     .purchase-page {
       display: flex;
+      height: 796px;
     }
 
     .product-ordered {
@@ -331,7 +350,7 @@
     }
     .purchase-page .payment-container {
       position: unset;
-      height: 94vh;
+      height: 100%;
       visibility: unset;
       opacity: 1;
       transition: unset;

@@ -6,7 +6,7 @@ import { AppContext } from "../Context"
 import PaymentMethods from "../components/PaymentMethods"
 
 const Purchase = () => {
-    const { productFound } = useContext(AppContext)
+    const { productFound, clearCard } = useContext(AppContext)
     const [isOpen, setIsOpen] = useState(false)
     const [productCount, setProductCount] = useState(1)
     const [isLoading, setIsLoading] = useState(true)
@@ -42,23 +42,27 @@ const Purchase = () => {
         navigate(-1)
     }
     
-    const productPrice = (productFound.price * productCount).toFixed(2)
+    const productPrice = productFound.hasOwnProperty('message') === false ?
+     (productFound.price * productCount).toFixed(2) : '0'
 
     return (
 
         <div className={`purchase-page ${pageClass}`}>
         {isLoading ?
-            <div class="lds-dual-ring"></div>
+            <div className="lds-dual-ring"></div>
         :
         <>
             <div className="product-ordered">
                 <i className="ri-arrow-left-s-line back-arrow" onClick={goBack}></i>
                 <div className="product-card">
+                {
+                     productFound.hasOwnProperty('message') === false ? 
+                    <>
                     <img 
                         src={productFound.imageURL} 
                         alt={productFound.name} 
                         className='orderd-product'
-                    >
+                        >
                     </img>
                     <ul>
                         <li>
@@ -83,11 +87,27 @@ const Purchase = () => {
                         <li>
                             <i 
                                 className="ri-delete-bin-line" 
+                                onClick={() => clearCard()}
                             >
                             </i>
                         </li>
                     </ul>
-                </div>
+                    </>
+                :
+                <p className='puchase-message'>
+                    {productFound.message}.
+                <br /> 
+                Please Check our
+                <Link 
+                    to='/products'
+                    className='products-link'
+                >
+                    Products
+                </Link>
+                and choose a plan
+                </p>
+            }
+            </div>
 
                 <ul className="order-total">
                     <li>
