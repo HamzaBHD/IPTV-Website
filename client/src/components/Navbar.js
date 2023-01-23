@@ -6,8 +6,6 @@ const Navbar = () => {
     const location = useLocation()
     const [headerClass, setHeaderClass] = useState(location.pathname === '/' || location.pathname === '/home'? 'dark' : 'black')
 
-    console.log(location.pathname)
-
     const activeStyle = {
         fontWeight: 'bold'
     }

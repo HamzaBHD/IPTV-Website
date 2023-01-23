@@ -8,4 +8,14 @@ let productSchema = new Schema({
     isFavorite: { type: Boolean, default: false}
 }, { collection : 'products' })
 
-module.exports = new mongoose.model('Product', productSchema)
+let messageSchema = new Schema({
+    username: { type: String, required: true },
+    email: { type: String, required: true },
+    userMessage: { type: String, required: true },
+    date: { type: Date, default: new Date()}
+}, { collation: 'messages' } )
+
+const product = new mongoose.model('Product', productSchema)
+const message = new mongoose.model('Message', messageSchema)
+
+module.exports = { product, message }

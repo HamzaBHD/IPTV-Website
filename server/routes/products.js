@@ -1,10 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path')
-var product = require('../models');
+var { product } = require('../models');
 var multer = require('multer');
 
- 
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, path.join('./uploads/'))
@@ -64,6 +63,7 @@ router.post('/', upload.single('image'), (req, res, next) => {
   product.create(obj, (err, item) => {
       if (err) {
           console.log(err);
+          res.status(500).send('An error occurred', err);
       }
       else {
           res.json(item)
