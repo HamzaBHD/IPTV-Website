@@ -8,6 +8,7 @@ function ContextProvider (props) {
     const [productId, setProductId] = useState('')
     const [productFound, setProductFound] = useState([])
     const [userFrom, setUserForm] = useState({})
+    const [validationMessage, setValidationMessage] = useState('')
 
     useEffect(() => {
         fetch('/products')
@@ -32,7 +33,7 @@ function ContextProvider (props) {
 
         fetch('/messages', requestOptions)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => setValidationMessage(data))
 
     }, [userFrom])
 
@@ -56,7 +57,7 @@ function ContextProvider (props) {
 
     return (
         <AppContext.Provider
-            value={{ message, getProductId, productFound, clearCard, getUserForm }} 
+            value={{ message, getProductId, productFound, clearCard, getUserForm, validationMessage }} 
         >
             {props.children}
         </AppContext.Provider>

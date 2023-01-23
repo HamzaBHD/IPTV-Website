@@ -5,9 +5,13 @@ const { message } = require('../models')
 
 Router.post('/', (req, res, next) => {
     const userObj = req.body
+    // var props = ['username', 'email', 'userMessage']
+    // var hasAll = props.every(prop => userObj.hasOwnProperty(prop))
 
-    if (!userObj) {
-        return res.json({ error: 'We are missing information' })
+    // console.log(hasAll)
+
+    if (!userObj.username && !userObj.email && !userObj.userMessage) {
+        return 
     } else if(!userObj.username) {
         return res.json({ error: 'Please provide your name' })
     } else if (!userObj.email) {

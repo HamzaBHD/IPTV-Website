@@ -104,6 +104,30 @@
     outline: none;
 }
 
+.contacts-form input[name=username] {
+    position: relative;
+}
+
+.error {
+    display: none;
+    position: absolute;
+    top: 20.5%;
+    left: 0;
+    background: rgb(233, 78, 78);
+    color: white;
+    font-size: .8em;
+    font-weight: bold;
+    padding: .1em .5em .2em; 
+}
+
+.in-valid {
+    display: unset;
+}
+
+input.in-valid-input{
+    border: 3px solid rgb(233, 78, 78);
+}
+
 .contacts-form input:focus {
     box-shadow: 0 1.5px 0 0 #D64006;
 }

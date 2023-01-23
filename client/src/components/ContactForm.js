@@ -7,12 +7,15 @@ import { gsap } from 'gsap'
 import { FaPaperPlane } from 'react-icons/fa'
 
 const ContactForm = () => {
-    const { getUserForm } = useContext(AppContext)
+    const { getUserForm, validationMessage } = useContext(AppContext)
     const [contactForm, setContactForm] = useState({
         username: '',
         email: '',
         userMessage: '',
     })
+
+    const errorClass = validationMessage ? 'in-valid' : undefined
+    const inputError = validationMessage ? 'in-valid-input' : undefined
     
     function handleChange(event) {
         const { name, value } = event.target
@@ -88,9 +91,14 @@ const ContactForm = () => {
                     id='fname' 
                     name='username' 
                     placeholder='John Doe'
+                    className={inputError}
                     value={contactForm.username}
                     onChange={handleChange}
                 />
+                {
+                    validationMessage &&
+                    <p className={`error ${errorClass}`}>{validationMessage.error}</p>
+                }
 
                 <label htmlFor='email'>Your Email too</label>
                 <input 
@@ -98,6 +106,7 @@ const ContactForm = () => {
                     id='email' 
                     name='email' 
                     placeholder='John@doe.com'
+                    className={inputError}
                     value={contactForm.email}
                     onChange={handleChange}
                 />
@@ -107,7 +116,8 @@ const ContactForm = () => {
                     type='text' 
                     id='msg' 
                     name='userMessage' 
-                    placeholder='Hi Watched.' 
+                    placeholder='Hi Watched.'
+                    className={inputError}
                     value={contactForm.userMessage}
                     onChange={handleChange}
                 />
