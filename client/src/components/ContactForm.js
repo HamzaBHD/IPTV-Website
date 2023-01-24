@@ -1,44 +1,15 @@
-import { useLayoutEffect, useRef, useState, useContext } from 'react'
+import { useLayoutEffect, useRef, useContext } from 'react'
+import { useForm } from "react-hook-form";
+import { gsap } from 'gsap'
+import { FaPaperPlane } from 'react-icons/fa'
+
 import { AppContext } from '../Context'
 // import { Link } from 'react-router-dom'
 
-import { gsap } from 'gsap'
-
-import { FaPaperPlane } from 'react-icons/fa'
-
 const ContactForm = () => {
-    const { getUserForm, validationMessage } = useContext(AppContext)
-    const [contactForm, setContactForm] = useState({
-        username: '',
-        email: '',
-        userMessage: '',
-    })
-
-    const errorClass = validationMessage ? 'in-valid' : undefined
-    const inputError = validationMessage ? 'in-valid-input' : undefined
-    
-    function handleChange(event) {
-        const { name, value } = event.target
-    
-        setContactForm(prevState => {
-            return {
-                ...prevState,
-                [name]: value
-            }
-        })
-    }
-    
-    function handleSubmit(event) {
-        getUserForm(contactForm)
-        setContactForm({
-            username: '',
-            email: '',
-            userMessage: '',
-        })
-        console.log(`Hello ${contactForm.username}, thank you for leaving us a message!`)
-        event.preventDefault()
-    }
-
+    const { getUserForm } = useContext(AppContext)
+    const { register, handleSubmit, formState: { errors } } = useForm()
+    const onSubmit = data => getUserForm(data)
 
     const title = useRef(null)
     const message = useRef(null)
@@ -73,7 +44,6 @@ const ContactForm = () => {
 
     }, [])
 
-
     return (
         <div className='contacts--form'>
             
@@ -83,44 +53,45 @@ const ContactForm = () => {
             <form 
                 ref={form} 
                 className='contacts-form'
-                onSubmit={handleSubmit}
+                onSubmit={handleSubmit(onSubmit)}
             >
-                <label htmlFor='fname'>What's your name?</label>
-                <input 
-                    type='text' 
-                    id='fname' 
-                    name='username' 
-                    placeholder='John Doe'
-                    className={inputError}
-                    value={contactForm.username}
-                    onChange={handleChange}
-                />
-                {
-                    validationMessage &&
-                    <p className={`error ${errorClass}`}>{validationMessage.error}</p>
-                }
+                <div className='input-container'>
+                    <label htmlFor='fname'>What's your name?</label>
+                    <input 
+                        type='text' 
+                        id='fname' 
+                        {...register('username', { required: true })} 
+                        placeholder='John Doe'
+                        className={errors.username ? 'in-valid' : 'valid'}
+                        />
+                    {errors.username && <span className='error-message'>Please provide a name</span>}
+                </div>
 
-                <label htmlFor='email'>Your Email too</label>
-                <input 
-                    type='email' 
-                    id='email' 
-                    name='email' 
-                    placeholder='John@doe.com'
-                    className={inputError}
-                    value={contactForm.email}
-                    onChange={handleChange}
-                />
+                <div className='input-container'>
+                    <label htmlFor='email'>Your Email too</label>
+                    <input 
+                        type='email' 
+                        id='email' 
+                        {...register('email', { required: true })} 
+                        placeholder='John@doe.com'
+                        className={errors.email ? 'in-valid' : 'valid'}
+                        />
+                    {errors.email && <span className='error-message'>Please provide an email</span>}
+                </div>
 
-                <label htmlFor='msg'>Your Message goes here!</label>
-                <input 
-                    type='text' 
-                    id='msg' 
-                    name='userMessage' 
-                    placeholder='Hi Watched.'
-                    className={inputError}
-                    value={contactForm.userMessage}
-                    onChange={handleChange}
-                />
+
+                <div className='input-container'>
+                    <label htmlFor='msg'>Your Message goes here!</label>
+                    <input 
+                        type='text' 
+                        id='msg' 
+                        {...register('userMessage', { required: true })} 
+                        placeholder='Hi Watched.'
+                        className={errors.userMessage ? 'in-valid' : 'valid'}
+                        />
+                    {errors.userMessage && <span className='error-message'>Please leave us a nice message!</span>}
+                </div>
+
                 <button 
                     className='cta-form' 
                     type='submit'

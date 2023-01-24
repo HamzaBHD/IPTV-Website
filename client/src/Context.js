@@ -41,8 +41,8 @@ function ContextProvider (props) {
     function getProductId(id) {
         setProductId(id)
         localStorage.setItem('productId', id)
+        
     }
-
     function clearCard() {
         setProductId('')
         localStorage.clear('productId')
@@ -53,7 +53,7 @@ function ContextProvider (props) {
         setUserForm(obj)
     }
 
-    console.log(userFrom)
+    // console.log(userFrom)
 
     return (
         <AppContext.Provider
