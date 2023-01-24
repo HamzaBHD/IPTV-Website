@@ -1,15 +1,26 @@
-import { useLayoutEffect, useRef, useContext } from 'react'
+import { useLayoutEffect, useRef, useContext, useEffect } from 'react'
 import { useForm } from "react-hook-form";
 import { gsap } from 'gsap'
 import { FaPaperPlane } from 'react-icons/fa'
 
 import { AppContext } from '../Context'
-// import { Link } from 'react-router-dom'
 
 const ContactForm = () => {
     const { getUserForm } = useContext(AppContext)
-    const { register, handleSubmit, formState: { errors } } = useForm()
+    const { register, handleSubmit, reset, formState ,formState: { errors, isSubmitSuccessful } } = useForm()
     const onSubmit = data => getUserForm(data)
+
+    useEffect(() => {
+
+        if(formState.isSubmitSuccessful) {
+            reset({
+                username: '',
+                email: '',
+                userMessage: ''
+            })
+        }
+        
+    }, [formState, reset])
 
     const title = useRef(null)
     const message = useRef(null)
