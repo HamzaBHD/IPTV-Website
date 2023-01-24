@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useContext, useState, useEffect } from 'react'
+import { useRef, useContext, useState, useEffect, createRef } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
@@ -20,10 +20,6 @@ const OurProducts = ({ isTrue, productsClass }) => {
         }, 1200)
         setIsLoading(true)
 
-        // return () => {
-        //     clearTimeout(toggleLoading)
-        // }
-
     }, [isOpen])
 
     function closeDetail(choice) {
@@ -31,40 +27,44 @@ const OurProducts = ({ isTrue, productsClass }) => {
     }
     
     const products = useRef()
-    const product = useRef()
-    
+    const productRefs = useRef([createRef(), createRef(), createRef()])
     const didAnimate = useRef(false)
     
     gsap.registerPlugin(ScrollTrigger)
     
-    useLayoutEffect(() => {
+    useEffect(() => {
         
-        if(didAnimate.current === true) {return}
-            
-            didAnimate.current = true
-                let tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: products.current,
-                        start: 'top bottom',
-                        end: 'center center',
-                        // endTrigger: thirdProduct.current,
-                        scrub: 1,
-                    },
-                    defaults:{
-                        duration: 1
-                    }
-                })
-                
-                tl.from(product.current, {x: -50, opacity: 0, stagger: .3})
-                // tl.from(secondProduct.current, {x: -50, opacity: 0, stagger: .3})
-                // tl.fromTo(thirdProduct.current, {x: -50, opacity: 0, stagger: .3} , {opacity: 1.5, x: 0})
+        if(didAnimate.current === true ||
+            productRefs.current[0].current === null) {return}
         
-    }, [])
+        didAnimate.current = true
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: products.current,
+                start: 'top bottom',
+                end: 'center center',
+                endTrigger: productRefs.current[2].current,
+                scrub: 1,
+            },
+            defaults:{
+                duration: 1
+            }
+        })
+        
+        tl.from(productRefs.current[0].current, {x: -50, opacity: 0, stagger: .3})
+        tl.from(productRefs.current[1].current, {x: -50, opacity: 0, stagger: .3})
+        tl.fromTo(productRefs.current[2].current, {x: -50, opacity: 0, stagger: .3} , {opacity: 1.5, x: 0})
+        
+    }, [message])
 
-    const producContent = message.map(item => {
+    const producContent = message.map((item, i) => {
 
         return (
-            <li key={item._id} className="product-container">
+            <li 
+                key={item._id} 
+                className="product-container"
+                ref={productRefs.current[i]}
+            >
                 <img src={item.imageURL} alt={item.name}></img>
                 <div className="product-title">
                     <h3>{item.name}</h3>
