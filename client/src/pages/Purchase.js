@@ -6,33 +6,18 @@ import { AppContext } from "../Context"
 import PaymentMethods from "../components/PaymentMethods"
 
 const Purchase = () => {
-    const { productFound, clearCard } = useContext(AppContext)
+    const { productFound} = useContext(AppContext)
     const [isOpen, setIsOpen] = useState(false)
-    const [productCount, setProductCount] = useState(1)
     const [isLoading, setIsLoading] = useState(true)
     const navigate = useNavigate()
 
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(false)
-        }, 1000)
+        }, 1500)
     }, [])
 
     const pageClass = isLoading ? 'purchase-page-loading' : undefined
-
-    function addOneProduct () {
-        if(productCount === 15) {
-            return
-        }
-        setProductCount(prevState => prevState + 1)
-    }
-
-    function subtractOneProduct () {
-        if(productCount === 1) {
-            return
-        }
-        setProductCount(prevState => prevState - 1)
-    }
 
     function toggle () {
         setIsOpen(false)
@@ -41,9 +26,6 @@ const Purchase = () => {
     function goBack() {
         navigate(-1)
     }
-    
-    const productPrice = productFound.hasOwnProperty('message') === false ?
-     (productFound.price * productCount).toFixed(2) : '0'
 
     return (
 
@@ -58,40 +40,21 @@ const Purchase = () => {
                 {
                      productFound.hasOwnProperty('message') === false ? 
                     <>
+                    <ul>
+                        <li>
+                            <h3>IPTV</h3>
+                            <p>{productFound.name}</p>
+                            <p>
+                                Quantity: 1
+                            </p>
+                        </li>
+                    </ul>
                     <img 
                         src={productFound.imageURL} 
                         alt={productFound.name} 
                         className='orderd-product'
                         >
                     </img>
-                    <ul>
-                        <li>
-                            <h3>IPTV</h3>
-                            <p>{productFound.name}</p>
-                            <p>
-                                Quantity: 
-                                <i 
-                                    className="ri-indeterminate-circle-line subtract"
-                                    onClick={subtractOneProduct}
-                                    >
-                                </i>
-                                {productCount}
-                                <i 
-                                    className="ri-add-circle-line add"
-                                    onClick={addOneProduct}
-                                    >
-                                </i>
-                            </p>
-                            <span>{productPrice}$</span>
-                        </li>
-                        <li>
-                            <i 
-                                className="ri-delete-bin-line" 
-                                onClick={() => clearCard()}
-                            >
-                            </i>
-                        </li>
-                    </ul>
                     </>
                 :
                 <p className='puchase-message'>
@@ -112,7 +75,7 @@ const Purchase = () => {
                 <ul className="order-total">
                     <li>
                         <h4>Product</h4>
-                        <span>{productPrice}$</span>
+                        <span>{productFound.price || 0}$</span>
                     </li>
                     <li>
                         <h4>Shipping</h4>
@@ -120,7 +83,7 @@ const Purchase = () => {
                     </li>
                     <li>
                         <h4>Total payment</h4>
-                        <span>{productPrice}$</span>
+                        <span>{productFound.price || 0}$</span>
                     </li>
                 </ul>
                 <ul className="cta-section">
@@ -145,7 +108,8 @@ const Purchase = () => {
             <PaymentMethods 
             isOpen={isOpen}
             toggle={toggle}
-            total={productPrice}
+            total={productFound.price}
+            product={productFound.name}
             />
         </>}
         </div>

@@ -60,7 +60,7 @@
 
 .detail-container {
   position: fixed;
-    visibility: hidden;
+  visibility: hidden;
   opacity: 0;
   transition: .3s;
   width: 100%;

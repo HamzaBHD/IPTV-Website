@@ -1,6 +1,12 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
-const PaymentMethods = ({ isOpen, toggle, total }) => {
+const PaymentMethods = ({ isOpen, toggle, total, product }) => {
+
+    console.log(product)
+
+    const updatedProduct = product ? product.replace(/\s/g, '-') : '' 
+
+    console.log(updatedProduct)
 
     const newClass = isOpen ? 'payment-opened' : undefined
     return ( 
@@ -13,32 +19,15 @@ const PaymentMethods = ({ isOpen, toggle, total }) => {
 
             <div className="total-tbp">
                 <h1>Your Total:</h1>
-                <span>{total}$</span>
+                <span>{total || 0}$</span>
             </div>
             <hr />
-            
-            <form>
 
-                <label htmlFor='card'>CARD NUMBER</label>
-                <input type='text' id='card' name='card'/>
 
-                <label htmlFor='date'>MM / YY</label>
-                <input type='text' id='date' name='date'/>
-
-                <label htmlFor='code'>CVS CODE</label>
-                <input type='text' id='code' name='code'/>
-
-                <label htmlFor='name'>NAME</label>
-                <input type='text' id='name' name='name'/>
-
-                <Link>
-                    <span>
-                        <i className="ri-bank-card-line"></i>
-                        Pay Now
-                    </span>
-                </Link>
-
-            </form>
+            {   
+                product &&
+                <div class="gumroad-product-embed"><a href={`https://wathched1.gumroad.com/l/${updatedProduct}`}>loading...</a></div>
+            }
         </div>
     );
 }

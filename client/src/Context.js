@@ -43,21 +43,14 @@ function ContextProvider (props) {
         localStorage.setItem('productId', id)
         
     }
-    function clearCard() {
-        setProductId('')
-        localStorage.clear('productId')
-        console.log('I was clicked')
-    }
 
     function getUserForm(obj) {
         setUserForm(obj)
     }
 
-    // console.log(userFrom)
-
     return (
         <AppContext.Provider
-            value={{ message, getProductId, productFound, clearCard, getUserForm, validationMessage }} 
+            value={{ message, getProductId, productFound, getUserForm, validationMessage }} 
         >
             {props.children}
         </AppContext.Provider>
