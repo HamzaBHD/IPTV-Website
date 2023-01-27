@@ -75,15 +75,15 @@ const Purchase = () => {
                 <ul className="order-total">
                     <li>
                         <h4>Product</h4>
-                        <span>{productFound.price || 0}$</span>
+                        <span className='item-price'>{productFound.price || 0}</span>
                     </li>
                     <li>
                         <h4>Shipping</h4>
-                        <span>0$</span>
+                        <span className='item-price'>0</span>
                     </li>
                     <li>
                         <h4>Total payment</h4>
-                        <span>{productFound.price || 0}$</span>
+                        <span className='item-price'>{productFound.price || 0}</span>
                     </li>
                 </ul>
                 <ul className="cta-section">

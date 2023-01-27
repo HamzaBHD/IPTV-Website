@@ -19,7 +19,7 @@ const PaymentMethods = ({ isOpen, toggle, total, product }) => {
 
             <div className="total-tbp">
                 <h1>Your Total:</h1>
-                <span>{total || 0}$</span>
+                <span className='item-price'>{total || 0}</span>
             </div>
             <hr />
 

@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react"
+import { useContext, useRef, useEffect } from "react"
 import { Link } from "react-router-dom" 
 
 import { AppContext } from "../../Context"
@@ -7,6 +7,20 @@ const ProductDetail = ({ toggle, isOpen, isLoading }) => {
     const { getProductId, productFound } = useContext(AppContext)
 
     const detailContainer = useRef(null)
+
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (detailContainer.current && !detailContainer.current.contains(event.target)) {
+                toggle(false)
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside)
+
+        return () => {
+        document.removeEventListener("mousedown", handleClickOutside)
+        }
+    }, [detailContainer, toggle]);
 
     const newClass = isOpen ? 'detail-opened' : undefined
 

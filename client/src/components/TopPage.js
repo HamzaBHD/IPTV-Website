@@ -1,6 +1,4 @@
 import { useRef, useLayoutEffect } from 'react'
-// import { Link } from 'react-router-dom'
-// import { AppContext } from '../Context'
 
 import { gsap } from 'gsap'
 
@@ -8,7 +6,7 @@ import { gsap } from 'gsap'
 import tvPicture from '../images/iptv-tv.png'
 import { FaAt, FaTelegram, FaWhatsapp } from 'react-icons/fa'
 
-const TopPage = ({ topPageClass, title, paragraph, isTrue, backgoundClass, contentClass, aboutPage, contactPage, primary, secondary }) => {
+const TopPage = ({ topPageClass, title, paragraph, isTrue, backgoundClass, contentClass, aboutPage, contactPage, primary, secondary, mainCta }) => {
 
     const topPageContent = useRef()
     const pageTitle = useRef()
@@ -48,7 +46,7 @@ const TopPage = ({ topPageClass, title, paragraph, isTrue, backgoundClass, conte
                 <p>{paragraph}</p>
                 {isTrue &&
                <div className='buttons'>
-                    <a href='/' className="cta primary">{primary}</a>
+                    <a href={mainCta} className="cta primary">{primary}</a>
                     <a href='/products' className="cta secondary">
                         <span>{secondary}</span>
                         <i className="ri-arrow-right-s-line arrow-right"></i>

@@ -20,6 +20,7 @@ const About = () => {
                     contactPage={false}
                     primary='Contact us'
                     secondary='Browse product'
+                    mainCta='/contacts'
                     />
                 <OurFeatures 
                     isTrue={false}

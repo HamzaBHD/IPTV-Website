@@ -26,14 +26,13 @@ const OurProducts = ({ isTrue, productsClass }) => {
         setIsOpen(choice)
     }
     
-    const products = useRef()
-    const productRefs = useRef([createRef(), createRef(), createRef()])
+    const products = useRef(null)
+    const productRefs = useRef([createRef(null), createRef(null), createRef(null)])
     const didAnimate = useRef(false)
     
     gsap.registerPlugin(ScrollTrigger)
     
     useEffect(() => {
-        
         if(didAnimate.current === true ||
             productRefs.current[0].current === null) {return}
         
@@ -68,7 +67,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                 <img src={item.imageURL} alt={item.name}></img>
                 <div className="product-title">
                     <h3>{item.name}</h3>
-                    <span>{item.price}$</span>
+                    <span className='item-price'>{item.price}</span>
                 </div>
                 <p>All devices are supported<br />
                 Up TO 12000 Live Channels Full SD/HD/4K<br />
@@ -88,7 +87,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
 
 
     return ( 
-        <div className={productsClass}>
+        <div id='our-products' className={productsClass}>
             {isTrue && <h2>Our Products</h2>}
             <ul ref={products}>
                 {producContent}

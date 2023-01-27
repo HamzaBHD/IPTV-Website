@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
@@ -8,33 +8,31 @@ import { FaCheck, FaBolt, FaHandshake } from 'react-icons/fa'
 const OurFeatures = ({ isTrue, featuresClass }) => {
     const currentLocation = useLocation()
 
-    const features = useRef()
-    const firstFeature = useRef()
-    const secondFeature = useRef()
-    const thirdFeature = useRef()
+    const features = useRef(null)
+    const firstFeature = useRef(null)
+    const secondFeature = useRef(null)
+    const thirdFeature = useRef(null)
 
     const didAnimate = useRef(false)
     gsap.registerPlugin(ScrollTrigger)
 
-    useLayoutEffect(() => {
-        if(didAnimate.current === true) {
-            return
-        } else {
+    useEffect(() => {
+        if(didAnimate.current === true) {return}
 
-            didAnimate.current = true
-            
-            if(currentLocation.pathname === '/') {
-                let tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: features.current,
-                        start: 'top bottom',
-                        end: 'center center',
-                        scrub: 1,
-                    },
-                    defaults:{
-                        duration: 1
-                    }
-                }) 
+        
+        didAnimate.current = true
+        if(currentLocation.pathname === '/') {
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: features.current,
+                    start: 'top bottom',
+                    end: 'center center',
+                    scrub: 1,
+                },
+                defaults:{
+                    duration: 1
+                }
+            }) 
             tl.from(firstFeature.current, {x: -50, opacity: 0, stagger: .3})
             tl.from(secondFeature.current, {x: -50, opacity: 0, stagger: .3})
             tl.from(thirdFeature.current, {x: -50, opacity: 0, stagger: .3})
@@ -46,11 +44,11 @@ const OurFeatures = ({ isTrue, featuresClass }) => {
                 }
             })
             tl.from(features.current, {
-                y: 50,
-                opacity: 0
+                x: -50,
+                opacity: 0,
+                stagger: .3
             })
         }
-    }
         
 
     }, [currentLocation])

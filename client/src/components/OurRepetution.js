@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect } from 'react'
+import { useRef, useEffect } from 'react'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger} from 'gsap/all';
@@ -15,7 +15,7 @@ const OurReputation = () => {
 
     gsap.registerPlugin(ScrollTrigger)
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if(didAnimate.current === true) {return}
         didAnimate.current = true
 
@@ -51,7 +51,7 @@ const OurReputation = () => {
         .from(secondTestimonial.current, {y: -50, opacity: 0})
         .from(thirdTestimonial.current, {y: -50, opacity: 0})
 
-    }, [])
+    }, [ourReputation])
 
     return (
         <div ref={ourReputation} className="our-reputation">

@@ -3,6 +3,7 @@ import TopPage from '../components/TopPage';
 import OurProducts from '../components/OurProducts';
 import OurFeatures from '../components/OurFeatures';
 import OurReputation from '../components/OurRepetution';
+import Footer from '../components/Footer';
 
 const Home = () => {
     return ( 
@@ -20,6 +21,7 @@ const Home = () => {
                 contactPage={false}
                 primary='Order NOW'
                 secondary='Browse product'
+                mainCta='#our-products'
             />
             <OurProducts 
                 isTrue={true}
@@ -30,6 +32,7 @@ const Home = () => {
                 featuresClass='our-features'
             />
             <OurReputation />
+            <Footer />
         </div>
      );
 }

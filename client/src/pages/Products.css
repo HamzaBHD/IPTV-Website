@@ -150,6 +150,19 @@
   animation: lds-dual-ring 1.2s linear infinite;
 }
 
+.item-price{
+  position: relative;
+}
+
+.item-price::before {
+  content: '$';
+  position: absolute;
+  font-size: .7em;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  left: -.7em; 
+}
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
