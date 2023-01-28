@@ -17,7 +17,8 @@
   }
   .top-page-product .top-page-content h1 {
     margin: 1em;
-    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
     position: relative;
 }
 
@@ -92,7 +93,8 @@
   top: 0;
   right: 0;
   width: 150px;
-  filter: drop-shadow(-5px 5px 10px rgba(0, 0, 0, 0.3));
+  -webkit-filter: drop-shadow(-5px 5px 10px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(-5px 5px 10px rgba(0, 0, 0, 0.3));
 }
 
 .product-detail .product-detail-content  .product-title h3 {
@@ -157,20 +159,32 @@
   border-radius: 50%;
   border: 6px solid #D64006;
   border-color: #D64006 transparent #D64006 transparent;
-  animation: lds-dual-ring 1.2s linear infinite;
+  -webkit-animation: lds-dual-ring 1.2s linear infinite;
+          animation: lds-dual-ring 1.2s linear infinite;
 }
 
 .item-price{
   position: relative;
+  font-size: 1.2em;
 }
 
 .item-price::before {
   content: '$';
   position: absolute;
-  font-size: .7em;
+  font-size: .5em;
   font-weight: 500;
   font-family: 'Roboto', sans-serif;
-  left: -.7em; 
+  left: -.8em;
+  top: .6em;
+}
+
+@-webkit-keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes lds-dual-ring {
@@ -236,7 +250,8 @@
   
   @media (min-width: 1200px) {
     .top-page-product {
-      min-height: 830px;
+      min-height: 796px;
+      height: 95vh;
       width: 68%;
     }
 
@@ -321,6 +336,8 @@
       margin-top: 3em;
       gap: 1em;
       font-size: 1.1em;
+      max-width: -webkit-fit-content;
+      max-width: -moz-fit-content;
       max-width: fit-content;
       padding: 1em;
     }

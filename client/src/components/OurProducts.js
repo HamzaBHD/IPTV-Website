@@ -1,4 +1,4 @@
-import { useRef, useContext, useState, useEffect, createRef } from 'react'
+import { useRef, useContext, useState, useLayoutEffect, useEffect, createRef } from 'react'
 import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
@@ -30,12 +30,11 @@ const OurProducts = ({ isTrue, productsClass }) => {
     
     const products = useRef(null)
     const productRefs = useRef([createRef(null), createRef(null), createRef(null), createRef(null)])
-    console.log(productRefs)
     const didAnimate = useRef(false)
     
     gsap.registerPlugin(ScrollTrigger)
     
-    useEffect(() => {
+    useLayoutEffect(() => {
         if(didAnimate.current === true ||
             productRefs.current[0].current === null) {return}
         
@@ -44,7 +43,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
             scrollTrigger: {
                 trigger: products.current,
                 start: 'top bottom',
-                end: 'center center',
+                end: 'center 75%',
                 endTrigger: productRefs.current[3].current,
                 scrub: 1,
             },
@@ -53,10 +52,10 @@ const OurProducts = ({ isTrue, productsClass }) => {
             }
         })
         
-        tl.from(productRefs.current[0].current, {x: -50, opacity: 0, stagger: .3})
-        tl.from(productRefs.current[1].current, {x: -50, opacity: 0, stagger: .3})
-        tl.from(productRefs.current[2].current, {x: -50, opacity: 0, stagger: .3})
-        tl.from(productRefs.current[3].current, {x: -50, opacity: 0, stagger: .3})
+        tl.from(productRefs.current[0].current, {x: -50, opacity: 0})
+        tl.from(productRefs.current[1].current, {x: -50, opacity: 0})
+        tl.from(productRefs.current[2].current, {x: -50, opacity: 0})
+        tl.from(productRefs.current[3].current, {x: -50, opacity: 0})
         
     }, [message])
 

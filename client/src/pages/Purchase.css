@@ -150,12 +150,23 @@
 
   .purchase-page .payment-container .total-tbp {
     text-align: center;
-    margin-bottom: 2em;
+    margin-bottom: .5em;
   }
 
   .purchase-page .payment-container .total-tbp span {
-    font-size: 1.4em;
+    font-size: 2.2em;
   }
+
+  .purchase-page .payment-container .total-tbp span::before {
+    content: '$';
+    position: absolute;
+    font-size: .7em;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    left: -.8em;
+    top: .3em;
+  }
+
 
   .purchase-page .payment-container hr {
     width: 80%;
@@ -193,6 +204,20 @@
     font-style: italic;
     text-transform: uppercase;
     line-height: 1.5em;
+  }
+
+  .product-ordered ul.order-total li .item-price {
+    font-size: 1.5em;
+  }
+
+  .product-ordered ul.order-total li .item-price::before {
+    content: '$';
+    position: absolute;
+    font-size: .7em;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    left: -.8em;
+    top: .3em;
   }
 
   @keyframes lds-dual-ring {

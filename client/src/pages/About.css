@@ -1,7 +1,8 @@
 .top-page-about .top-page-content .about-title{
     color: white;
     position: relative;
-    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 
 }
 
@@ -92,6 +93,7 @@
 @media (min-width: 1200px) {
     .top-page-about {
         min-height: 796px;
+        height: 91vh;
         width: 68%
 
     }
@@ -99,7 +101,8 @@
     .top-page-about .top-page-content .about-title{
         text-align: left;
         width: 70%;
-        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+                clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
     }
 
     .top-page-about .top-page-content .about-title h2 {

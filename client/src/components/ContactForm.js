@@ -7,7 +7,7 @@ import { AppContext } from '../Context'
 
 const ContactForm = () => {
     const { getUserForm } = useContext(AppContext)
-    const { register, handleSubmit, reset, formState ,formState: { errors, isSubmitSuccessful } } = useForm()
+    const { register, handleSubmit, reset, formState ,formState: { errors } } = useForm()
     const onSubmit = data => getUserForm(data)
 
     useEffect(() => {
@@ -53,7 +53,7 @@ const ContactForm = () => {
         })
 
 
-    }, [])
+    }, [didAnimate])
 
     return (
         <div className='contacts--form'>

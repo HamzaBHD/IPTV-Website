@@ -1,11 +1,25 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false)
     const location = useLocation()
-    const [headerClass, setHeaderClass] = useState(location.pathname === '/' || location.pathname === '/home'? 'dark' : 'black')
+    const [isOpen, setIsOpen] = useState(false)
+    const [headerClass, setHeaderClass] = useState(location.pathname === '/' || location.pathname === '/home' ? 'dark' : 'black')
 
+    useEffect(() => {
+        window.onpopstate = ()=> {
+            if(location.pathname === '/' && headerClass === 'black'){
+                setHeaderClass('dark')
+            } else if((location.pathname === '/products' || location.pathname === '/about' ||
+                location.pathname === '/contacts') && headerClass === 'dark') {
+                setHeaderClass('black') 
+            }
+
+        }
+
+    }, [location, headerClass] )
+
+        
     const activeStyle = {
         fontWeight: 'bold'
     }
@@ -80,7 +94,7 @@ const Navbar = () => {
                             style={({ isActive }) => 
                             isActive ? activeStyle : undefined
                             }
-                            onClick={() => {setIsOpen(false)}}
+                            onClick={() => {setIsOpen(false); setHeaderClass('black')}}
                         >
                             <i className="ri-shopping-bag-line"></i>
                     </NavLink>

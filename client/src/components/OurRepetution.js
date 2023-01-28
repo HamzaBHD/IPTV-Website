@@ -1,22 +1,25 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useLayoutEffect } from 'react'
 
 import { gsap } from 'gsap'
 import { ScrollTrigger} from 'gsap/all';
 
 const OurReputation = () => {
 
-    const ourReputation = useRef()
-    const paragraph = useRef()
-    const firstTestimonial = useRef()
-    const secondTestimonial = useRef()
-    const thirdTestimonial = useRef()
+    const ourReputation = useRef(null)
+    const paragraph = useRef(null)
+    const firstTestimonial = useRef(null)
+    const secondTestimonial = useRef(null)
+    const thirdTestimonial = useRef(null)
 
     const didAnimate = useRef(false)
 
     gsap.registerPlugin(ScrollTrigger)
 
-    useEffect(() => {
-        if(didAnimate.current === true) {return}
+    useLayoutEffect(() => {
+        
+        if(didAnimate.current === true) {
+            return
+        }
         didAnimate.current = true
 
         let tl = gsap.timeline({
@@ -42,7 +45,7 @@ const OurReputation = () => {
             defaults: {
                 duration: 1
             } 
-        })
+        }, [didAnimate])
 
         tl.from(paragraph.current, {x: -50, opacity:0})
 
@@ -51,7 +54,7 @@ const OurReputation = () => {
         .from(secondTestimonial.current, {y: -50, opacity: 0})
         .from(thirdTestimonial.current, {y: -50, opacity: 0})
 
-    }, [ourReputation])
+    })
 
     return (
         <div ref={ourReputation} className="our-reputation">

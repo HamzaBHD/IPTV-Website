@@ -8,10 +8,10 @@ import { FaAt, FaTelegram, FaWhatsapp } from 'react-icons/fa'
 
 const TopPage = ({ topPageClass, title, paragraph, isTrue, backgoundClass, contentClass, aboutPage, contactPage, primary, secondary, mainCta }) => {
 
-    const topPageContent = useRef()
-    const pageTitle = useRef()
-    const aboutTitle = useRef()
-    const tv = useRef()
+    const topPageContent = useRef(null)
+    const pageTitle = useRef(null)
+    const aboutTitle = useRef(null)
+    const tv = useRef(null)
 
     const didAnimate = useRef(false)
 
@@ -21,13 +21,14 @@ const TopPage = ({ topPageClass, title, paragraph, isTrue, backgoundClass, conte
 
         didAnimate.current = true
         let tl = gsap.timeline({defaults:{duration: 1}})
+
         tl.from(topPageContent.current, {y: 50, opacity: 0})
         .from(tv.current, {y: 50, opacity: 0}, '-=1')
         .to(pageTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 150% 0%, 0% -50%)'}, '-=.7')
         .to(aboutTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 150% 0%, 0% -50%)'}, '-=.7')
             
     
-    }, [])
+    }, [didAnimate])
 
 
     return (

@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useLayoutEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
@@ -16,7 +16,7 @@ const OurFeatures = ({ isTrue, featuresClass }) => {
     const didAnimate = useRef(false)
     gsap.registerPlugin(ScrollTrigger)
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if(didAnimate.current === true) {return}
 
         
@@ -51,7 +51,7 @@ const OurFeatures = ({ isTrue, featuresClass }) => {
         }
         
 
-    }, [currentLocation])
+    }, [currentLocation, didAnimate])
 
     
 
