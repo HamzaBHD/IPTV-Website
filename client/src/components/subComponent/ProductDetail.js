@@ -2,6 +2,8 @@ import { useContext, useRef, useEffect } from "react"
 import { Link } from "react-router-dom" 
 
 import { AppContext } from "../../Context"
+import popularPack from '../../images/Iptv-Popular-pack.png'
+import bestPack from '../../images/Iptv-Best-Pack.png'
 
 const ProductDetail = ({ toggle, isOpen, isLoading }) => {
     const { getProductId, productFound } = useContext(AppContext)
@@ -35,6 +37,13 @@ const ProductDetail = ({ toggle, isOpen, isLoading }) => {
                     ref={detailContainer}
                 >
                     <i className="ri-close-fill close-detail" onClick={() => toggle(false)}></i>
+                    {   productFound.name === '3 Months Subscription' && 
+                    <img className='pack-tag' src={popularPack} alt='Iptv Popular pack'></img> 
+                    }
+                    {
+                        productFound.name === '1 Year Subscription' && 
+                        <img className='pack-tag' src={bestPack} alt='Iptv Best pack'></img>
+                    }
                     <img className="product-img" src={productFound.imageURL} alt={productFound.name}></img>
                     <div className="product-detail-content">
                         <div className="product-title">

@@ -5,6 +5,8 @@ import { ScrollTrigger } from 'gsap/all'
 
 import { AppContext } from '../Context'
 import ProductDetail from './subComponent/ProductDetail'
+import popularPack from '../images/Iptv-Popular-pack.png'
+import bestPack from '../images/Iptv-Best-Pack.png'
 
 
 const OurProducts = ({ isTrue, productsClass }) => {
@@ -27,7 +29,8 @@ const OurProducts = ({ isTrue, productsClass }) => {
     }
     
     const products = useRef(null)
-    const productRefs = useRef([createRef(null), createRef(null), createRef(null)])
+    const productRefs = useRef([createRef(null), createRef(null), createRef(null), createRef(null)])
+    console.log(productRefs)
     const didAnimate = useRef(false)
     
     gsap.registerPlugin(ScrollTrigger)
@@ -42,7 +45,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                 trigger: products.current,
                 start: 'top bottom',
                 end: 'center center',
-                endTrigger: productRefs.current[2].current,
+                endTrigger: productRefs.current[3].current,
                 scrub: 1,
             },
             defaults:{
@@ -52,7 +55,8 @@ const OurProducts = ({ isTrue, productsClass }) => {
         
         tl.from(productRefs.current[0].current, {x: -50, opacity: 0, stagger: .3})
         tl.from(productRefs.current[1].current, {x: -50, opacity: 0, stagger: .3})
-        tl.fromTo(productRefs.current[2].current, {x: -50, opacity: 0, stagger: .3} , {opacity: 1.5, x: 0})
+        tl.from(productRefs.current[2].current, {x: -50, opacity: 0, stagger: .3})
+        tl.from(productRefs.current[3].current, {x: -50, opacity: 0, stagger: .3})
         
     }, [message])
 
@@ -64,6 +68,14 @@ const OurProducts = ({ isTrue, productsClass }) => {
                 className="product-container"
                 ref={productRefs.current[i]}
             >
+                {   item.name === '3 Months Subscription' && 
+                    <img className='pack-tag' src={popularPack} alt='Iptv Popular pack'></img> 
+                }
+
+                {
+                    item.name === '1 Year Subscription' && 
+                    <img className='pack-tag' src={bestPack} alt='Iptv Best pack'></img>
+                }
                 <img src={item.imageURL} alt={item.name}></img>
                 <div className="product-title">
                     <h3>{item.name}</h3>

@@ -4,8 +4,7 @@ const { Schema } = mongoose;
 let productSchema = new Schema({
     name: 'String',
     price: 'String',
-    imageURL: { type: String, required: true },
-    isFavorite: { type: Boolean, default: false}
+    imageURL: { type: String, required: true }
 }, { collection : 'products' })
 
 let messageSchema = new Schema({
