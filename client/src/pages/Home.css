@@ -1,5 +1,5 @@
 header {
-    padding: 1em;
+    padding: 0em 1em;
     background: #000103;
     color: white;
   }
@@ -17,6 +17,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: .5em 0;
   }
   
   nav ul {
@@ -96,7 +97,7 @@ header {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-image: url(../images/christian-englmeier-J7EUjSlNQtg-unsplash.jpg) !important;
+    background-image: url(../images/Premuim-IPTV-adult.jpg) !important;
     background-repeat: no-repeat;
     background-position: -800px 0;
     background-size: 2000px;
@@ -230,6 +231,9 @@ header {
 
   .cta-buttons .primary {
     margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   } 
   
   .cta-buttons .secondary {
@@ -456,10 +460,6 @@ header {
       display: flex;
       justify-content: space-between;
     }
-    .cta-buttons .primary {
-      margin-bottom: 0;
-      padding: 1.5em;
-    } 
 
     .cta-buttons .cta {
       flex: 0 0 47%;
@@ -541,9 +541,8 @@ header {
       gap: 1em;
       justify-content: space-between;
     }
-    .cta {
+    .buttons .cta {
       flex: 0 0 50%;
-      margin: 0;
     }
   
     .our-products ul,
@@ -672,7 +671,10 @@ header {
     header {
       font-size: 1.2em;
       padding: 0em 3em;
+    }
 
+    nav {
+      padding: .5em 0;
     }
     .top-page {
       min-height: 796px;
@@ -718,6 +720,11 @@ header {
     .primary,
     .secondary {
       font-size: 1.2em;
+    }
+
+    .cta-buttons .cta {
+      font-size: 1.2em;
+      padding: .9em 0;
     }
   
     .primary {

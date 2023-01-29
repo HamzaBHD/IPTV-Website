@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser')
 var logger = require('morgan');
 var cors = require("cors");
+var helmet = require('helmet')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -24,13 +25,22 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(cors());
 app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads' ,express.static('uploads'))
 app.use(express.static(__dirname));
+app.use(helmet())
+app.use(helmet.hidePoweredBy());
+app.use(helmet.ieNoOpen());
+app.use(helmet.noSniff());
+app.use(helmet.xssFilter());
+app.use(
+  helmet.frameguard({
+    action: "deny",
+  })
+ );
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

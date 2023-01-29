@@ -1,5 +1,6 @@
 .purchase-page {
     position: relative;
+    height: 93.7vh;
 }
 
 .purchase-page-loading {
@@ -12,7 +13,7 @@
 .product-ordered {
     position: relative;
     background: #FAFCFF ;
-    height: 94vh;
+    height: 100%;
     padding: 1em;
     display: flex;
     flex-direction: column;
@@ -237,6 +238,10 @@
 
   @media (min-width: 620px) {
 
+    .purchase-page {
+      height: 92.5vh;
+    }
+
     .purchase-page .payment-container {
       width: 70%;
       height: 100%;
@@ -246,6 +251,12 @@
   }
 
   @media (min-width: 1200px) {
+
+    .purchase-page {
+      min-height: 799px;
+      height: 91vh;
+    }
+
     .product-ordered {
       height: 100%;
     }
