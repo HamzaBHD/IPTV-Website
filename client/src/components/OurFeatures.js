@@ -20,7 +20,7 @@ const OurFeatures = ({ isTrue, featuresClass }) => {
         if(didAnimate.current === true) {return}
         
         didAnimate.current = true
-        if(currentLocation.pathname === '/') {
+        if(currentLocation.pathname === '/' || currentLocation.pathname === '/home') {
             let tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: features.current,
@@ -52,7 +52,7 @@ const OurFeatures = ({ isTrue, featuresClass }) => {
     return ( 
         <div className={featuresClass}>
             {isTrue && <h2>Our Features</h2>}
-            <ul ref={features}>
+            <ul ref={features} id='our-features'>
                 <li ref={firstFeature} className="feature-container">
                     <FaCheck />
                     <h3>Quality</h3>
