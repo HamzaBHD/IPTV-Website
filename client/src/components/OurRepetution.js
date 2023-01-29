@@ -21,17 +21,13 @@ const OurReputation = () => {
             return
         }
         didAnimate.current = true
-
         let tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ourReputation.current,
                 start: "top bottom",
                 end: 'top center',
                 scrub: 1
-            },
-            defaults: {
-                duration: 1
-            } 
+            }
         })
 
         let secondTl = gsap.timeline({
@@ -41,11 +37,8 @@ const OurReputation = () => {
                 end: '-50% center',
                 endTrigger: thirdTestimonial.current,
                 scrub: 1
-            },
-            defaults: {
-                duration: 1
-            } 
-        }, [didAnimate])
+            }
+        })
 
         tl.from(paragraph.current, {x: -50, opacity:0})
 
@@ -53,8 +46,6 @@ const OurReputation = () => {
         .from(firstTestimonial.current, {y: -50, opacity: 0})
         .from(secondTestimonial.current, {y: -50, opacity: 0})
         .from(thirdTestimonial.current, {y: -50, opacity: 0})
-
-        console.log('I\'m reptutaion')
 
     })
 

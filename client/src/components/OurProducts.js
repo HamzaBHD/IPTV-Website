@@ -24,9 +24,6 @@ const OurProducts = ({ isTrue, productsClass }) => {
 
     }, [isOpen])
 
-    function closeDetail(choice) {
-        setIsOpen(choice)
-    }
     
     const products = useRef(null)
     const productRefs = useRef([createRef(null), createRef(null), createRef(null), createRef(null)])
@@ -35,35 +32,34 @@ const OurProducts = ({ isTrue, productsClass }) => {
     gsap.registerPlugin(ScrollTrigger)
     
     useLayoutEffect(() => {
+        
         if(didAnimate.current === true ||
             productRefs.current[0].current === null) {return}
-        
-        didAnimate.current = true
-        let tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: products.current,
-                start: 'top bottom',
-                end: 'center 75%',
-                endTrigger: productRefs.current[3].current,
-                scrub: 1,
-            },
-            defaults:{
-                duration: 1
-            }
+            
+            
+            didAnimate.current = true
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: products.current,
+                    start: 'top bottom',
+                    end: 'center 75%',
+                    endTrigger: productRefs.current[3].current,
+                    scrub: 1,
+                }
+            })
+            
+            tl.from(productRefs.current[0].current, {x: -50, opacity: 0})
+            tl.from(productRefs.current[1].current, {x: -50, opacity: 0})
+            tl.from(productRefs.current[2].current, {x: -50, opacity: 0})
+            tl.from(productRefs.current[3].current, {x: -50, opacity: 0})
         })
         
-        tl.from(productRefs.current[0].current, {x: -50, opacity: 0})
-        tl.from(productRefs.current[1].current, {x: -50, opacity: 0})
-        tl.from(productRefs.current[2].current, {x: -50, opacity: 0})
-        tl.from(productRefs.current[3].current, {x: -50, opacity: 0})
+        function closeDetail(choice) {
+            setIsOpen(choice)
+        }
 
-        console.log('I\'m products')
-        
-    }, [message])
-
-    const producContent = message.map((item, i) => {
-
-        return (
+        const producContent = message.map((item, i) => {
+            return (
             <li 
                 key={item._id} 
                 className="product-container"

@@ -147,14 +147,20 @@
     visibility: unset;
     opacity: 200;
   }
-
+  
   .purchase-page .payment-container .total-tbp {
+    padding: 0;
     text-align: center;
-    margin-bottom: .5em;
+    margin-bottom: 1em;
+  }
+
+  .purchase-page .payment-container .total-tbp h1 {
+    margin: 0;
   }
 
   .purchase-page .payment-container .total-tbp span {
     font-size: 2.2em;
+    margin: 0;
   }
 
   .purchase-page .payment-container .total-tbp span::before {
@@ -170,7 +176,7 @@
 
   .purchase-page .payment-container hr {
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto .5em;
     border-top: 2px dashed #000103
   }
 

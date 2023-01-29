@@ -15,10 +15,9 @@ const OurFeatures = ({ isTrue, featuresClass }) => {
 
     const didAnimate = useRef(false)
     gsap.registerPlugin(ScrollTrigger)
-
+    
     useLayoutEffect(() => {
         if(didAnimate.current === true) {return}
-
         
         didAnimate.current = true
         if(currentLocation.pathname === '/') {
@@ -27,15 +26,13 @@ const OurFeatures = ({ isTrue, featuresClass }) => {
                     trigger: features.current,
                     start: 'top bottom',
                     end: 'center center',
-                    scrub: 1,
-                },
-                defaults:{
-                    duration: 1
+                    endTrigger: thirdFeature.current,
+                    scrub: true,
                 }
             }) 
-            tl.from(firstFeature.current, {x: -50, opacity: 0, stagger: .3})
-            tl.from(secondFeature.current, {x: -50, opacity: 0, stagger: .3})
-            tl.from(thirdFeature.current, {x: -50, opacity: 0, stagger: .3})
+            tl.from(firstFeature.current, {x: -50, opacity: 0})
+            tl.from(secondFeature.current, {x: -50, opacity: 0})
+            tl.from(thirdFeature.current, {x: -50, opacity: 0})
 
         } else if(currentLocation.pathname === '/about') {
             let tl = gsap.timeline({
@@ -46,13 +43,9 @@ const OurFeatures = ({ isTrue, featuresClass }) => {
             tl.from(features.current, {
                 x: -50,
                 opacity: 0,
-                stagger: .3
             })
         }
-        
-        console.log('I\'m features')
-
-    }, [currentLocation, didAnimate])
+    })
 
     
 

@@ -22,10 +22,11 @@ const TopPage = ({ topPageClass, title, paragraph, isTrue, backgoundClass, conte
         didAnimate.current = true
         let tl = gsap.timeline({defaults:{duration: 1}})
 
-        tl.from(topPageContent.current, {y: 50, opacity: 0})
-        .from(tv.current, {y: 50, opacity: 0}, '-=1')
-        .to(pageTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 150% 0%, 0% -50%)'}, '-=.7')
-        .to(aboutTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 150% 0%, 0% -50%)'}, '-=.7')
+        if(topPageContent.current) {tl.from(topPageContent.current, {y: 50, opacity: 0})}
+        if(tv.current) {tl.from(tv.current, {y: 50, opacity: 0}, '-=1')}
+
+        if(pageTitle.current){tl.to(pageTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 150% 0%, 0% -50%)'}, '-=.7')}
+        if(aboutTitle.current){tl.to(aboutTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 150% 0%, 0% -50%)'}, '-=.7')}
             
     
     }, [didAnimate])
