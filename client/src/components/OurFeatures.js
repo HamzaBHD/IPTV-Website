@@ -50,6 +50,7 @@ const OurFeatures = ({ isTrue, featuresClass }) => {
             })
         }
         
+        console.log('I\'m features')
 
     }, [currentLocation, didAnimate])
 

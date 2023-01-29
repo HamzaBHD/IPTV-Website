@@ -56,6 +56,8 @@ const OurProducts = ({ isTrue, productsClass }) => {
         tl.from(productRefs.current[1].current, {x: -50, opacity: 0})
         tl.from(productRefs.current[2].current, {x: -50, opacity: 0})
         tl.from(productRefs.current[3].current, {x: -50, opacity: 0})
+
+        console.log('I\'m products')
         
     }, [message])
 

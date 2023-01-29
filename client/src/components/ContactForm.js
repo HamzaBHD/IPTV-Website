@@ -1,14 +1,18 @@
-import { useLayoutEffect, useRef, useContext, useEffect } from 'react'
+import { useLayoutEffect, useRef, useContext, useEffect, useState } from 'react'
 import { useForm } from "react-hook-form";
 import { gsap } from 'gsap'
 import { FaPaperPlane } from 'react-icons/fa'
+import { CheckCircle } from 'react-bootstrap-icons'
 
 import { AppContext } from '../Context'
 
 const ContactForm = () => {
     const { getUserForm } = useContext(AppContext)
+    const [sent, setSent] = useState(false)
     const { register, handleSubmit, reset, formState ,formState: { errors } } = useForm()
     const onSubmit = data => getUserForm(data)
+
+    const successClass = sent ? 'shown' : undefined
 
     useEffect(() => {
 
@@ -18,6 +22,12 @@ const ContactForm = () => {
                 email: '',
                 userMessage: ''
             })
+
+            setSent(true)
+            setTimeout(()=> {
+                setSent(false)
+
+            }, 1500)
         }
         
     }, [formState, reset])
@@ -97,7 +107,7 @@ const ContactForm = () => {
                         type='text' 
                         id='msg' 
                         {...register('userMessage', { required: true })} 
-                        placeholder='Hi Watched.'
+                        placeholder='Hi Watched.IPTV'
                         className={errors.userMessage ? 'in-valid' : 'valid'}
                         />
                     {errors.userMessage && <span className='error-message'>Please leave us a nice message!</span>}
@@ -112,6 +122,13 @@ const ContactForm = () => {
                         className='plane-icon'
                     />
                 </button>
+
+                <div className={`message-confirmed ${successClass}`}>
+                    <CheckCircle 
+                        className='confirmed-icon'
+                    />
+                    <h2>Your message was successfully sent!</h2>
+                </div>
 
             </form>
         </div>

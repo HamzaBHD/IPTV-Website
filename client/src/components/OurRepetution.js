@@ -54,6 +54,8 @@ const OurReputation = () => {
         .from(secondTestimonial.current, {y: -50, opacity: 0})
         .from(thirdTestimonial.current, {y: -50, opacity: 0})
 
+        console.log('I\'m reptutaion')
+
     })
 
     return (
