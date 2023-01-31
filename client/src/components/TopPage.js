@@ -4,7 +4,7 @@ import { gsap } from 'gsap'
 
 
 import tvPicture from '../images/iptv-tv.png'
-import { FaAt, FaTelegram, FaWhatsapp } from 'react-icons/fa'
+import { FaAt, FaWhatsapp, FaPhone } from 'react-icons/fa'
 
 const TopPage = ({ topPageClass, title, paragraph, isTrue, backgoundClass, contentClass, aboutPage, contactPage, primary, secondary, mainCta }) => {
 
@@ -57,13 +57,13 @@ const TopPage = ({ topPageClass, title, paragraph, isTrue, backgoundClass, conte
                 { contactPage 
                 &&
                 <div className='contact-icons'>
-                    <a href='/'>
+                    <a href='https://api.whatsapp.com/send?phone=155513070526'>
                         <FaWhatsapp />
                     </a>
-                    <a href='/'>
-                        <FaTelegram />
+                    <a href='tel:+155513070526'>
+                        <FaPhone className='phone-icon'/>
                     </a>
-                    <a href='/'>
+                    <a href='mailto:customer.service@watchediptv.com'>
                         <FaAt />
                     </a>
                 </div> }

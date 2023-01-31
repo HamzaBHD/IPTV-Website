@@ -72,48 +72,44 @@ const OurProducts = ({ isTrue, productsClass }) => {
         setIsOpen(choice)
     }
 
-    const producContent = message.map((item, i) => {
-        return (
-        <li 
-            key={item._id} 
-            className="product-container"
-            ref={productRefs.current[i]}
-        >
-            {   item.name === '3 Months Subscription' && 
-                <img className='pack-tag' src={popularPack} alt='Iptv Popular pack'></img> 
-            }
-
-            {
-                item.name === '1 Year Subscription' && 
-                <img className='pack-tag' src={bestPack} alt='Iptv Best pack'></img>
-            }
-            <img src={item.imageURL} alt={item.name}></img>
-            <div className="product-title">
-                <h3>{item.name}</h3>
-                <span className='item-price'>{item.price}</span>
-            </div>
-            <p>All devices are supported<br />
-            Up TO 12000 Live Channels Full SD/HD/4K<br />
-            Money-Back guarantee<br />
-            24/7 Technical Support</p>
-            <div className='cta-buttons'>
-                <Link to="/purchase" className='cta primary' onClick={() => getProductId(item._id)}>PURCHASE</Link>
-                <Link to='#' className='cta secondary' onClick={() => {setIsOpen(true); getProductId(item._id)}}>
-                    <span>Read more</span>
-                    <i className="ri-arrow-right-s-line arrow"></i>    
-                </Link>
-            </div>
-        </li>
-        )
-    })
-
-
-
     return ( 
         <div id='our-products' className={productsClass}>
             {isTrue && <h2>Our Products</h2>}
             <ul ref={products}>
-                {producContent}
+                {message.map((item, i) => {
+                return (
+                <li 
+                    key={item._id} 
+                    className="product-container"
+                    ref={productRefs.current[i]}
+                >
+                    {   item.name === '3 Months Subscription' && 
+                        <img className='pack-tag' src={popularPack} alt='Iptv Popular pack'></img> 
+                    }
+
+                    {
+                        item.name === '1 Year Subscription' && 
+                        <img className='pack-tag' src={bestPack} alt='Iptv Best pack'></img>
+                    }
+                    <img src={item.imageURL} alt={item.name}></img>
+                    <div className="product-title">
+                        <h3>{item.name}</h3>
+                        <span className='item-price'>{item.price}</span>
+                    </div>
+                    <p>All devices are supported<br />
+                    Up TO 12000 Live Channels Full SD/HD/4K<br />
+                    Money-Back guarantee<br />
+                    24/7 Technical Support</p>
+                    <div className='cta-buttons'>
+                        <Link to="/purchase" className='cta primary' onClick={() => getProductId(item._id)}>PURCHASE</Link>
+                        <Link to='#' className='cta secondary' onClick={() => {setIsOpen(true); getProductId(item._id)}}>
+                            <span>Read more</span>
+                            <i className="ri-arrow-right-s-line arrow"></i>    
+                        </Link>
+                    </div>
+                </li>
+                )
+            })}
             </ul>
             <ProductDetail 
                 toggle={closeDetail} 

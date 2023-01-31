@@ -40,7 +40,7 @@ app.use(
   helmet.frameguard({
     action: "deny",
   })
- );
+);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

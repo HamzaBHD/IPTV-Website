@@ -1,4 +1,4 @@
-import { FaAt, FaTelegram, FaWhatsapp } from 'react-icons/fa'
+import { FaAt, FaPhone, FaWhatsapp } from 'react-icons/fa'
 
 
 const Footer = () => {
@@ -35,22 +35,22 @@ const Footer = () => {
                 <div className='socials-container'>
                     <ul className='socials'>
                         <li>
-                            <a href='/'>
+                            <a href='https://api.whatsapp.com/send?phone=155513070526'>
                                 <FaWhatsapp />
                             </a>
                         </li>
                         <li>
-                            <a href='/'>
-                                <FaTelegram />
+                            <a href='tel:+155513070526'>
+                                <FaPhone />
                             </a>
                         </li>
                         <li>
-                            <a href='/'>
+                            <a href='mailto:customer.service@watchediptv.com'>
                                 <FaAt />
                             </a>
                         </li>
                     </ul>
-                    <p><span>Support: </span>customer.service@watched-iptv.com</p>
+                    <p><span>Support: </span>customer.service@watchediptv.com</p>
                 </div>
             </div>
         </footer>
