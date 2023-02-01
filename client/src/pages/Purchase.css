@@ -1,6 +1,7 @@
 .purchase-page {
     position: relative;
-    height: 93.7vh;
+    height: 94.3vh;
+    /* height: 100%; */
 }
 
 .purchase-page-loading {
@@ -135,6 +136,8 @@
     -webkit-box-shadow: -6px 8px 14px -3px rgba(0,0,0,0.39);
     -moz-box-shadow: -6px 8px 14px -3px rgba(0,0,0,0.39);
     transition: .3s;
+    display: flex;
+    align-items: center;
   }
   .purchase-page .payment-container .close-payment {
     font-size: 2.5em;
@@ -239,7 +242,7 @@
   @media (min-width: 620px) {
 
     .purchase-page {
-      height: 92.5vh;
+      height: 93.5vh;
     }
 
     .purchase-page .payment-container {
@@ -253,8 +256,8 @@
   @media (min-width: 1200px) {
 
     .purchase-page {
-      min-height: 799px;
-      height: 91vh;
+      min-height: 796px;
+      height: 97vh;
     }
 
     .product-ordered {
@@ -282,7 +285,8 @@
     }
     .purchase-page .payment-container {
       position: unset;
-      height: 100%;
+      min-height: 796px;
+      height: 92.6vh;
       visibility: unset;
       opacity: 1;
       transition: unset;

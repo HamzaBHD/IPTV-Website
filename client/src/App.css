@@ -7,6 +7,9 @@
   scroll-behavior: smooth;
   /* outline: 3px solid limegreen !important ; */
 }
+html {
+  height: 100%;
+}
 
 body {
   height: 100vh;

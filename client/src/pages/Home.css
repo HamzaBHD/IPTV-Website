@@ -362,6 +362,7 @@ header {
             user-select: none;
     transition: 0.25s ease-out;
     letter-spacing: .1em;
+    font-size: 1.2em;
   }
   
   
@@ -369,7 +370,7 @@ header {
     content: '';
     background: #FAFCFF;
     position: absolute;
-    height: 2px;
+    height: 1px;
     bottom: -42%;
     left: 0;
     width: 100%;
@@ -623,6 +624,7 @@ header {
       grid-row: 1 / 3;
       align-self: center;
       margin: 0;
+      font-size: 1.5em;
     }
 
     .footer-container h2:after {
