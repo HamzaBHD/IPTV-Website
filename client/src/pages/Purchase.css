@@ -221,7 +221,7 @@
   }
 
   .product-ordered ul.order-total li .item-price::before {
-    content: '$';
+    content: '€';
     position: absolute;
     font-size: .7em;
     font-weight: 500;

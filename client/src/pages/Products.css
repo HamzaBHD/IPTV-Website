@@ -169,7 +169,7 @@
 }
 
 .item-price::before {
-  content: '$';
+  content: '€';
   position: absolute;
   font-size: .5em;
   font-weight: 500;
