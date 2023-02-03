@@ -168,8 +168,7 @@
   font-size: 1.2em;
 }
 
-.item-price::before {
-  content: '€';
+.item-price span {
   position: absolute;
   font-size: .5em;
   font-weight: 500;

@@ -110,7 +110,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                     <img src={getImage(item)} alt={item.name}></img>
                     <div className="product-title">
                         <h3>{item.name}</h3>
-                        <span className='item-price'>{item.price}</span>
+                        <span className='item-price'>{item.price}<span>€</span></span>
                     </div>
                     <p>All devices are supported<br />
                     Up TO 12000 Live Channels Full SD/HD/4K<br />

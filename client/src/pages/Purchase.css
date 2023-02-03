@@ -220,8 +220,7 @@
     font-size: 1.5em;
   }
 
-  .product-ordered ul.order-total li .item-price::before {
-    content: '€';
+  .product-ordered ul.order-total li .item-price span {
     position: absolute;
     font-size: .7em;
     font-weight: 500;

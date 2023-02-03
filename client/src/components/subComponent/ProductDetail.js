@@ -49,7 +49,7 @@ const ProductDetail = ({ toggle, isOpen, isLoading }) => {
                     <div className="product-detail-content">
                         <div className="product-title">
                             <h3>{productFound.name}</h3>
-                            <span>{productFound.price}$</span>
+                            <span className='item-price'>{productFound.price}<span>€</span></span>
                         </div>
                         <p>
                             - Enjoy your favorite TV channels with this IPTV subscription.<br />
