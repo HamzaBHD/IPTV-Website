@@ -195,6 +195,24 @@
   }
 }
 
+@media (min-height: 350px ) {
+  .product-detail {
+    line-height: unset;
+    font-size: .9em;
+  }
+
+  .product-detail .product-img {
+    width: 150px
+  }
+}
+
+
+@media (min-height: 820px ) {
+  .product-detail .product-img {
+    width: 200px
+  }
+}
+
   @media (min-width: 620px) {
     .top-page-product .top-page-content h1{
       font-size: 2.5em;
