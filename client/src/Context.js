@@ -1,5 +1,7 @@
 import { createContext, useEffect, useState } from 'react'
 
+import { API_URL } from './config'
+
 const AppContext = createContext()
 
 function ContextProvider (props) {
@@ -11,13 +13,13 @@ function ContextProvider (props) {
     const [validationMessage, setValidationMessage] = useState('')
 
     useEffect(() => {
-        fetch('/products')
+        fetch(`${API_URL}/products`)
         .then(res => res.json())
         .then(data => setMessage(data))
     }, [])
 
     useEffect(() => {
-        fetch(`/products/${productId || localStorage.getItem('productId') || 'firstLoad' }`)
+        fetch(`${API_URL}/products/${productId || localStorage.getItem('productId') || 'firstLoad' }`)
         .then(res => res.json())
         .then(data => setProductFound(data))
         
@@ -31,7 +33,7 @@ function ContextProvider (props) {
             body: JSON.stringify(userFrom)
         }
 
-        fetch('/messages', requestOptions)
+        fetch(`${API_URL}/messages`, requestOptions)
         .then(res => res.json())
         .then(data => setValidationMessage(data))
 

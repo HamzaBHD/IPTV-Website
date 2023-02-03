@@ -1,5 +1,6 @@
 import { useContext, useRef, useEffect } from "react"
 import { Link } from "react-router-dom" 
+import getImage from '../../assets/getImage'
 
 import { AppContext } from "../../Context"
 import popularPack from '../../images/Iptv-Popular-pack.png'
@@ -44,7 +45,7 @@ const ProductDetail = ({ toggle, isOpen, isLoading }) => {
                         productFound.name === '1 Year Subscription' && 
                         <img className='pack-tag' src={bestPack} alt='Iptv Best pack'></img>
                     }
-                    <img className="product-img" src={productFound.imageURL} alt={productFound.name}></img>
+                    <img className="product-img" src={getImage(productFound)} alt={productFound.name}></img>
                     <div className="product-detail-content">
                         <div className="product-title">
                             <h3>{productFound.name}</h3>

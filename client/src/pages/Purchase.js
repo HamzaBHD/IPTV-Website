@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import getImage from '../assets/getImage'
 
 import './Purchase.css'
 import { AppContext } from "../Context"
@@ -50,7 +51,7 @@ const Purchase = () => {
                         </li>
                     </ul>
                     <img 
-                        src={productFound.imageURL} 
+                        src={getImage(productFound)} 
                         alt={productFound.name} 
                         className='orderd-product'
                         >

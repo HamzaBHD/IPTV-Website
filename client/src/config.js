@@ -1,0 +1,1 @@
+export const API_URL = process.env.REACT_APP8SERVER_URL || 'http://localhost:9000'

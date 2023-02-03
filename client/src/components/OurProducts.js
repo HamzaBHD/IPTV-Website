@@ -2,12 +2,16 @@ import { useRef, useContext, useState, useLayoutEffect, useEffect, createRef } f
 import { Link, useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
+import getImage from '../assets/getImage'
 
 import { AppContext } from '../Context'
 import ProductDetail from './subComponent/ProductDetail'
 import popularPack from '../images/Iptv-Popular-pack.png'
 import bestPack from '../images/Iptv-Best-Pack.png'
-
+// import firstpack from '../images/iptv-1-Month-Pack.png'
+// import secondPack from '../images/Iptv-3-Months-Pack.png'
+// import thirdPack from '../images/Iptv-6-Months-Pack.png'
+// import lastPack from '../images/iptv-1-Year-Pack.png'
 
 const OurProducts = ({ isTrue, productsClass }) => {
     const { message, getProductId } = useContext(AppContext)
@@ -72,6 +76,18 @@ const OurProducts = ({ isTrue, productsClass }) => {
         setIsOpen(choice)
     }
 
+    // function getProductPic(product) {
+    //     if(product.name === '1 Month Subscription') {
+    //         return firstpack
+    //     } else if(product.name === '3 Months Subscription') {
+    //         return secondPack
+    //     } else if(product.name === '6 Months Subscription') {
+    //         return thirdPack
+    //     } else if (product.name === '1 Year Subscription') {
+    //         return lastPack
+    //     }
+    // }
+
     return ( 
         <div id='our-products' className={productsClass}>
             {isTrue && <h2>Our Products</h2>}
@@ -91,7 +107,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                         item.name === '1 Year Subscription' && 
                         <img className='pack-tag' src={bestPack} alt='Iptv Best pack'></img>
                     }
-                    <img src={item.imageURL} alt={item.name}></img>
+                    <img src={getImage(item)} alt={item.name}></img>
                     <div className="product-title">
                         <h3>{item.name}</h3>
                         <span className='item-price'>{item.price}</span>
