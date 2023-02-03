@@ -1,17 +1,18 @@
-import { useContext, useState, useEffect } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import getImage from '../assets/getImage'
+import { useState, useEffect } from "react"
+import { Link, useNavigate, useParams } from "react-router-dom"
 
+import useProduct from "../Hooks/useProduct"
+import getImage from '../assets/getImage'
 import './Purchase.css'
-import { AppContext } from "../Context"
 import PaymentMethods from "../components/PaymentMethods"
 
 const Purchase = () => {
-    const { productFound} = useContext(AppContext)
     const [isOpen, setIsOpen] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
+    const { productId } = useParams()
+    const productPurchased = useProduct(productId)
     const navigate = useNavigate()
-
+    
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(false)
@@ -39,44 +40,49 @@ const Purchase = () => {
                 <i className="ri-arrow-left-s-line back-arrow" onClick={goBack}></i>
                 <div className="product-card">
                 {
-                     productFound.hasOwnProperty('message') === false ? 
+                    productId === undefined &&
                     <>
-                    <ul>
-                        <li>
-                            <h3>IPTV</h3>
-                            <p>{productFound.name}</p>
-                            <p>
-                                Quantity: 1
-                            </p>
-                        </li>
-                    </ul>
-                    <img 
-                        src={getImage(productFound)} 
-                        alt={productFound.name} 
-                        className='orderd-product'
-                        >
-                    </img>
+                        <p className='puchase-message'>
+                            It looks like you didn't pick your product yet.
+                        <br /> 
+                        Please Check our
+                        <Link 
+                            to='/products'
+                            className='products-link'
+                            >
+                            Products
+                        </Link>
+                        and choose a plan.
+                        </p>
                     </>
-                :
-                <p className='puchase-message'>
-                    {productFound.message}.
-                <br /> 
-                Please Check our
-                <Link 
-                    to='/products'
-                    className='products-link'
-                >
-                    Products
-                </Link>
-                and choose a plan
-                </p>
-            }
-            </div>
+                }
+                {
+                    productId !== undefined &&
+                    <>
+                        <ul>
+                            <li>
+                                <h3>IPTV</h3>
+                                <p>{productPurchased.productName}</p>
+                                <p>
+                                    Quantity: 1
+                                </p>
+                            </li>
+                        </ul>
+                        <img 
+                            src={getImage(productPurchased.productName)} 
+                            alt={'productPurchased.productName'} 
+                            className='orderd-product'
+                            >
+                        </img>
+                    </>
+                }
+                </div>
+
 
                 <ul className="order-total">
                     <li>
                         <h4>Product</h4>
-                        <span className='item-price'>{productFound.price || 0}<span>€</span></span>
+                        <span className='item-price'>{productPurchased.productPrice || 0}<span>€</span></span>
                     </li>
                     <li>
                         <h4>Shipping</h4>
@@ -84,7 +90,7 @@ const Purchase = () => {
                     </li>
                     <li>
                         <h4>Total payment</h4>
-                        <span className='item-price'>{productFound.price || 0}<span>€</span></span>
+                        <span className='item-price'>{productPurchased.productPrice || 0}<span>€</span></span>
                     </li>
                 </ul>
                 <ul className="cta-section">
@@ -109,8 +115,8 @@ const Purchase = () => {
             <PaymentMethods 
             isOpen={isOpen}
             toggle={toggle}
-            total={productFound.price}
-            product={productFound.name}
+            product={productId}
+            itemPrice={productPurchased.productPrice}
             />
         </>}
         </div>

@@ -25,8 +25,8 @@ const TopPage = ({ topPageClass, title, paragraph, isTrue, backgoundClass, conte
         if(topPageContent.current) {tl.from(topPageContent.current, {y: 50, opacity: 0})}
         if(tv.current) {tl.from(tv.current, {y: 50, opacity: 0}, '-=1')}
 
-        if(pageTitle.current){tl.to(pageTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 150% 0%, 0% -50%)'}, '-=.7')}
-        if(aboutTitle.current){tl.to(aboutTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 150% 0%, 0% -50%)'}, '-=.7')}
+        if(pageTitle.current){tl.to(pageTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 200% 0%, 0% -50%)'}, '-=.7')}
+        if(aboutTitle.current){tl.to(aboutTitle.current, {clipPath: 'polygon(0% 100%, 100% 100%, 200% 0%, 0% -50%)'}, '-=.7')}
             
     
     }, [didAnimate])
@@ -57,11 +57,16 @@ const TopPage = ({ topPageClass, title, paragraph, isTrue, backgoundClass, conte
                 { contactPage 
                 &&
                 <div className='contact-icons'>
-                    <a href='https://api.whatsapp.com/send?phone=155513070526'>
+                    <a href='https://wa.me/15513070526'
+                        target='_blank'
+                        rel='noreferrer noopener'>
                         <FaWhatsapp />
                     </a>
-                    <a href='tel:+155513070526'>
-                        <FaPhone className='phone-icon'/>
+                    <a href='tel:+15513070526'
+                        target='_blank'
+                        rel="noreferrer noopener"
+                    >
+                        <FaPhone />
                     </a>
                     <a href='mailto:customer.service@watchediptv.com'>
                         <FaAt />

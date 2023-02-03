@@ -1,11 +1,7 @@
-const PaymentMethods = ({ isOpen, toggle, product }) => {
-
-    function getProductSelected(item) {
-        let updatedProduct = item.split(' ')
-        return updatedProduct[0] + '-' + updatedProduct[1]
-    }
+const PaymentMethods = ({ isOpen, toggle, product, itemPrice }) => {
 
     const newClass = isOpen ? 'payment-opened' : undefined
+    const hiddenProduct = product === undefined ? 'hidden-product' : 'undefined'
     return ( 
         <div className={`payment-container ${newClass}`}>
             <i 
@@ -13,11 +9,9 @@ const PaymentMethods = ({ isOpen, toggle, product }) => {
                 onClick={() => toggle()}
             >
             </i>
-
-            {   
-                product &&
-                <div className='gumroad-product-embed'><a href={`https://watched1.gumroad.com/l/${getProductSelected(product)}`}>Loading...</a></div>
-            }
+            <div className={`gumroad-product ${hiddenProduct}`}>
+                <div className='gumroad-product-embed'><a href={`https://watched1.gumroad.com/l/${product || '1-Year'}`}>Loading...</a></div>
+            </div>
         </div>
     );
 }

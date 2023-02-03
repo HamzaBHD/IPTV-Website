@@ -1,6 +1,4 @@
 import TopPage from '../components/TopPage'
-import ContactForm from '../components/ContactForm';
-
 import '../pages/Contacts.css'
 
 const Contacts = () => {
@@ -21,7 +19,6 @@ const Contacts = () => {
                     primary='Go Home'
                     secondary='Browse product'
                     />
-                <ContactForm />
             </div>
         </div>
     );

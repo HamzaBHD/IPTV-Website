@@ -17,7 +17,7 @@ const Navbar = () => {
 
         }
 
-    }, [location, headerClass] )
+    }, [location, headerClass])
 
         
     const activeStyle = {
@@ -55,7 +55,7 @@ const Navbar = () => {
                     </li>
                     <li>
                         <NavLink
-                            to='product'
+                            to='products'
                             style={({ isActive }) => 
                                 isActive ? activeStyle : undefined
                             }
@@ -94,7 +94,7 @@ const Navbar = () => {
                             style={({ isActive }) => 
                             isActive ? activeStyle : undefined
                             }
-                            onClick={() => {setIsOpen(false); setHeaderClass('black')}}
+                            onClick={() => {setIsOpen(false); setHeaderClass('black'); console.log('Im clicked')}}
                         >
                             <i className="ri-shopping-bag-line"></i>
                     </NavLink>
