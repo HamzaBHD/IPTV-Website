@@ -94,7 +94,7 @@ const Navbar = () => {
                             style={({ isActive }) => 
                             isActive ? activeStyle : undefined
                             }
-                            onClick={() => {setIsOpen(false); setHeaderClass('black'); console.log('Im clicked')}}
+                            onClick={() => {setIsOpen(false); setHeaderClass('black')}}
                         >
                             <i className="ri-shopping-bag-line"></i>
                     </NavLink>
