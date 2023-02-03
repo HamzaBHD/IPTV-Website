@@ -55,7 +55,7 @@ const Navbar = () => {
                     </li>
                     <li>
                         <NavLink
-                            to='products'
+                            to='product'
                             style={({ isActive }) => 
                                 isActive ? activeStyle : undefined
                             }
