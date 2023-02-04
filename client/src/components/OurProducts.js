@@ -67,6 +67,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
             {isTrue && <h2>Our Products</h2>}
             <ul ref={products}>
                 <Product
+                    productNameAlt='Best iptv premium iptv 1 Month iptv Subscription'
                     productName='1 Month Subscription'
                     productPrice='10'
                     reference={firstProduct}
@@ -75,6 +76,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                     getProduct={getProduct}
                     />
                 <Product
+                    productNameAlt='Best iptv premium iptv 3 Months iptv Subscription'
                     productName='3 Months Subscription'
                     productPrice='25'
                     productOffer={popularPack}
@@ -85,6 +87,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                     getProduct={getProduct}
                     />
                 <Product
+                    productNameAlt='Best iptv adult iptv 6 Months iptv Subscription'
                     productName='6 Months Subscription'
                     productPrice='40'
                     reference={thirdProduct}
@@ -93,6 +96,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                     getProduct={getProduct}
                     />
                 <Product
+                    productNameAlt='Best iptv adult iptv 4K 8K UHD HD 1 Year iptv Subscription'
                     productName='1 Year Subscription'
                     productPrice='60'
                     productOffer={bestPack}

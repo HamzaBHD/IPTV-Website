@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 import getImage from '../../assets/getImage'
 
-function Product({ productName, productPrice, productOffer, productTag, reference, productId, openDetail, getProduct }) {
+function Product({ productName, productNameAlt, productPrice, productOffer, productTag, reference, productId, openDetail, getProduct }) {
     return (
         <li 
             className="product-container"
@@ -11,7 +11,7 @@ function Product({ productName, productPrice, productOffer, productTag, referenc
             { productOffer &&
                 <img className='pack-tag' src={productOffer} alt={productTag}></img>
             } 
-            <img src={getImage(productName)} alt={productName}></img>
+            <img src={getImage(productName)} alt={productNameAlt}></img>
             <div className="product-title">
                 <h3>{productName}</h3>
                 <span className='item-price'>{productPrice}<span>€</span></span>
