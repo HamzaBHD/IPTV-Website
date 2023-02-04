@@ -12,9 +12,10 @@ html {
 }
 
 body {
-  height: 100vh;
+  height: 100%;
   font-family: 'Montserrat', sans-serif;
   color: black;
+  background: #FAFCFF ;
 }
 
 body::-webkit-scrollbar {

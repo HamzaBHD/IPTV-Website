@@ -1,7 +1,7 @@
-import firstpack from '../images/iptv-1-Month-Pack.png'
-import secondPack from '../images/Iptv-3-Months-Pack.png'
-import thirdPack from '../images/Iptv-6-Months-Pack.png'
-import lastPack from '../images/iptv-1-Year-Pack.png'
+import firstpack from '../images/iptv-1-Month-Pack.webp'
+import secondPack from '../images/Iptv-3-Months-Pack.webp'
+import thirdPack from '../images/Iptv-6-Months-Pack.webp'
+import lastPack from '../images/iptv-1-Year-Pack.webp'
 
 
 export default function getProductPic(product) {

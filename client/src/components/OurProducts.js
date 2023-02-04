@@ -3,8 +3,8 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 
 import ProductDetail from './subComponent/ProductDetail'
-import popularPack from '../images/Iptv-Popular-pack.png'
-import bestPack from '../images/Iptv-Best-Pack.png'
+import popularPack from '../images/Iptv-Popular-pack.webp'
+import bestPack from '../images/Iptv-Best-Pack.webp'
 import Product from './subComponent/Product'
 
 const OurProducts = ({ isTrue, productsClass }) => {
@@ -42,7 +42,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
             scrollTrigger: {
                 trigger: products.current,
                 start: 'top bottom',
-                end: 'center center',
+                end: 'center 80%',
                 endTrigger: lastProduct.current,
                 scrub: true,
             }
@@ -108,6 +108,8 @@ const OurProducts = ({ isTrue, productsClass }) => {
                 isOpen={isOpen}
                 isLoading={isLoading}
                 productDetails={productDetails}
+                popularPack={popularPack}
+                bestPack={bestPack}
             />
         </div>
      );

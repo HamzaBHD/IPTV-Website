@@ -31,7 +31,7 @@ const Purchase = () => {
 
     return (
 
-        <div className={`purchase-page ${pageClass}`}>
+        <div className={`purchase-page  ${pageClass}`}>
         {isLoading ?
             <div className="lds-dual-ring"></div>
         :
@@ -40,7 +40,7 @@ const Purchase = () => {
                 <i className="ri-arrow-left-s-line back-arrow" onClick={goBack}></i>
                 <div className="product-card">
                 {
-                    productId === undefined &&
+                    productPurchased.hasOwnProperty('message') &&
                     <>
                         <p className='puchase-message'>
                             It looks like you didn't pick your product yet.
@@ -57,7 +57,7 @@ const Purchase = () => {
                     </>
                 }
                 {
-                    productId !== undefined &&
+                    (!productPurchased.hasOwnProperty('message') && productId !== undefined) &&
                     <>
                         <ul>
                             <li>
@@ -111,13 +111,13 @@ const Purchase = () => {
                     </li>
                 </ul>
             </div>
-
             <PaymentMethods 
             isOpen={isOpen}
             toggle={toggle}
-            product={productId}
-            itemPrice={productPurchased.productPrice}
+            product={productPurchased}
+            productId={productId}
             />
+
         </>}
         </div>
     )

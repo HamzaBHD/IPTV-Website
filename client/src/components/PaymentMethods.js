@@ -1,7 +1,7 @@
-const PaymentMethods = ({ isOpen, toggle, product, itemPrice }) => {
+const PaymentMethods = ({ isOpen, toggle, product, productId }) => {
 
     const newClass = isOpen ? 'payment-opened' : undefined
-    const hiddenProduct = product === undefined ? 'hidden-product' : 'undefined'
+    const hiddenProduct = product.hasOwnProperty('message') ? 'hidden-product' : 'undefined'
     return ( 
         <div className={`payment-container ${newClass}`}>
             <i 
@@ -10,7 +10,7 @@ const PaymentMethods = ({ isOpen, toggle, product, itemPrice }) => {
             >
             </i>
             <div className={`gumroad-product ${hiddenProduct}`}>
-                <div className='gumroad-product-embed'><a href={`https://watched1.gumroad.com/l/${product || '1-Year'}`}>Loading...</a></div>
+                <div className='gumroad-product-embed'><a href={`https://watched1.gumroad.com/l/${productId || '1-Year'}`}>Loading...</a></div>
             </div>
         </div>
     );

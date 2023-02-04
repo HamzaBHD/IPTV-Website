@@ -2,11 +2,9 @@ import { useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom' 
 import getImage from '../../assets/getImage'
 
-import popularPack from '../../images/Iptv-Popular-pack.png'
-import bestPack from '../../images/Iptv-Best-Pack.png'
 import useProduct from '../../Hooks/useProduct'
 
-const ProductDetail = ({ toggle, isOpen, isLoading, productDetails }) => {
+const ProductDetail = ({ toggle, isOpen, isLoading, productDetails, popularPack, bestPack }) => {
     const productPurchased = useProduct(productDetails)
 
     const detailContainer = useRef(null)

@@ -27,7 +27,9 @@ function useProduct(product) {
                     productPrice: '60',
                 })
             } else {
-                return
+                return setProductPurchesed({
+                    message: 'It looks like you didn\'t pick your product yet.'
+                })
             }
         }, [product])
 

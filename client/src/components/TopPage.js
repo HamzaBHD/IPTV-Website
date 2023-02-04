@@ -3,7 +3,7 @@ import { useRef, useLayoutEffect } from 'react'
 import { gsap } from 'gsap'
 
 
-import tvPicture from '../images/iptv-tv.png'
+import tvPicture from '../images/iptv-tv.webp'
 import { FaAt, FaWhatsapp, FaPhone } from 'react-icons/fa'
 
 const TopPage = ({ topPageClass, title, paragraph, isTrue, backgoundClass, contentClass, aboutPage, contactPage, primary, secondary, mainCta }) => {
