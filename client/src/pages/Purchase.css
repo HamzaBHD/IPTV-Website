@@ -197,9 +197,11 @@
     top: .3em;
   }
 
+  .hidden-section, 
   .hidden-product {
-    visibility: hidden;
+    display: none;
   }
+
   
   @keyframes lds-dual-ring {
     0% {
@@ -213,7 +215,7 @@
   @media (min-width: 620px) {
 
     .purchase-page {
-      height: fit-content;
+      /* height: fit-content; */
     }
 
     .product-ordered .product-card {

@@ -20,6 +20,7 @@ const Purchase = () => {
     }, [])
 
     const pageClass = isLoading ? 'purchase-page-loading' : undefined
+    const hiddenSection = productPurchased.hasOwnProperty('message') ? 'hidden-section' : undefined
 
     // function toggle () {
     //     setIsOpen(false)
@@ -105,7 +106,7 @@ const Purchase = () => {
                         <span className='item-price'>{productPurchased.productPrice || 0}<span>€</span></span>
                     </li>
                 </ul>
-                <ul className="cta-section">
+                <ul className={`cta-section ${hiddenSection}`}>
                     <li>
                         <p>Please confirm this Purchase</p>
                     </li>
