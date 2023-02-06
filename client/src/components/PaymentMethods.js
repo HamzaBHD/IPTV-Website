@@ -10,7 +10,8 @@ const PaymentMethods = ({ isOpen, toggle, product, productId }) => {
             >
             </i>
             <div className={`gumroad-product ${hiddenProduct}`}>
-                <div className='gumroad-product-embed'><a href={`https://watched1.gumroad.com/l/${productId || '1-Year'}`}>Loading...</a></div>
+                {/* <div className="payhip-embed-page" data-key="mSNuz"><a href='https://payhip.com/b/mSNuz'>Loading...</a></div> */}
+                {/* <div className='gumroad-product-embed'><a href={`https://watched1.gumroad.com/l/${productId || '1-Year'}`}>Loading...</a></div> */}
             </div>
         </div>
     );

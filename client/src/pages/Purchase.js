@@ -4,10 +4,10 @@ import { Link, useNavigate, useParams } from "react-router-dom"
 import useProduct from "../Hooks/useProduct"
 import getImage from '../assets/getImage'
 import './Purchase.css'
-import PaymentMethods from "../components/PaymentMethods"
+// import PaymentMethods from "../components/PaymentMethods"
 
 const Purchase = () => {
-    const [isOpen, setIsOpen] = useState(false)
+    // const [isOpen, setIsOpen] = useState(false)
     const [isLoading, setIsLoading] = useState(true)
     const { productId } = useParams()
     const productPurchased = useProduct(productId)
@@ -21,12 +21,24 @@ const Purchase = () => {
 
     const pageClass = isLoading ? 'purchase-page-loading' : undefined
 
-    function toggle () {
-        setIsOpen(false)
-    }
+    // function toggle () {
+    //     setIsOpen(false)
+    // }
 
     function goBack() {
         navigate(-1)
+    }
+
+    function refactoredId() {
+        if(productId === '1-Month'){
+            return 'UhkMQ'
+        } else if(productId === '3-Months'){
+            return 'sfDrW'
+        }else if(productId === '6-Months'){
+            return '1XyR0'
+        }else if(productId === '1-Year'){
+            return 'mSNuz'
+        } 
     }
 
     return (
@@ -95,28 +107,27 @@ const Purchase = () => {
                 </ul>
                 <ul className="cta-section">
                     <li>
-                        <p>Choose your payment method</p>
+                        <p>Please confirm this Purchase</p>
                     </li>
                     <li>
-                        <Link 
-                            href="#" 
-                            className="cta" 
-                            onClick={() => setIsOpen(true)}
+                        <a 
+                            href={`https://payhip.com/b/${refactoredId()}`}
+                            className='cta' 
                             > 
                             <span>
                                 <i className="ri-shopping-bag-line"></i>
-                                Choose Now
+                                Confirm
                             </span>
-                        </Link>
+                        </a>
                     </li>
                 </ul>
             </div>
-            <PaymentMethods 
+            {/* <PaymentMethods 
             isOpen={isOpen}
             toggle={toggle}
             product={productPurchased}
             productId={productId}
-            />
+            /> */}
 
         </>}
         </div>
