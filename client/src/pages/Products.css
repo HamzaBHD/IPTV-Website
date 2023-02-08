@@ -168,11 +168,10 @@
 }
 
 .price-container {
-  width: 35%;
+  width: 40%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 .item-price{
@@ -210,9 +209,9 @@ span.old-price span.sign {
 span.old-price::after {
   content: ' ';
   position: absolute;
-  width: 100%;
+  width: 90%;
   height: 2px;
-  left: -.7em;
+  left: -.6em;
   bottom: .55em;
   background: #141313;
   z-index: 1;
