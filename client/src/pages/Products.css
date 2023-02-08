@@ -167,12 +167,32 @@
           animation: lds-dual-ring 1.2s linear infinite;
 }
 
+.price-container {
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
 .item-price{
   position: relative;
   font-size: 1.2em;
+  color: #D64006;
 }
 
-.item-price span {
+span.old-price {
+  font-size: 1.8em;
+  font-weight: 400;
+  position: relative;
+  color: #141313;
+  display: inline-block;
+  padding: 0 1em 0 0;
+
+}
+
+.item-price .euro-sign,
+span.old-price span.sign {
   position: absolute;
   font-size: .5em;
   font-weight: 500;
@@ -180,6 +200,32 @@
   left: -.8em;
   top: .6em;
 }
+
+span.old-price span.sign {
+  left: -.7em;
+  top: .3em;
+  font-size: .7em;
+  font-weight: 400;
+}
+span.old-price::after {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: -.7em;
+  bottom: .55em;
+  background: #141313;
+  z-index: 1;
+}
+
+.product-container:first-child .product-title .price-container span.old-price{
+  margin-left: .85em;
+}
+
+.product-container:nth-child(2) .product-title .price-container span.old-price {
+  margin-left: .35em;
+}
+
 
 @-webkit-keyframes lds-dual-ring {
   0% {
@@ -270,7 +316,6 @@
     .product-detail .product-detail-content p {
       line-height: 2em;
     }
-  
   }
 
   

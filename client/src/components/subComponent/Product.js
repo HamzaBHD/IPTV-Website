@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 import getImage from '../../assets/getImage'
 
-function Product({ productName, productNameAlt, productPrice, productOffer, productTag, reference, productId, openDetail, getProduct }) {
+function Product({ productName, productNameAlt, productPrice, productOffer, productTag, reference, productId, openDetail, getProduct, oldPrice }) {
     return (
         <li 
             className="product-container"
@@ -14,7 +14,16 @@ function Product({ productName, productNameAlt, productPrice, productOffer, prod
             <img src={getImage(productName)} alt={productNameAlt}></img>
             <div className="product-title">
                 <h3>{productName}</h3>
-                <span className='item-price'>{productPrice}<span>€</span></span>
+                <div className='price-container'>
+                    <span className='old-price'>
+                        <span className='sign'>€</span>
+                        {oldPrice}
+                    </span>
+                    <span className='item-price'>
+                        {productPrice}
+                        <span className='euro-sign'>€</span>
+                    </span>
+                </div>
             </div>
             <p>All devices are supported<br />
             Up TO 12000 Live Channels Full SD/HD/4K<br />

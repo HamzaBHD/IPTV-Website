@@ -70,6 +70,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                     productNameAlt='Best iptv premium iptv 1 Month iptv Subscription'
                     productName='1 Month Subscription'
                     productPrice='10'
+                    oldPrice='15'
                     reference={firstProduct}
                     productId='1-Month'
                     openDetail={closeDetail}
@@ -79,6 +80,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                     productNameAlt='Best iptv premium iptv 3 Months iptv Subscription'
                     productName='3 Months Subscription'
                     productPrice='25'
+                    oldPrice='30'
                     productOffer={popularPack}
                     productTag='Iptv Popular Pack'
                     reference={secondProduct}
@@ -90,6 +92,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                     productNameAlt='Best iptv adult iptv 6 Months iptv Subscription'
                     productName='6 Months Subscription'
                     productPrice='40'
+                    oldPrice='45'
                     reference={thirdProduct}
                     productId='6-Months'
                     openDetail={closeDetail}
@@ -99,6 +102,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                     productNameAlt='Best iptv adult iptv 4K 8K UHD HD 1 Year iptv Subscription'
                     productName='1 Year Subscription'
                     productPrice='60'
+                    oldPrice='70'
                     productOffer={bestPack}
                     productTag='Iptv Best Pack'
                     reference={lastProduct}

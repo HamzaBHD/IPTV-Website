@@ -115,11 +115,12 @@
   }
 
   .product-ordered ul.cta-section li a span {
-    width: 92%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1em;
+
   }
 
   .purchase-page .payment-container {
@@ -185,6 +186,7 @@
   }
 
   .product-ordered ul.order-total li .item-price {
+    color: black;
     font-size: 1.5em;
   }
 
@@ -195,6 +197,7 @@
     font-family: 'Roboto', sans-serif;
     left: -.8em;
     top: .3em;
+    color: black;
   }
 
   .hidden-section, 
@@ -213,10 +216,6 @@
   }
 
   @media (min-width: 620px) {
-
-    .purchase-page {
-      /* height: fit-content; */
-    }
 
     .product-ordered .product-card {
       height: 190px;
@@ -309,6 +308,16 @@
 
     .product-ordered ul.order-total {
       margin: 0 auto 3em;
+    }
+  
+    .product-ordered ul.cta-section li a,
+    .product-ordered ul.cta-section li p{
+      margin: 0 auto;
+    }
+
+    .product-ordered ul.cta-section li p {
+      width: 50%;
+      text-align: center;
     }
   
   }

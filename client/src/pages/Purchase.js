@@ -108,7 +108,7 @@ const Purchase = () => {
                 </ul>
                 <ul className={`cta-section ${hiddenSection}`}>
                     <li>
-                        <p>Please confirm this Purchase</p>
+                        <p>Clicking this button will confirm your purchase.</p>
                     </li>
                     <li>
                         <a 
