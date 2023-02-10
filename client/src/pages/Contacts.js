@@ -18,7 +18,7 @@ const Contacts = () => {
                     contactPage={true}
                     primary='Go Home'
                     secondary='Browse product'
-                    />
+                />
             </div>
         </div>
     );

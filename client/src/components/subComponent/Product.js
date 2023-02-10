@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import getImage from '../../assets/getImage'
 
 function Product({ productName, productNameAlt, productPrice, productOffer, productTag, reference, productId, openDetail, getProduct, oldPrice }) {
+    // const splitName = productName
+
     return (
         <li 
             className="product-container"
@@ -30,7 +32,14 @@ function Product({ productName, productNameAlt, productPrice, productOffer, prod
             Money-Back guarantee<br />
             24/7 Technical Support</p>
             <div className='cta-buttons'>
-                <Link to={`/purchase/${productId}`} className='cta primary'>PURCHASE</Link>
+                <a 
+                    href={`https://wa.me/15513070526?text=Hello,%20I'm%20interested%20to%20buy%20${productName}.`} 
+                    target='_blank'
+                    rel='noreferrer noopener'
+                    className='cta primary'
+                >
+                    PURCHASE
+                </a>
                 <Link to='#' className='cta secondary' onClick={() => {openDetail(true); getProduct(productId)}}>
                     <span>Read more</span>
                     <i className="ri-arrow-right-s-line arrow"></i>    

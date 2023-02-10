@@ -478,11 +478,8 @@ header {
       background-position: -500px 0;
       background-size: 2000px;
     }
-
-    .purchase-link {
+    .contacts-link {
       padding-right: 0;
-      display: flex;
-      font-size: 1.3em;
     }
 
     .top-page .top-page-content {

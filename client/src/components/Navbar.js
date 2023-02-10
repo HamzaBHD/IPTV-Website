@@ -87,18 +87,6 @@ const Navbar = () => {
                             Contacts
                     </NavLink>
                     </li>
-                    <li>
-                    <NavLink
-                            to='purchase'
-                            className='purchase-link'
-                            style={({ isActive }) => 
-                            isActive ? activeStyle : undefined
-                            }
-                            onClick={() => {setIsOpen(false); setHeaderClass('black')}}
-                        >
-                            <i className="ri-shopping-bag-line"></i>
-                    </NavLink>
-                    </li>
                 </ul>
             </nav>
         </header>

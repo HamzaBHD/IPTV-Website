@@ -1,5 +1,4 @@
 import { useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom' 
 import getImage from '../../assets/getImage'
 
 import useProduct from '../../Hooks/useProduct'
@@ -47,7 +46,7 @@ const ProductDetail = ({ toggle, isOpen, isLoading, productDetails, popularPack,
                     <div className='product-detail-content'>
                         <div className='product-title'>
                             <h3>{productPurchased.productName}</h3>
-                            <span className='item-price'>{productPurchased.productPrice}<span>€</span></span>
+                            <span className='item-price black-price'>{productPurchased.productPrice}<span className='euro-sign'>€</span></span>
                         </div>
                         <p>
                             - Enjoy your favorite TV channels with this IPTV subscription.<br />
@@ -55,12 +54,14 @@ const ProductDetail = ({ toggle, isOpen, isLoading, productDetails, popularPack,
                             - Watch live TV or catch up on your favorite shows with recordings.<br />
                             - Enjoy a {productPurchased.productName} with this purchase.<br />
                         </p>
-                        <Link 
-                            to={`/purchase/${productDetails}`}
-                            className='cta primary' 
-                            >
+                        <a 
+                            href={`https://wa.me/15513070526?text=Hello,%20I'm%20interested%20to%20buy%20${productPurchased.productName}.`} 
+                            target='_blank'
+                            rel='noreferrer noopener'
+                            className='cta primary'
+                        >
                             PURCHASE
-                        </Link>
+                        </a>
                     </div>
                 </div>
                 </>}
