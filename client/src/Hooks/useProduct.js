@@ -30,6 +30,12 @@ function useProduct(product) {
                     productPrice: '60',
                     productOldPrice: '70'
                 })
+            } else if(product === 'test') {
+                    return setProductPurchesed({
+                        productName: 'Test Before you buy',
+                        productPrice: 'Free',
+                        productOldPrice: 'Free'
+                    })
             } else {
                 return setProductPurchesed({
                     message: 'It looks like you didn\'t pick your product yet.'

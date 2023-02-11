@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom'
 import getImage from '../../assets/getImage'
 
 function Product({ productName, productNameAlt, productPrice, productOffer, productTag, reference, productId, openDetail, getProduct, oldPrice }) {
-    // const splitName = productName
+    const messageToSent = productId === 'test' ?
+                        `https://wa.me/15513070526?text=Hello,%20I'm%20interested%20to%20test%20before%20I%20buy.`
+                        :
+                        `https://wa.me/15513070526?text=Hello,%20I'm%20interested%20to%20buy%20${productName}.`
+
 
     return (
         <li 
@@ -17,14 +21,23 @@ function Product({ productName, productNameAlt, productPrice, productOffer, prod
             <div className="product-title">
                 <h3>{productName}</h3>
                 <div className='price-container'>
-                    <span className='old-price'>
+                    { oldPrice && 
+                    <div className='old-price-conatiner'>
                         <span className='sign'>€</span>
+                        <span className='old-price'>
                         {oldPrice}
-                    </span>
-                    <span className='item-price'>
-                        {productPrice}
-                        <span className='euro-sign'>€</span>
-                    </span>
+                        </span>
+                    </div>
+                    }
+                    <div className='actual-price-conatiner'>
+                        {
+                            productPrice !== 'Free' &&
+                            <span className='euro-sign'>€</span>
+                        }
+                        <span className='item-price'>
+                            {productPrice}
+                        </span>
+                    </div>
                 </div>
             </div>
             <p>All devices are supported<br />
@@ -33,7 +46,7 @@ function Product({ productName, productNameAlt, productPrice, productOffer, prod
             24/7 Technical Support</p>
             <div className='cta-buttons'>
                 <a 
-                    href={`https://wa.me/15513070526?text=Hello,%20I'm%20interested%20to%20buy%20${productName}.`} 
+                    href={messageToSent} 
                     target='_blank'
                     rel='noreferrer noopener'
                     className='cta primary'

@@ -518,7 +518,13 @@ header {
       flex: 0 0 50%;
     }
   
-    .our-products ul,
+    .our-products ul{
+      display: grid;
+      grid-gap: 2em;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 540px));
+      width: 100%;
+    }
+
     .our-features ul {
       display: flex;
       gap: 1em;

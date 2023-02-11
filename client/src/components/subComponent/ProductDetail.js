@@ -3,10 +3,14 @@ import getImage from '../../assets/getImage'
 
 import useProduct from '../../Hooks/useProduct'
 
-const ProductDetail = ({ toggle, isOpen, isLoading, productDetails, popularPack, bestPack }) => {
+const ProductDetail = ({ toggle, isOpen, isLoading, productDetails, popularPack, bestPack, trialPack }) => {
     const productPurchased = useProduct(productDetails)
-
     const detailContainer = useRef(null)
+
+    const messageToSent = productPurchased.productPrice === 'Free' ?
+    `https://wa.me/15513070526?text=Hello,%20I'm%20interested%20to%20test%20before%20I%20buy.`
+    :
+    `https://wa.me/15513070526?text=Hello,%20I'm%20interested%20to%20buy%20${productPurchased.productName}.`
 
     useEffect(() => {
         function handleClickOutside(event) {
@@ -42,11 +46,18 @@ const ProductDetail = ({ toggle, isOpen, isLoading, productDetails, popularPack,
                         productPurchased.productName === '1 Year Subscription' && 
                         <img className='pack-tag' src={bestPack} alt='Iptv Best pack'></img>
                     }
+                    {
+                        productPurchased.productName === 'Test Before you buy' && 
+                        <img className='pack-tag' src={trialPack} alt='Iptv Best pack'></img>
+                    }
                     <img className='product-img' src={getImage(productPurchased.productName)} alt={productPurchased.productName}></img>
                     <div className='product-detail-content'>
                         <div className='product-title'>
                             <h3>{productPurchased.productName}</h3>
-                            <span className='item-price black-price'>{productPurchased.productPrice}<span className='euro-sign'>€</span></span>
+                            <div className='pricing-container'>
+                                {productPurchased.productPrice !== 'Free' && <span className='euro-sign'>€</span>}
+                                <span className='item-price black-price'>{productPurchased.productPrice}</span>
+                            </div>
                         </div>
                         <p>
                             - Enjoy your favorite TV channels with this IPTV subscription.<br />
@@ -55,7 +66,7 @@ const ProductDetail = ({ toggle, isOpen, isLoading, productDetails, popularPack,
                             - Enjoy a {productPurchased.productName} with this purchase.<br />
                         </p>
                         <a 
-                            href={`https://wa.me/15513070526?text=Hello,%20I'm%20interested%20to%20buy%20${productPurchased.productName}.`} 
+                            href={messageToSent} 
                             target='_blank'
                             rel='noreferrer noopener'
                             className='cta primary'
