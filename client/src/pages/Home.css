@@ -450,6 +450,14 @@ header {
   .footer-container .socials-container p span {
     font-weight: bold
   }
+
+  @media (max-width: 385px) {
+
+    .product-title h3 {
+      font-size: 1.5em;
+    }
+    
+  }
   
   @media (min-width: 550px) {
     .product-container,
@@ -518,13 +526,8 @@ header {
       flex: 0 0 50%;
     }
   
-    .our-products ul{
-      display: grid;
-      grid-gap: 2em;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 540px));
-      width: 100%;
-    }
 
+    .our-products ul,
     .our-features ul {
       display: flex;
       gap: 1em;
@@ -747,6 +750,13 @@ header {
     .top-page .background-img {
       background-position: 0 0;
       background-size: 2000px;
+    }
+
+    .our-products ul{
+      display: grid;
+      grid-gap: 2em;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 540px));
+      width: 100%;
     }
   
     .our-products,
