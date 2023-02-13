@@ -15,11 +15,11 @@ const OurProducts = ({ isTrue, productsClass }) => {
     const [productDetails, setProductDetails] = useState('')
 
     const products = useRef(null)
-    const trialProduct = useRef(null)
     const firstProduct = useRef(null)
     const secondProduct = useRef(null)
     const thirdProduct = useRef(null)
     const lastProduct = useRef(null)
+    const trialProduct = useRef(null)
     const didAnimate = useRef(false)
     
     gsap.registerPlugin(ScrollTrigger)
@@ -45,15 +45,15 @@ const OurProducts = ({ isTrue, productsClass }) => {
                 trigger: products.current,
                 start: 'top bottom',
                 end: 'center 80%',
-                endTrigger: lastProduct.current,
+                endTrigger: trialProduct.current,
                 scrub: true,
             }
         })
-        tl.from(trialProduct.current, {x: -50, opacity: 0, stagger: .3})
-        .from(firstProduct.current, {x: -50, opacity: 0, stagger: .3})
+        tl.from(firstProduct.current, {x: -50, opacity: 0, stagger: .3})
         .from(secondProduct.current, {x: -50, opacity: 0, stagger: .3})
         .from(thirdProduct.current, {x: -50, opacity: 0, stagger: .3})
         .from(lastProduct.current, {x: -50, opacity: 0, stagger: .3})
+        .from(trialProduct.current, {x: -50, opacity: 0, stagger: .3})
     })
         
     function closeDetail(choice) {
@@ -69,16 +69,6 @@ const OurProducts = ({ isTrue, productsClass }) => {
         <div id='our-products' className={productsClass}>
             {isTrue && <h2>Our Products</h2>}
             <ul ref={products}>
-                <Product
-                    productNameAlt='Best iptv premium iptv Trial iptv Subscription'
-                    productName='Test Before you buy'
-                    productPrice='Free'
-                    productOffer={trialPack}
-                    reference={trialProduct}
-                    productId='test'
-                    openDetail={closeDetail}
-                    getProduct={getProduct}
-                />
                 
                 <Product
                     productNameAlt='Best iptv premium iptv 1 Month iptv Subscription'
@@ -124,6 +114,17 @@ const OurProducts = ({ isTrue, productsClass }) => {
                     productTag='Iptv Best Pack'
                     reference={lastProduct}
                     productId='1-Year'
+                    openDetail={closeDetail}
+                    getProduct={getProduct}
+                />
+
+                <Product
+                    productNameAlt='Best iptv premium iptv Trial iptv Subscription'
+                    productName='Test Before you buy'
+                    productPrice='Free'
+                    productOffer={trialPack}
+                    reference={trialProduct}
+                    productId='test'
                     openDetail={closeDetail}
                     getProduct={getProduct}
                 />
