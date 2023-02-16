@@ -69,7 +69,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
         <div id='our-products' className={productsClass}>
             {isTrue && <h2>Our Products</h2>}
             <ul ref={products}>
-                <Product
+                {/* <Product
                     productNameAlt='Best iptv premium iptv Trial iptv Subscription'
                     productName='Test Before you buy'
                     productPrice='Free'
@@ -78,7 +78,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                     productId='test'
                     openDetail={closeDetail}
                     getProduct={getProduct}
-                />
+                /> */}
                 
                 <Product
                     productNameAlt='Best iptv premium iptv 1 Month iptv Subscription'

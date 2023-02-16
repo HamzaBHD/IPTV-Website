@@ -6,17 +6,17 @@ function Product({ productName, productNameAlt, productPrice, productOffer, prod
                         :
                         `https://wa.me/15513070526?text=Hello,%20I'm%20interested%20to%20buy%20${productName}.`
 
-    const sendProductId = (id) => {
-        if(id === '1 Month Subscription') {
-            return '303afb30'
-        } else if(id === '3 Months Subscription') {
-            return '40762c72'
-        } else if(id === '6 Months Subscription') {
-            return '5be6d15a'
-        } else if(id === '1 Year Subscription') {
-            return '62825bb0'
-        }
-    }
+    // const sendProductId = (id) => {
+    //     if(id === '1 Month Subscription') {
+    //         return '303afb30'
+    //     } else if(id === '3 Months Subscription') {
+    //         return '40762c72'
+    //     } else if(id === '6 Months Subscription') {
+    //         return '5be6d15a'
+    //     } else if(id === '1 Year Subscription') {
+    //         return '62825bb0'
+    //     }
+    // }
 
 
     return (
@@ -61,7 +61,9 @@ function Product({ productName, productNameAlt, productPrice, productOffer, prod
             </p>
             <div className='cta-buttons'>
                 <a 
-                    href={`https://hmzbhd.me/${sendProductId(productName)}`} 
+                    href={messageToSent} 
+                    target='_blank'
+                    rel='noreferrer noopener'
                     className='cta primary'
                 >
                     PURCHASE
