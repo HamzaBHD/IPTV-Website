@@ -5,7 +5,6 @@ import { ScrollTrigger } from 'gsap/all'
 import ProductDetail from './subComponent/ProductDetail'
 import popularPack from '../images/Iptv-Popular-pack.webp'
 import bestPack from '../images/Iptv-Best-Pack.webp'
-import trialPack from '../images/Iptv-trial-pack.webp'
 import Product from './subComponent/Product'
 
 const OurProducts = ({ isTrue, productsClass }) => {
@@ -19,7 +18,6 @@ const OurProducts = ({ isTrue, productsClass }) => {
     const secondProduct = useRef(null)
     const thirdProduct = useRef(null)
     const lastProduct = useRef(null)
-    const trialProduct = useRef(null)
     const didAnimate = useRef(false)
     
     gsap.registerPlugin(ScrollTrigger)
@@ -45,7 +43,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
                 trigger: products.current,
                 start: 'top bottom',
                 end: 'center 80%',
-                endTrigger: trialProduct.current,
+                endTrigger: lastProduct.current,
                 scrub: true,
             }
         })
@@ -53,7 +51,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
         .from(secondProduct.current, {x: -50, opacity: 0, stagger: .3})
         .from(thirdProduct.current, {x: -50, opacity: 0, stagger: .3})
         .from(lastProduct.current, {x: -50, opacity: 0, stagger: .3})
-        .from(trialProduct.current, {x: -50, opacity: 0, stagger: .3})
+        // .from(trialProduct.current, {x: -50, opacity: 0, stagger: .3})
     })
         
     function closeDetail(choice) {
@@ -117,17 +115,6 @@ const OurProducts = ({ isTrue, productsClass }) => {
                     openDetail={closeDetail}
                     getProduct={getProduct}
                 />
-
-                <Product
-                    productNameAlt='Best iptv premium iptv Trial iptv Subscription'
-                    productName='Test Before you buy'
-                    productPrice='Free'
-                    productOffer={trialPack}
-                    reference={trialProduct}
-                    productId='test'
-                    openDetail={closeDetail}
-                    getProduct={getProduct}
-                />
             </ul>
             <ProductDetail 
                 toggle={closeDetail}
@@ -136,7 +123,6 @@ const OurProducts = ({ isTrue, productsClass }) => {
                 productDetails={productDetails}
                 popularPack={popularPack}
                 bestPack={bestPack}
-                trialPack={trialPack}
             />
         </div>
      );

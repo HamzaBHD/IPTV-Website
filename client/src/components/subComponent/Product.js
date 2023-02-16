@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-
 import getImage from '../../assets/getImage'
 
 function Product({ productName, productNameAlt, productPrice, productOffer, productTag, reference, productId, openDetail, getProduct, oldPrice }) {
@@ -7,6 +5,18 @@ function Product({ productName, productNameAlt, productPrice, productOffer, prod
                         `https://wa.me/15513070526?text=Hello,%20I'm%20interested%20to%20test%20before%20I%20buy.`
                         :
                         `https://wa.me/15513070526?text=Hello,%20I'm%20interested%20to%20buy%20${productName}.`
+
+    const sendProductId = (id) => {
+        if(id === '1 Month Subscription') {
+            return '303afb30'
+        } else if(id === '3 Months Subscription') {
+            return '40762c72'
+        } else if(id === '6 Months Subscription') {
+            return '5be6d15a'
+        } else if(id === '1 Year Subscription') {
+            return '62825bb0'
+        }
+    }
 
 
     return (
@@ -40,23 +50,31 @@ function Product({ productName, productNameAlt, productPrice, productOffer, prod
                     </div>
                 </div>
             </div>
-            <p>All devices are supported<br />
+            <p>
             Up TO 12000 Live Channels Full SD/HD/4K<br />
+            All devices are supported<br />
+            Customize your pack<br />
+            Movies/Series with your language<br />
+            Adults/No Adults channels<br />
             Money-Back guarantee<br />
-            24/7 Technical Support</p>
+            24/7 Technical Support<br />
+            </p>
             <div className='cta-buttons'>
                 <a 
-                    href={messageToSent} 
-                    target='_blank'
-                    rel='noreferrer noopener'
+                    href={`https://hmzbhd.me/${sendProductId(productName)}`} 
                     className='cta primary'
                 >
                     PURCHASE
                 </a>
-                <Link to='#' className='cta secondary' onClick={() => {openDetail(true); getProduct(productId)}}>
-                    <span>Read more</span>
+                <a 
+                    href={messageToSent} 
+                    target='_blank'
+                    rel='noreferrer noopener'
+                    className='cta secondary'
+                >
+                    <span>Contact Seller</span>
                     <i className="ri-arrow-right-s-line arrow"></i>    
-                </Link>
+                </a>
             </div>
         </li>
     )
