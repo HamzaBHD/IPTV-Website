@@ -14,6 +14,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
     const [productDetails, setProductDetails] = useState('')
 
     const products = useRef(null)
+    const trialProduct = useRef(null)
     const firstProduct = useRef(null)
     const secondProduct = useRef(null)
     const thirdProduct = useRef(null)
@@ -47,11 +48,12 @@ const OurProducts = ({ isTrue, productsClass }) => {
                 scrub: true,
             }
         })
-        tl.from(firstProduct.current, {x: -50, opacity: 0, stagger: .3})
+        tl.from(trialProduct.current, {x: -50, opacity: 0, stagger: .3})
+        .from(firstProduct.current, {x: -50, opacity: 0, stagger: .3})
         .from(secondProduct.current, {x: -50, opacity: 0, stagger: .3})
         .from(thirdProduct.current, {x: -50, opacity: 0, stagger: .3})
         .from(lastProduct.current, {x: -50, opacity: 0, stagger: .3})
-        // .from(trialProduct.current, {x: -50, opacity: 0, stagger: .3})
+        .from(trialProduct.current, {x: -50, opacity: 0, stagger: .3})
     })
         
     function closeDetail(choice) {
@@ -67,6 +69,16 @@ const OurProducts = ({ isTrue, productsClass }) => {
         <div id='our-products' className={productsClass}>
             {isTrue && <h2>Our Products</h2>}
             <ul ref={products}>
+                <Product
+                    productNameAlt='Best iptv premium iptv Trial iptv Subscription'
+                    productName='Test Before you buy'
+                    productPrice='Free'
+                    productOffer={trialPack}
+                    reference={trialProduct}
+                    productId='test'
+                    openDetail={closeDetail}
+                    getProduct={getProduct}
+                />
                 
                 <Product
                     productNameAlt='Best iptv premium iptv 1 Month iptv Subscription'
