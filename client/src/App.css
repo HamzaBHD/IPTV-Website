@@ -15,7 +15,7 @@ body {
   height: 100%;
   font-family: 'Montserrat', sans-serif;
   color: black;
-  background: #FAFCFF ;
+  background: #fafcff;
 }
 
 body::-webkit-scrollbar {
@@ -27,7 +27,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #D64006;
+  background-color: #d64006;
   border-radius: 20px;
   border: 3px solid #141313;
 }

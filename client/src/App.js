@@ -2,13 +2,13 @@ import { Routes, Route } from 'react-router-dom'
 
 import './App.css'
 
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar'
 import Home from './pages/Home'
-import Products from './pages/Products';
-import About from './pages/About';
-import Contacts from './pages/Contacts';
+import Products from './pages/Products'
+import About from './pages/About'
+import Contacts from './pages/Contacts'
 
-function App(){
+function App() {
   return (
     <>
       <Navbar />
@@ -20,7 +20,7 @@ function App(){
         <Route path='/contacts' element={<Contacts />} />
       </Routes>
     </>
-  );
+  )
 }
- 
-export default App;
+
+export default App
