@@ -4,7 +4,7 @@
   background-image: url(../images/get-Iptv-buy-iptv.webp) !important;
   background-repeat: no-repeat;
   background-position: -700px 500px;
-  background-size: 1500px;
+  background-size: 1500px auto;
 }
 
 .top-page-contacts .top-page-content,
@@ -71,7 +71,7 @@
 @media (min-width: 620px) {
   .contact-page {
     background-position: -500px 0;
-    background-size: 2000px;
+    background-size: 2000px auto;
   }
 
   .top-page-contacts .top-page-content {
@@ -106,7 +106,7 @@
 @media (min-width: 1200px) {
   .contact-page {
     background-position: 0 0;
-    background-size: 1920px;
+    background-size: 1920px auto;
   }
 
   .top-page-contacts {
