@@ -13,7 +13,7 @@ const Products = () => {
                 We offer a variety of products,
                 and you can pick and choose which ones you want."
         isTrue={false}
-        backgoundClass='background-img-black'
+        backgroundClass='background-img-black'
         contentClass='top-page-content'
         aboutPage={false}
         contactPage={false}

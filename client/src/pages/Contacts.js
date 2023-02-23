@@ -12,7 +12,7 @@ const Contacts = () => {
                                 Contact us today for any queries regarding our services. 
                                 We look forward to hearing from you!'
           isTrue={false}
-          backgoundClass='background-full-black'
+          backgroundClass='background-full-black'
           contentClass='top-page-content'
           aboutPage={false}
           contactPage={true}

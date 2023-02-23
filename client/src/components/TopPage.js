@@ -10,13 +10,12 @@ const TopPage = ({
   title,
   paragraph,
   isTrue,
-  backgoundClass,
+  backgroundClass,
   contentClass,
   aboutPage,
   contactPage,
   primary,
   secondary,
-  mainCta,
 }) => {
   const topPageContent = useRef(null)
   const pageTitle = useRef(null)
@@ -58,7 +57,7 @@ const TopPage = ({
 
   return (
     <div className={topPageClass}>
-      <div className={backgoundClass}></div>
+      <div className={backgroundClass}></div>
       <div ref={topPageContent} className={contentClass}>
         {aboutPage ? (
           <div ref={aboutTitle} className='about-title'>
@@ -71,7 +70,7 @@ const TopPage = ({
         <p>{paragraph}</p>
         {isTrue && (
           <div className='buttons'>
-            <a href={mainCta} className='cta primary'>
+            <a href='#our-products' className='cta primary'>
               {primary}
             </a>
             <a href='/products' className='cta secondary'>

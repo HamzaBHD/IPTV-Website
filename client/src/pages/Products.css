@@ -367,6 +367,7 @@ span.sign {
   .tv-picture {
     display: unset;
     width: clamp(15vw, 45vw, 50vw);
+    height: auto;
     position: absolute;
     top: 27%;
     right: 2%;

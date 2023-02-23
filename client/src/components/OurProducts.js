@@ -40,15 +40,15 @@ const OurProducts = ({ isTrue, productsClass }) => {
       scrollTrigger: {
         trigger: products.current,
         start: 'top bottom',
-        end: 'center 80%',
+        end: 'center 85%',
         endTrigger: lastProduct.current,
         scrub: true,
       },
     })
-    tl.from(firstProduct.current, { x: -50, opacity: 0, stagger: 0.3 })
-      .from(secondProduct.current, { x: -50, opacity: 0, stagger: 0.3 })
-      .from(thirdProduct.current, { x: -50, opacity: 0, stagger: 0.3 })
-      .from(lastProduct.current, { x: -50, opacity: 0, stagger: 0.3 })
+    tl.from(firstProduct.current, { x: -50, opacity: 0 })
+      .from(secondProduct.current, { x: -50, opacity: 0 })
+      .from(thirdProduct.current, { x: -50, opacity: 0 })
+      .from(lastProduct.current, { x: -50, opacity: 0 })
   })
 
   function closeDetail(choice) {

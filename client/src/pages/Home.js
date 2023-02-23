@@ -15,13 +15,12 @@ const Home = () => {
                             Get IPTV and access over 10,000+ channels with no contracts
                             or hidden fees. Our service is easy to set up and use'
         isTrue={true}
-        backgoundClass='background-img'
+        backgroundClass='background-img'
         contentClass='top-page-content'
         aboutPage={false}
         contactPage={false}
         primary='Order NOW'
         secondary='Browse product'
-        mainCta='#our-products'
       />
       <OurProducts isTrue={true} productsClass='our-products' />
       <OurFeatures isTrue={true} featuresClass='our-features' />

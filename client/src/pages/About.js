@@ -14,7 +14,7 @@ const About = () => {
                     We are committed to providing our customers with the best quality IPTV services and solutions available on the market. 
                     Our team of experienced professionals has been working in the IPTV industry for more than 10 years.'
           isTrue={true}
-          backgoundClass='background-img--black'
+          backgroundClass='background-img--black'
           contentClass='top-page-content'
           aboutPage={true}
           contactPage={false}
