@@ -61,8 +61,6 @@ function Product({
         <br />
         Adults/No Adults channels
         <br />
-        Money-Back guarantee
-        <br />
         24/7 Technical Support
         <br />
       </p>

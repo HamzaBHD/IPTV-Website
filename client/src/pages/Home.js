@@ -20,7 +20,7 @@ const Home = () => {
         aboutPage={false}
         contactPage={false}
         primary='Order NOW'
-        secondary='Browse product'
+        secondary='Contact Us'
       />
       <OurProducts isTrue={true} productsClass='our-products' />
       <OurFeatures isTrue={true} featuresClass='our-features' />

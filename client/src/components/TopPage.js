@@ -70,10 +70,10 @@ const TopPage = ({
         <p>{paragraph}</p>
         {isTrue && (
           <div className='buttons'>
-            <a href='#our-products' className='cta primary'>
+            <a href='/products' className='cta primary'>
               {primary}
             </a>
-            <a href='/products' className='cta secondary'>
+            <a href='/contacts' className='cta secondary'>
               <span>{secondary}</span>
               <i className='ri-arrow-right-s-line arrow-right'></i>
             </a>

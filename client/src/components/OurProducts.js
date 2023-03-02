@@ -60,7 +60,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
   }
 
   return (
-    <div id='our-products' className={productsClass}>
+    <div className={productsClass}>
       {isTrue && <h2>Our Products</h2>}
       <ul ref={products}>
         {/* <Product
