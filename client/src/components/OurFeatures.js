@@ -35,9 +35,9 @@ const OurFeatures = ({ isTrue, featuresClass }) => {
           scrub: true,
         },
       })
-      tl.from(firstFeature.current, { x: -50, opacity: 0 })
-      tl.from(secondFeature.current, { x: -50, opacity: 0 })
-      tl.from(thirdFeature.current, { x: -50, opacity: 0 })
+      tl.from(firstFeature.current, { x: -10, y: -10, opacity: 0 })
+      tl.from(secondFeature.current, { x: -10, y: -10, opacity: 0 })
+      tl.from(thirdFeature.current, { x: -10, y: -10, opacity: 0 })
     } else if (currentLocation.pathname === '/about') {
       let tl = gsap.timeline({
         defaults: {

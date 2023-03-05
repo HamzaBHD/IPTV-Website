@@ -185,7 +185,7 @@ span.old-price {
   margin-right: 1em;
 }
 
-.actual-price-conatiner {
+.actual-price-container {
   display: flex;
   align-items: center;
 }
@@ -196,13 +196,13 @@ span.euro-sign {
   margin-right: 0.1em;
 }
 
-.old-price-conatiner {
+.old-price-container {
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.old-price-conatiner::after {
+.old-price-container::after {
   position: absolute;
   content: ' ';
   width: 70%;

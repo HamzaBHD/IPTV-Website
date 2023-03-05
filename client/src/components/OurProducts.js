@@ -45,10 +45,10 @@ const OurProducts = ({ isTrue, productsClass }) => {
         scrub: true,
       },
     })
-    tl.from(firstProduct.current, { x: -50, opacity: 0 })
-      .from(secondProduct.current, { x: -50, opacity: 0 })
-      .from(thirdProduct.current, { x: -50, opacity: 0 })
-      .from(lastProduct.current, { x: -50, opacity: 0 })
+    tl.from(firstProduct.current, { x: -10, y: -20, opacity: 0 })
+      .from(secondProduct.current, { x: -10, y: -20, opacity: 0 })
+      .from(thirdProduct.current, { x: -10, y: -20, opacity: 0 })
+      .from(lastProduct.current, { x: -10, y: -20, opacity: 0 })
   })
 
   function closeDetail(choice) {
@@ -63,17 +63,6 @@ const OurProducts = ({ isTrue, productsClass }) => {
     <div className={productsClass}>
       {isTrue && <h2>Our Products</h2>}
       <ul ref={products}>
-        {/* <Product
-                    productNameAlt='Best iptv premium iptv Trial iptv Subscription'
-                    productName='Test Before you buy'
-                    productPrice='Free'
-                    productOffer={trialPack}
-                    reference={trialProduct}
-                    productId='test'
-                    openDetail={closeDetail}
-                    getProduct={getProduct}
-                /> */}
-
         <Product
           productNameAlt='Best iptv premium iptv 1 Month iptv Subscription'
           productName='1 Month Subscription'

@@ -8,10 +8,10 @@ function Product({
   productTag,
   reference,
   productId,
-  openDetail,
-  getProduct,
   oldPrice,
 }) {
+  const imageObj = getImage(productName)
+
   const messageToSent =
     productId === 'test'
       ? `https://wa.me/15513070526?text=Hello,%20I'm%20interested%20to%20test%20before%20I%20buy.`
@@ -34,17 +34,22 @@ function Product({
       {productOffer && (
         <img className='pack-tag' src={productOffer} alt={productTag}></img>
       )}
-      <img src={getImage(productName)} alt={productNameAlt}></img>
+      <img
+        // srcSet={`${imageObj.smallImage} 280w, ${imageObj.mediumImage} 300w, ${imageObj.largeImage} 350w`}
+        sizes='(max-width: 620px) 280px, (min-width: 620px) 300px, (min-width: 1200px) 350px'
+        src={imageObj.mainImage}
+        alt={productNameAlt}
+      ></img>
       <div className='product-title'>
         <h3>{productName}</h3>
         <div className='price-container'>
           {oldPrice && (
-            <div className='old-price-conatiner'>
+            <div className='old-price-container'>
               <span className='sign'>€</span>
               <span className='old-price'>{oldPrice}</span>
             </div>
           )}
-          <div className='actual-price-conatiner'>
+          <div className='actual-price-container'>
             {productPrice !== 'Free' && <span className='euro-sign'>€</span>}
             <span className='item-price'>{productPrice}</span>
           </div>
