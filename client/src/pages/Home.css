@@ -96,6 +96,7 @@ nav a h1 {
   width: 100%;
   height: 100%;
   position: absolute;
+  background-color: #000103;
   background-image: url(../images/Premuim-IPTV-adult.webp) !important;
   background-repeat: no-repeat;
   background-position: -800px 0;
