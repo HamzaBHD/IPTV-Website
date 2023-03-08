@@ -1,0 +1,57 @@
+.not-found-page {
+  width: 100%;
+  max-width: 800px;
+  height: 90vh;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  color: black;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+.not-found-page h1 {
+  font-size: 8em;
+  margin: 0;
+  color: #d64006;
+}
+
+.not-found-page p {
+  font-size: 1.3em;
+  margin: 0 auto;
+  line-height: 1.3em;
+}
+
+.buttons .contact-btn {
+  color: black;
+}
+
+@media (min-width: 620px) {
+  .not-found-page p {
+    width: 98%;
+    text-align: center;
+  }
+  .redirect-buttons {
+    width: 100%;
+    max-width: unset;
+    gap: unset;
+    justify-content: unset;
+  }
+  .redirect-buttons .cta {
+    flex: 0 0 48%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .not-found-page {
+    text-align: center;
+  }
+
+  .redirect-buttons {
+    justify-content: center;
+    max-width: unset;
+    width: 100%;
+  }
+}

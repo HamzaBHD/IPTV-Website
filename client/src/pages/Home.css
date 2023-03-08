@@ -135,6 +135,7 @@ nav a h1 {
   margin: 1em auto;
   padding: 1em;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 .buttons .secondary {
@@ -144,6 +145,7 @@ nav a h1 {
   background: none;
   border: 1px solid #d38567;
   position: relative;
+  font-weight: 600;
 }
 
 .arrow-right {
@@ -788,6 +790,7 @@ footer {
 
   .our-features svg {
     font-size: 4em;
+    /* margin-top: 2em; */
   }
 
   .reputation-content {

@@ -2,7 +2,7 @@ import './Home.css'
 import TopPage from '../components/TopPage'
 import OurProducts from '../components/OurProducts'
 import OurFeatures from '../components/OurFeatures'
-import OurReputation from '../components/OurRepetution'
+import OurReputation from '../components/OurReputation'
 import Footer from '../components/Footer'
 
 const Home = () => {

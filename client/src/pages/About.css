@@ -1,5 +1,5 @@
 .top-page-about .top-page-content .about-title {
-  color: white;
+  /* color: black; */
   position: relative;
   -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
@@ -149,7 +149,7 @@
     display: flex;
     height: 650px;
     margin-left: -7em;
-    padding: 0.8em 0;
+    padding: 6em 0;
   }
 
   .features .feature-container {
@@ -181,7 +181,7 @@
 @media (min-width: 1450px) {
   .features ul {
     margin-left: -7em;
-    padding: 3.5em 0;
+    padding: 7em 0;
   }
 
   .features .feature-container p {

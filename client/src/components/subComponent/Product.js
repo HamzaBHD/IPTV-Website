@@ -34,12 +34,7 @@ function Product({
       {productOffer && (
         <img className='pack-tag' src={productOffer} alt={productTag}></img>
       )}
-      <img
-        // srcSet={`${imageObj.smallImage} 280w, ${imageObj.mediumImage} 300w, ${imageObj.largeImage} 350w`}
-        // sizes='(max-width: 620px) 280px, (min-width: 620px) 300px, (min-width: 1200px) 350px'
-        src={mainImg}
-        alt={productNameAlt}
-      ></img>
+      <img src={mainImg} alt={productNameAlt}></img>
       <div className='product-title'>
         <h3>{productName}</h3>
         <div className='price-container'>
