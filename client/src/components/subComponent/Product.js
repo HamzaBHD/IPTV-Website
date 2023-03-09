@@ -77,7 +77,7 @@ function Product({
           rel='noreferrer noopener'
           className='cta secondary'
         >
-          <span>More details</span>
+          <span>Contact Seller</span>
           <i className='ri-arrow-right-s-line arrow'></i>
         </a>
       </div>
