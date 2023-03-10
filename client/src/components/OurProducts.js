@@ -62,7 +62,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
         <Product
           productNameAlt='Best iptv adult iptv 6 Months iptv Subscription'
           productName='6 Months Subscription'
-          productPrice='40'
+          productPrice='35'
           oldPrice='45'
           reference={thirdProduct}
           productId='6-Months'
@@ -71,7 +71,7 @@ const OurProducts = ({ isTrue, productsClass }) => {
         <Product
           productNameAlt='Best iptv adult iptv 4K 8K UHD HD 1 Year iptv Subscription'
           productName='1 Year Subscription'
-          productPrice='60'
+          productPrice='50'
           oldPrice='70'
           productOffer={bestPack}
           productTag='Iptv Best Pack'
